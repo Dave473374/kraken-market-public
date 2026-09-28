@@ -1,4 +1,91 @@
 {
-  "mirror_status": "AWAITING_FIRST_GITHUB_ACTION_RUN",
-  "generated_at": null
+  "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
+  "generated_at": "2026-09-28T20:54:27.168629Z",
+  "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
+  "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "status": "OK",
+  "files": {
+    "health.json": {
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-09-28T20:52:09.109371Z"
+    },
+    "universe.json": {
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-09-28T20:52:13.830606Z"
+    },
+    "owned-quotes.json": {
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-09-28T20:52:15.426474Z"
+    }
+  },
+  "candidate_pairs_attempted": [
+    "XBTEUR",
+    "ETHEUR",
+    "SOLEUR",
+    "DOGEEUR",
+    "LTCEUR",
+    "SUIEUR",
+    "LINKEUR",
+    "BNBEUR",
+    "AAVEEUR",
+    "ONDOEUR",
+    "INJEUR",
+    "PENDLEEUR",
+    "RENDEREUR",
+    "TAOEUR",
+    "HBAREUR",
+    "ALGOEUR",
+    "NMRUSD"
+  ],
+  "candidate_pairs_ok": [
+    "ETHEUR",
+    "SOLEUR",
+    "LTCEUR",
+    "SUIEUR",
+    "BNBEUR",
+    "AAVEEUR",
+    "ONDOEUR",
+    "INJEUR",
+    "RENDEREUR",
+    "TAOEUR",
+    "HBAREUR",
+    "ALGOEUR",
+    "NMRUSD"
+  ],
+  "candidate_pairs_failed": [
+    {
+      "pair": "XBTEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "DOGEEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "LINKEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "PENDLEEUR",
+      "error": "HTTP_429",
+      "schema": null
+    }
+  ],
+  "notes": [
+    "Public read-only market-data mirror only.",
+    "Mirror success is not a BUY/SELL signal.",
+    "Consumer must recompute freshness from source timestamps."
+  ],
+  "summary": {
+    "universe_ok": true,
+    "quotes_ok": true,
+    "candidate_ok_count": 13,
+    "candidate_failed_count": 4
+  }
 }
