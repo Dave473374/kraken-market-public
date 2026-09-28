@@ -1,6 +1,6 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
-  "generated_at": "2026-09-28T21:08:11.485498Z",
+  "generated_at": "2026-09-28T22:08:31.918354Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -8,17 +8,17 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T21:06:35.527541Z"
+      "source_retrieved_at": "2026-09-28T22:06:03.243225Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T21:06:40.204517Z"
+      "source_retrieved_at": "2026-09-28T22:06:07.866315Z"
     },
     "owned-quotes.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T21:06:41.513872Z"
+      "source_retrieved_at": "2026-09-28T22:06:09.192211Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -37,58 +37,30 @@
     "RENDEREUR",
     "TAOEUR",
     "HBAREUR",
-    "TELUSD",
-    "ALGOEUR"
+    "ALGOEUR",
+    "MUBARAKUSD"
   ],
   "candidate_pairs_ok": [
+    "XBTEUR",
+    "SOLEUR",
+    "DOGEEUR",
+    "LTCEUR",
+    "SUIEUR",
     "LINKEUR",
     "BNBEUR",
+    "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
+    "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
     "HBAREUR",
-    "TELUSD",
-    "ALGOEUR"
+    "ALGOEUR",
+    "MUBARAKUSD"
   ],
   "candidate_pairs_failed": [
     {
-      "pair": "XBTEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
       "pair": "ETHEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "SOLEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "DOGEEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "LTCEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "SUIEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "AAVEEUR",
-      "error": "HTTP_429",
-      "schema": null
-    },
-    {
-      "pair": "PENDLEEUR",
       "error": "HTTP_429",
       "schema": null
     }
@@ -101,7 +73,7 @@
   "summary": {
     "universe_ok": true,
     "quotes_ok": true,
-    "candidate_ok_count": 9,
-    "candidate_failed_count": 8
+    "candidate_ok_count": 16,
+    "candidate_failed_count": 1
   }
 }
