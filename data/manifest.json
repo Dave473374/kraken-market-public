@@ -1,6 +1,6 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
-  "generated_at": "2026-09-28T20:54:27.168629Z",
+  "generated_at": "2026-09-28T21:08:11.485498Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -8,17 +8,17 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T20:52:09.109371Z"
+      "source_retrieved_at": "2026-09-28T21:06:35.527541Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T20:52:13.830606Z"
+      "source_retrieved_at": "2026-09-28T21:06:40.204517Z"
     },
     "owned-quotes.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-28T20:52:15.426474Z"
+      "source_retrieved_at": "2026-09-28T21:06:41.513872Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -37,27 +37,33 @@
     "RENDEREUR",
     "TAOEUR",
     "HBAREUR",
-    "ALGOEUR",
-    "NMRUSD"
+    "TELUSD",
+    "ALGOEUR"
   ],
   "candidate_pairs_ok": [
-    "ETHEUR",
-    "SOLEUR",
-    "LTCEUR",
-    "SUIEUR",
+    "LINKEUR",
     "BNBEUR",
-    "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
     "RENDEREUR",
     "TAOEUR",
     "HBAREUR",
-    "ALGOEUR",
-    "NMRUSD"
+    "TELUSD",
+    "ALGOEUR"
   ],
   "candidate_pairs_failed": [
     {
       "pair": "XBTEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "ETHEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "SOLEUR",
       "error": "HTTP_429",
       "schema": null
     },
@@ -67,7 +73,17 @@
       "schema": null
     },
     {
-      "pair": "LINKEUR",
+      "pair": "LTCEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "SUIEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "AAVEEUR",
       "error": "HTTP_429",
       "schema": null
     },
@@ -85,7 +101,7 @@
   "summary": {
     "universe_ok": true,
     "quotes_ok": true,
-    "candidate_ok_count": 13,
-    "candidate_failed_count": 4
+    "candidate_ok_count": 9,
+    "candidate_failed_count": 8
   }
 }
