@@ -1,24 +1,24 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
-  "generated_at": "2026-09-29T04:08:35.203224Z",
+  "generated_at": "2026-09-29T05:08:49.764139Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "status": "OK",
+  "status": "PARTIAL",
   "files": {
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T04:06:05.605320Z"
+      "source_retrieved_at": "2026-09-29T05:06:23.834921Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T04:06:10.176754Z"
+      "source_retrieved_at": "2026-09-29T05:06:28.607876Z"
     },
     "owned-quotes.json": {
-      "ok": true,
-      "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T04:06:11.435132Z"
+      "ok": false,
+      "schema_ok": false,
+      "source_retrieved_at": "2026-09-29T05:06:28.672687Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -36,8 +36,8 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "DRVEUR",
-    "ICPEUR",
+    "GRASSUSD",
+    "XDPUSD",
     "QNTEUR"
   ],
   "candidate_pairs_ok": [
@@ -45,7 +45,6 @@
     "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
-    "LTCEUR",
     "SUIEUR",
     "LINKEUR",
     "BNBEUR",
@@ -55,11 +54,17 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "DRVEUR",
-    "ICPEUR",
+    "GRASSUSD",
+    "XDPUSD",
     "QNTEUR"
   ],
-  "candidate_pairs_failed": [],
+  "candidate_pairs_failed": [
+    {
+      "pair": "LTCEUR",
+      "error": "HTTP_429",
+      "schema": null
+    }
+  ],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -67,8 +72,8 @@
   ],
   "summary": {
     "universe_ok": true,
-    "quotes_ok": true,
-    "candidate_ok_count": 17,
-    "candidate_failed_count": 0
+    "quotes_ok": false,
+    "candidate_ok_count": 16,
+    "candidate_failed_count": 1
   }
 }
