@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-29T12:11:18.370429Z",
+  "generated_at": "2026-09-29T13:12:49.542732Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T12:08:27.464726Z"
+      "source_retrieved_at": "2026-09-29T13:09:55.128571Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T12:08:32.062397Z"
+      "source_retrieved_at": "2026-09-29T13:09:59.721402Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-29T12:08:33.339184Z"
+      "source_retrieved_at": "2026-09-29T13:10:01.023539Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -103,7 +103,7 @@
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ONDOEUR",
@@ -113,7 +113,7 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -128,23 +128,21 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "GRASSUSD",
-      "requested_pair": "GRASSUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "CELOUSD",
-      "requested_pair": "CELOUSD",
+      "logical_pair": "0GEUR",
+      "requested_pair": "0GEUR",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "PUMPEUR",
+      "requested_pair": "PUMPEUR",
       "attempts": 2
     }
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
-    "ETHEUR",
-    "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
     "SUIEUR",
@@ -152,16 +150,18 @@
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
+    "INJEUR",
     "PENDLEEUR",
+    "RENDEREUR",
     "TAOEUR",
-    "GRASSUSD",
-    "CELOUSD"
+    "0GEUR",
+    "PUMPEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
-      "attempts": 1,
+      "logical_pair": "ETHEUR",
+      "requested_pair": "ETHEUR",
+      "attempts": 2,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -169,8 +169,8 @@
       "error": null
     },
     {
-      "logical_pair": "RENDEREUR",
-      "requested_pair": "RENDEREUR",
+      "logical_pair": "SOLEUR",
+      "requested_pair": "SOLEUR",
       "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,

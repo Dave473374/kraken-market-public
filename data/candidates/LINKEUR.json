@@ -9,8 +9,8 @@
   "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
   "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-09-29T12:09:30.233Z",
-  "generated_at": "2026-09-29T12:09:38.031Z",
+  "request_started_at": "2026-09-29T13:11:02.479Z",
+  "generated_at": "2026-09-29T13:11:10.286Z",
   "data_health": "DATA_OK",
   "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
   "pair_metadata": {
@@ -39,14 +39,14 @@
   "metadata_source": {
     "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=LINKEUR&country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
-    "request_started_at": "2026-09-29T12:09:31.333Z",
-    "retrieved_at": "2026-09-29T12:09:31.438Z",
+    "request_started_at": "2026-09-29T13:11:03.579Z",
+    "retrieved_at": "2026-09-29T13:11:03.690Z",
     "http_status": 200,
     "market_observed_at": null,
     "from_isolate_cache": false,
     "ok": true,
     "http_metadata": {
-      "Date": "Tue, 29 Sep 2026 12:09:31 GMT",
+      "Date": "Tue, 29 Sep 2026 13:11:03 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1",
       "CF-Cache-Status": "EXPIRED",
       "Content-Type": "application/json"
@@ -55,19 +55,19 @@
   },
   "clock": {
     "quality": "VERIFIED",
-    "server_unix": 1790683770,
-    "age_seconds_at_response": 8.030999898910522,
+    "server_unix": 1790687462,
+    "age_seconds_at_response": 8.28600001335144,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Time",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:30.233Z",
-      "retrieved_at": "2026-09-29T12:09:30.326Z",
+      "request_started_at": "2026-09-29T13:11:02.479Z",
+      "retrieved_at": "2026-09-29T13:11:02.580Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:30 GMT",
+        "Date": "Tue, 29 Sep 2026 13:11:02 GMT",
         "Cache-Control": "no-store",
         "CF-Cache-Status": "BYPASS",
         "Content-Type": "application/json"
@@ -80,83 +80,28 @@
     "quality": "APPROXIMATE",
     "observation_time": null,
     "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
-    "bid": 13.49389,
-    "ask": 13.49586,
-    "last": 13.49391,
-    "mid": 13.494875,
-    "spread_pct": 0.014598134476977572,
-    "volume_24h_base": 1070890.79576679,
-    "vwap_24h_quote": 13.232099,
-    "turnover_24h_quote": 14170133.027774945,
-    "change_since_midnight_utc_pct": -0.6441166920322705,
+    "bid": 13.52158,
+    "ask": 13.52185,
+    "last": 13.5346,
+    "mid": 13.521715,
+    "spread_pct": 0.001996788129319665,
+    "volume_24h_base": 967616.001041,
+    "vwap_24h_quote": 13.275941,
+    "turnover_24h_quote": 12846012.940476254,
+    "change_since_midnight_utc_pct": -0.3445155466414107,
     "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
     "rolling_24h_price_change_pct": null,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Ticker?pair=LINKEUR",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:37.933Z",
-      "retrieved_at": "2026-09-29T12:09:38.031Z",
+      "request_started_at": "2026-09-29T13:11:10.179Z",
+      "retrieved_at": "2026-09-29T13:11:10.286Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:38 GMT",
-        "Cache-Control": "max-age=2, public",
-        "CF-Cache-Status": "EXPIRED",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "timestamped_spread": {
-    "quality": "VERIFIED",
-    "observed_unix": 1790683775,
-    "observed_at": "2026-09-29T12:09:35.000Z",
-    "age_seconds_at_response": 3.0309998989105225,
-    "bid": 13.49391,
-    "ask": 13.49586,
-    "mid": 13.494885,
-    "spread_pct": 0.01444991935834047,
-    "recent_rows": [
-      [
-        1790683774,
-        "13.493920",
-        "13.495910"
-      ],
-      [
-        1790683774,
-        "13.493890",
-        "13.495910"
-      ],
-      [
-        1790683774,
-        "13.493890",
-        "13.495890"
-      ],
-      [
-        1790683774,
-        "13.493890",
-        "13.495860"
-      ],
-      [
-        1790683775,
-        "13.493910",
-        "13.495860"
-      ]
-    ],
-    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Spread?pair=LINKEUR",
-      "method": "GET",
-      "request_started_at": "2026-09-29T12:09:35.733Z",
-      "retrieved_at": "2026-09-29T12:09:35.836Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:35 GMT",
+        "Date": "Tue, 29 Sep 2026 13:11:10 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -164,24 +109,79 @@
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     }
   },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1790687467,
+    "observed_at": "2026-09-29T13:11:07.000Z",
+    "age_seconds_at_response": 3.2860000133514404,
+    "bid": 13.52158,
+    "ask": 13.52185,
+    "mid": 13.521715,
+    "spread_pct": 0.001996788129319665,
+    "recent_rows": [
+      [
+        1790687467,
+        "13.520440",
+        "13.522690"
+      ],
+      [
+        1790687467,
+        "13.521840",
+        "13.522690"
+      ],
+      [
+        1790687467,
+        "13.521840",
+        "13.521850"
+      ],
+      [
+        1790687467,
+        "13.520440",
+        "13.521850"
+      ],
+      [
+        1790687467,
+        "13.521580",
+        "13.521850"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=LINKEUR",
+      "method": "GET",
+      "request_started_at": "2026-09-29T13:11:07.979Z",
+      "retrieved_at": "2026-09-29T13:11:08.101Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 13:11:08 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
   "depth": {
     "quality": "VERIFIED",
-    "best_bid": 13.49389,
-    "best_ask": 13.49586,
-    "mid": 13.494875,
-    "spread_pct": 0.014598134476977572,
+    "best_bid": 13.51949,
+    "best_ask": 13.52067,
+    "mid": 13.52008,
+    "spread_pct": 0.008727759007354344,
     "band_pct": 0.5,
     "depth_each_side": {
       "asks": {
-        "notional_quote_lower_bound": 228643.54015495002,
+        "notional_quote_lower_bound": 309904.68335092004,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 3810.725669249167,
+        "multiple_of_test_notional": 5165.078055848668,
         "depth_20x_test": "PASS"
       },
       "bids": {
-        "notional_quote_lower_bound": 323104.30569445994,
+        "notional_quote_lower_bound": 448347.16199427017,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 5385.071761574332,
+        "multiple_of_test_notional": 7472.452699904503,
         "depth_20x_test": "PASS"
       }
     },
@@ -197,18 +197,18 @@
       "buy": {
         "fillable": true,
         "notional_quote": 60,
-        "base_quantity": 4.445807825510935,
+        "base_quantity": 4.4376117342606864,
         "unfilled_quote": 0,
-        "average_price": 13.49586,
-        "slippage_vs_best_ask_pct": 0
+        "average_price": 13.520786313225328,
+        "slippage_vs_best_ask_pct": 0.0008602622897146972
       },
       "sell_same_base_quantity": {
         "fillable": true,
-        "base_quantity": 4.445807825510935,
+        "base_quantity": 4.4376117342606864,
         "unfilled_base": 0,
-        "proceeds_quote": 59.99124175858375,
-        "average_price": 13.49389,
-        "slippage_vs_best_bid_pct": 0
+        "proceeds_quote": 59.993855188990494,
+        "average_price": 13.51940160194875,
+        "slippage_vs_best_bid_pct": 0.0006538564047087192
       },
       "fees_included": false,
       "executed": false,
@@ -217,15 +217,15 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/Depth?pair=LINKEUR&count=500",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:36.833Z",
-      "retrieved_at": "2026-09-29T12:09:36.938Z",
+      "request_started_at": "2026-09-29T13:11:09.079Z",
+      "retrieved_at": "2026-09-29T13:11:09.195Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:36 GMT",
-        "Cache-Control": "max-age=2, public",
+        "Date": "Tue, 29 Sep 2026 13:11:09 GMT",
+        "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
@@ -882,16 +882,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=LINKEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:32.433Z",
-      "retrieved_at": "2026-09-29T12:09:32.531Z",
+      "request_started_at": "2026-09-29T13:11:04.679Z",
+      "retrieved_at": "2026-09-29T13:11:04.815Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:32 GMT",
+        "Date": "Tue, 29 Sep 2026 13:11:04 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1528,16 +1528,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=LINKEUR&interval=1440",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:33.533Z",
-      "retrieved_at": "2026-09-29T12:09:33.640Z",
+      "request_started_at": "2026-09-29T13:11:05.779Z",
+      "retrieved_at": "2026-09-29T13:11:05.900Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:33 GMT",
+        "Date": "Tue, 29 Sep 2026 13:11:05 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1555,16 +1555,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-29T12:09:34.633Z",
-      "retrieved_at": "2026-09-29T12:09:34.743Z",
+      "request_started_at": "2026-09-29T13:11:06.879Z",
+      "retrieved_at": "2026-09-29T13:11:06.981Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 12:09:34 GMT",
+        "Date": "Tue, 29 Sep 2026 13:11:06 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1582,22 +1582,22 @@
   "test_notional_is_recommendation": false,
   "test_minima": {
     "quality": "APPROXIMATE",
-    "base_quantity_rounded_down": 4.44580782,
+    "base_quantity_rounded_down": 4.4376499,
     "ordermin_met": true,
     "costmin_met": true,
     "fees_included": false
   },
   "same_exchange_quote_comparisons": {
     "Ticker_Spread": {
-      "difference_pct": 7.410217800841076e-05,
-      "within_1pct": true
-    },
-    "Ticker_Depth": {
       "difference_pct": 0,
       "within_1pct": true
     },
+    "Ticker_Depth": {
+      "difference_pct": 0.012092392535334841,
+      "within_1pct": true
+    },
     "Spread_Depth": {
-      "difference_pct": 7.410217800841076e-05,
+      "difference_pct": 0.012092392535334841,
       "within_1pct": true
     }
   },
