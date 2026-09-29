@@ -1,24 +1,24 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
-  "generated_at": "2026-09-29T05:08:49.764139Z",
+  "generated_at": "2026-09-29T06:10:34.628818Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "status": "PARTIAL",
+  "status": "OK",
   "files": {
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T05:06:23.834921Z"
+      "source_retrieved_at": "2026-09-29T06:08:13.179727Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T05:06:28.607876Z"
+      "source_retrieved_at": "2026-09-29T06:08:17.977382Z"
     },
     "owned-quotes.json": {
-      "ok": false,
-      "schema_ok": false,
-      "source_retrieved_at": "2026-09-29T05:06:28.672687Z"
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-09-29T06:08:19.439327Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -36,17 +36,16 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "GRASSUSD",
-    "XDPUSD",
-    "QNTEUR"
+    "PHAUSD",
+    "ARXUSD",
+    "ICPEUR"
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
     "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
-    "SUIEUR",
-    "LINKEUR",
+    "LTCEUR",
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
@@ -54,13 +53,18 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "GRASSUSD",
-    "XDPUSD",
-    "QNTEUR"
+    "PHAUSD",
+    "ARXUSD",
+    "ICPEUR"
   ],
   "candidate_pairs_failed": [
     {
-      "pair": "LTCEUR",
+      "pair": "SUIEUR",
+      "error": "HTTP_429",
+      "schema": null
+    },
+    {
+      "pair": "LINKEUR",
       "error": "HTTP_429",
       "schema": null
     }
@@ -72,8 +76,8 @@
   ],
   "summary": {
     "universe_ok": true,
-    "quotes_ok": false,
-    "candidate_ok_count": 16,
-    "candidate_failed_count": 1
+    "quotes_ok": true,
+    "candidate_ok_count": 15,
+    "candidate_failed_count": 2
   }
 }
