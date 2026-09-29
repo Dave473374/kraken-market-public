@@ -10,9 +10,17 @@ CFG = json.loads((ROOT / "config/assets.json").read_text(encoding="utf-8"))
 BASE = CFG["worker_base"].rstrip("/")
 EXPECTED = CFG["expected_schema"]
 TIMEOUT = int(CFG.get("request_timeout_seconds", 30))
+ALIASES = {str(k).upper(): str(v).upper() for k, v in CFG.get("pair_aliases", {}).items()}
 
 def now_iso():
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+def normalize_pair(pair):
+    return str(pair).upper().replace("/", "").strip()
+
+def request_pair(pair):
+    p = normalize_pair(pair)
+    return ALIASES.get(p, p)
 
 def atomic_write(path, obj):
     path = Path(path)
@@ -26,7 +34,7 @@ def public_get(path):
     started = now_iso()
     req = urllib.request.Request(url, method="GET", headers={
         "Accept": "application/json",
-        "User-Agent": "kraken-market-public-mirror/1.0"
+        "User-Agent": "kraken-market-public-mirror/1.1"
     })
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
@@ -56,6 +64,19 @@ def public_get(path):
 def schema_ok(result):
     return bool(result.get("ok")) and result.get("body", {}).get("schema") == EXPECTED
 
+def candidate_usable(result):
+    if not schema_ok(result):
+        return False
+    body = result.get("body", {})
+    return body.get("data_health") == "DATA_OK" and not body.get("pair_error")
+
+def quotes_usable(result):
+    if not schema_ok(result):
+        return False
+    body = result.get("body", {})
+    unresolved = body.get("unresolved") or []
+    return body.get("data_health") == "DATA_OK" and len(unresolved) == 0
+
 def save_result(filename, result):
     if result.get("ok"):
         atomic_write(DATA / filename, result["body"])
@@ -78,7 +99,7 @@ def discovery_pairs(body, limit):
             continue
         pair = c.get("pair_key") or c.get("altname") or c.get("pair")
         if isinstance(pair, str):
-            pair = pair.upper().replace("/", "").strip()
+            pair = normalize_pair(pair)
             if pair and pair not in found:
                 found.append(pair)
         if len(found) >= limit:
@@ -88,20 +109,24 @@ def discovery_pairs(body, limit):
 def main():
     DATA.mkdir(exist_ok=True)
     CANDIDATES.mkdir(parents=True, exist_ok=True)
+
     manifest = {
         "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
+        "mirror_revision": "1.1-doge-xdg",
         "generated_at": now_iso(),
         "worker_base": BASE,
         "expected_worker_schema": EXPECTED,
         "status": "STARTED",
+        "pair_aliases": ALIASES,
         "files": {},
         "candidate_pairs_attempted": [],
         "candidate_pairs_ok": [],
-        "candidate_pairs_failed": [],
+        "candidate_pairs_partial_or_failed": [],
         "notes": [
             "Public read-only market-data mirror only.",
             "Mirror success is not a BUY/SELL signal.",
-            "Consumer must recompute freshness from source timestamps."
+            "Consumer must recompute freshness from source timestamps.",
+            "Logical DOGEEUR is requested from Kraken REST as XDGEUR."
         ]
     }
 
@@ -125,16 +150,21 @@ def main():
         "source_retrieved_at": universe.get("retrieved_at")
     }
 
-    pairs = ",".join(CFG["quotes_pairs"])
+    logical_quotes = [normalize_pair(p) for p in CFG["quotes_pairs"]]
+    requested_quotes = [request_pair(p) for p in logical_quotes]
+    pairs = ",".join(requested_quotes)
     quotes = public_get("/quotes.json?pairs=" + urllib.parse.quote(pairs, safe=","))
     save_result("owned-quotes.json", quotes)
     manifest["files"]["owned-quotes.json"] = {
         "ok": quotes.get("ok", False),
         "schema_ok": schema_ok(quotes),
+        "usable": quotes_usable(quotes),
+        "requested_pairs": requested_quotes,
+        "logical_pairs": logical_quotes,
         "source_retrieved_at": quotes.get("retrieved_at")
     }
 
-    deep_pairs = list(CFG["deep_pairs"])
+    deep_pairs = [normalize_pair(p) for p in CFG["deep_pairs"]]
     if schema_ok(universe):
         deep_pairs.extend(discovery_pairs(
             universe["body"],
@@ -143,36 +173,56 @@ def main():
 
     unique = []
     for p in deep_pairs:
-        p = str(p).upper().replace("/", "").strip()
+        p = normalize_pair(p)
         if p and p not in unique:
             unique.append(p)
 
     notional = float(CFG.get("synthetic_notional_eur", 60))
     delay = float(CFG.get("candidate_delay_seconds", 0.75))
 
-    for pair in unique:
-        manifest["candidate_pairs_attempted"].append(pair)
-        path = "/candidate.json?pair=" + urllib.parse.quote(pair) + "&notional_eur=" + urllib.parse.quote(str(notional))
+    for logical_pair in unique:
+        requested_pair = request_pair(logical_pair)
+        manifest["candidate_pairs_attempted"].append({
+            "logical_pair": logical_pair,
+            "requested_pair": requested_pair
+        })
+
+        path = (
+            "/candidate.json?pair=" + urllib.parse.quote(requested_pair)
+            + "&notional_eur=" + urllib.parse.quote(str(notional))
+        )
         result = public_get(path)
-        filename = f"candidates/{pair}.json"
+
+        # Keep stable logical filenames so downstream code can continue using DOGEEUR.json.
+        filename = f"candidates/{logical_pair}.json"
         save_result(filename, result)
-        if schema_ok(result):
-            manifest["candidate_pairs_ok"].append(pair)
+
+        if candidate_usable(result):
+            manifest["candidate_pairs_ok"].append(logical_pair)
         else:
-            manifest["candidate_pairs_failed"].append({
-                "pair": pair,
-                "error": result.get("error"),
-                "schema": result.get("body", {}).get("schema") if result.get("ok") else None
+            body = result.get("body", {}) if result.get("ok") else {}
+            manifest["candidate_pairs_partial_or_failed"].append({
+                "logical_pair": logical_pair,
+                "requested_pair": requested_pair,
+                "transport_ok": bool(result.get("ok")),
+                "schema_ok": schema_ok(result),
+                "data_health": body.get("data_health"),
+                "pair_error": body.get("pair_error"),
+                "error": result.get("error")
             })
         time.sleep(delay)
 
-    manifest["status"] = "OK" if schema_ok(universe) and schema_ok(quotes) else "PARTIAL"
+    manifest["status"] = (
+        "OK"
+        if schema_ok(universe) and quotes_usable(quotes)
+        else "PARTIAL"
+    )
     manifest["generated_at"] = now_iso()
     manifest["summary"] = {
         "universe_ok": schema_ok(universe),
-        "quotes_ok": schema_ok(quotes),
+        "quotes_usable": quotes_usable(quotes),
         "candidate_ok_count": len(manifest["candidate_pairs_ok"]),
-        "candidate_failed_count": len(manifest["candidate_pairs_failed"])
+        "candidate_partial_or_failed_count": len(manifest["candidate_pairs_partial_or_failed"])
     }
     atomic_write(DATA / "manifest.json", manifest)
     return 0 if manifest["status"] == "OK" else 1
