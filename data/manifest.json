@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-29T06:53:57.029526Z",
+  "generated_at": "2026-09-29T07:11:39.974896Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T06:51:04.997556Z"
+      "source_retrieved_at": "2026-09-29T07:08:37.475385Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T06:51:09.647458Z"
+      "source_retrieved_at": "2026-09-29T07:08:42.170992Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-29T06:51:10.986670Z"
+      "source_retrieved_at": "2026-09-29T07:08:43.625244Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -108,7 +108,7 @@
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "INJEUR",
@@ -128,21 +128,21 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
+      "attempts": 2
+    },
+    {
+      "logical_pair": "PHAUSD",
+      "requested_pair": "PHAUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "QNTUSD",
-      "requested_pair": "QNTUSD",
+      "logical_pair": "MUBARAKUSD",
+      "requested_pair": "MUBARAKUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "PONDUSD",
-      "requested_pair": "PONDUSD",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "ARXUSD",
-      "requested_pair": "ARXUSD",
+      "logical_pair": "QNTEUR",
+      "requested_pair": "QNTEUR",
       "attempts": 1
     }
   ],
@@ -158,17 +158,26 @@
     "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
-    "PENDLEEUR",
     "RENDEREUR",
-    "TAOEUR",
-    "PONDUSD",
-    "ARXUSD"
+    "PHAUSD",
+    "MUBARAKUSD",
+    "QNTEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "QNTUSD",
-      "requested_pair": "QNTUSD",
+      "logical_pair": "PENDLEEUR",
+      "requested_pair": "PENDLEEUR",
       "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "TAOEUR",
+      "requested_pair": "TAOEUR",
+      "attempts": 2,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -189,7 +198,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 15,
+    "candidate_partial_or_failed_count": 2
   }
 }
