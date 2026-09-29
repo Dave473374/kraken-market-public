@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-29T15:12:49.422379Z",
+  "generated_at": "2026-09-29T16:11:07.546551Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T15:09:36.658545Z"
+      "source_retrieved_at": "2026-09-29T16:08:17.025629Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T15:09:41.445964Z"
+      "source_retrieved_at": "2026-09-29T16:08:21.692247Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,19 +56,19 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-29T15:09:42.775176Z"
+      "source_retrieved_at": "2026-09-29T16:08:23.051764Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "SOLEUR",
@@ -88,7 +88,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LINKEUR",
@@ -108,7 +108,7 @@
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "INJEUR",
@@ -118,7 +118,7 @@
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "RENDEREUR",
@@ -136,13 +136,13 @@
       "attempts": 1
     },
     {
-      "logical_pair": "0GEUR",
-      "requested_pair": "0GEUR",
-      "attempts": 2
+      "logical_pair": "PUMPEUR",
+      "requested_pair": "PUMPEUR",
+      "attempts": 1
     },
     {
-      "logical_pair": "XDPUSD",
-      "requested_pair": "XDPUSD",
+      "logical_pair": "0GEUR",
+      "requested_pair": "0GEUR",
       "attempts": 1
     }
   ],
@@ -150,7 +150,9 @@
     "XBTEUR",
     "ETHEUR",
     "SOLEUR",
+    "DOGEEUR",
     "LTCEUR",
+    "SUIEUR",
     "LINKEUR",
     "BNBEUR",
     "AAVEEUR",
@@ -159,50 +161,11 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
+    "ESPORTSUSD",
+    "PUMPEUR",
     "0GEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "DOGEEUR",
-      "requested_pair": "XDGEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "SUIEUR",
-      "requested_pair": "SUIEUR",
-      "attempts": 2,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "ESPORTSUSD",
-      "requested_pair": "ESPORTSUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "XDPUSD",
-      "requested_pair": "XDPUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -216,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 13,
-    "candidate_partial_or_failed_count": 4
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
