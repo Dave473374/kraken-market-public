@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-29T14:11:26.571503Z",
+  "generated_at": "2026-09-29T15:12:49.422379Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T14:08:36.431904Z"
+      "source_retrieved_at": "2026-09-29T15:09:36.658545Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-29T14:08:41.072937Z"
+      "source_retrieved_at": "2026-09-29T15:09:41.445964Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-29T14:08:42.371866Z"
+      "source_retrieved_at": "2026-09-29T15:09:42.775176Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
@@ -88,7 +88,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "LINKEUR",
@@ -108,7 +108,7 @@
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "INJEUR",
@@ -118,7 +118,7 @@
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "RENDEREUR",
@@ -131,18 +131,18 @@
       "attempts": 1
     },
     {
-      "logical_pair": "ZBCNUSD",
-      "requested_pair": "ZBCNUSD",
+      "logical_pair": "ESPORTSUSD",
+      "requested_pair": "ESPORTSUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "GRASSUSD",
-      "requested_pair": "GRASSUSD",
-      "attempts": 1
+      "logical_pair": "0GEUR",
+      "requested_pair": "0GEUR",
+      "attempts": 2
     },
     {
-      "logical_pair": "PUMPEUR",
-      "requested_pair": "PUMPEUR",
+      "logical_pair": "XDPUSD",
+      "requested_pair": "XDPUSD",
       "attempts": 1
     }
   ],
@@ -150,9 +150,7 @@
     "XBTEUR",
     "ETHEUR",
     "SOLEUR",
-    "DOGEEUR",
     "LTCEUR",
-    "SUIEUR",
     "LINKEUR",
     "BNBEUR",
     "AAVEEUR",
@@ -161,11 +159,50 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "ZBCNUSD",
-    "GRASSUSD",
-    "PUMPEUR"
+    "0GEUR"
   ],
-  "candidate_pairs_partial_or_failed": [],
+  "candidate_pairs_partial_or_failed": [
+    {
+      "logical_pair": "DOGEEUR",
+      "requested_pair": "XDGEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "SUIEUR",
+      "requested_pair": "SUIEUR",
+      "attempts": 2,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "ESPORTSUSD",
+      "requested_pair": "ESPORTSUSD",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "XDPUSD",
+      "requested_pair": "XDPUSD",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    }
+  ],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -179,7 +216,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 17,
-    "candidate_partial_or_failed_count": 0
+    "candidate_ok_count": 13,
+    "candidate_partial_or_failed_count": 4
   }
 }
