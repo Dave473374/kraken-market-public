@@ -1,0 +1,71 @@
+name: Collect Kraken fast core mirror
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kraken-fast-core-collector
+  cancel-in-progress: true
+
+jobs:
+  collect-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect fast public core
+        run: python scripts/collect_core.py
+
+      - name: Publish rolling core-live snapshot
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f data/core/manifest.json
+
+          tmp="$(mktemp -d)"
+          cp -a data/core "$tmp/core"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout --orphan core-live-publish
+          git rm -rf . >/dev/null 2>&1 || true
+          git clean -fdx >/dev/null 2>&1 || true
+
+          mkdir -p data
+          cp -a "$tmp/core" data/core
+          cat > README.md <<'EOF'
+          # Kraken fast core live snapshot
+
+          Rolling public read-only market snapshot for Crypto Portfolio v2.1 / Kraken Movers KM1.0.
+          This branch is force-replaced on each fast-core publication so repository history does not grow every five minutes.
+
+          Files:
+          - data/core/manifest.json
+          - data/core/health.json
+          - data/core/universe.json
+          - data/core/owned-quotes.json
+          - data/core/candidates/<PAIR>.json
+
+          Evidence transport only. No account data, private APIs, trading, order changes, or transfers.
+          EOF
+
+          git add README.md data/core
+          git commit -m "Publish Kraken fast core snapshot"
+          git push --force origin HEAD:core-live
