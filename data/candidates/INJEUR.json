@@ -9,8 +9,8 @@
   "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
   "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-09-29T22:07:59.710Z",
-  "generated_at": "2026-09-29T22:08:08.618Z",
+  "request_started_at": "2026-09-29T23:07:42.484Z",
+  "generated_at": "2026-09-29T23:07:48.096Z",
   "data_health": "DATA_OK",
   "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
   "pair_metadata": {
@@ -39,14 +39,14 @@
   "metadata_source": {
     "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=INJEUR&country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
-    "request_started_at": "2026-09-29T22:08:00.810Z",
-    "retrieved_at": "2026-09-29T22:08:00.927Z",
+    "request_started_at": "2026-09-29T23:07:42.484Z",
+    "retrieved_at": "2026-09-29T23:07:42.605Z",
     "http_status": 200,
     "market_observed_at": null,
     "from_isolate_cache": false,
     "ok": true,
     "http_metadata": {
-      "Date": "Tue, 29 Sep 2026 22:08:00 GMT",
+      "Date": "Tue, 29 Sep 2026 23:07:42 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1",
       "CF-Cache-Status": "EXPIRED",
       "Content-Type": "application/json"
@@ -55,19 +55,19 @@
   },
   "clock": {
     "quality": "VERIFIED",
-    "server_unix": 1790719679,
-    "age_seconds_at_response": 9.618000030517578,
+    "server_unix": 1790723248,
+    "age_seconds_at_response": 20.09599995613098,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Time",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:07:59.710Z",
-      "retrieved_at": "2026-09-29T22:07:59.821Z",
+      "request_started_at": "2026-09-29T23:07:28.509Z",
+      "retrieved_at": "2026-09-29T23:07:28.625Z",
       "http_status": 200,
       "market_observed_at": null,
-      "from_isolate_cache": false,
+      "from_isolate_cache": true,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:07:59 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:28 GMT",
         "Cache-Control": "no-store",
         "CF-Cache-Status": "BYPASS",
         "Content-Type": "application/json"
@@ -80,83 +80,28 @@
     "quality": "APPROXIMATE",
     "observation_time": null,
     "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
-    "bid": 6.813,
-    "ask": 6.821,
-    "last": 6.79,
-    "mid": 6.817,
-    "spread_pct": 0.11735367463693717,
-    "volume_24h_base": 61273.03269527,
-    "vwap_24h_quote": 6.69084,
-    "turnover_24h_quote": 409968.0580788203,
-    "change_since_midnight_utc_pct": 4.077253218884125,
+    "bid": 6.804,
+    "ask": 6.81,
+    "last": 6.798,
+    "mid": 6.807,
+    "spread_pct": 0.08814455707359099,
+    "volume_24h_base": 61076.58702216,
+    "vwap_24h_quote": 6.69855,
+    "turnover_24h_quote": 409124.57199728984,
+    "change_since_midnight_utc_pct": 4.199877375843042,
     "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
     "rolling_24h_price_change_pct": null,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Ticker?pair=INJEUR",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:08:08.510Z",
-      "retrieved_at": "2026-09-29T22:08:08.618Z",
+      "request_started_at": "2026-09-29T23:07:47.984Z",
+      "retrieved_at": "2026-09-29T23:07:48.096Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:08 GMT",
-        "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "timestamped_spread": {
-    "quality": "VERIFIED",
-    "observed_unix": 1790719685,
-    "observed_at": "2026-09-29T22:08:05.000Z",
-    "age_seconds_at_response": 3.618000030517578,
-    "bid": 6.813,
-    "ask": 6.821,
-    "mid": 6.817,
-    "spread_pct": 0.11735367463693717,
-    "recent_rows": [
-      [
-        1790719672,
-        "6.81500",
-        "6.82400"
-      ],
-      [
-        1790719673,
-        "6.81500",
-        "6.82300"
-      ],
-      [
-        1790719683,
-        "6.81200",
-        "6.82300"
-      ],
-      [
-        1790719685,
-        "6.81300",
-        "6.82200"
-      ],
-      [
-        1790719685,
-        "6.81300",
-        "6.82100"
-      ]
-    ],
-    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Spread?pair=INJEUR",
-      "method": "GET",
-      "request_started_at": "2026-09-29T22:08:06.310Z",
-      "retrieved_at": "2026-09-29T22:08:06.423Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:06 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:48 GMT",
         "Cache-Control": "max-age=2, public",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
@@ -164,24 +109,79 @@
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     }
   },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1790723265,
+    "observed_at": "2026-09-29T23:07:45.000Z",
+    "age_seconds_at_response": 3.0959999561309814,
+    "bid": 6.802,
+    "ask": 6.811,
+    "mid": 6.8065,
+    "spread_pct": 0.1322265481525063,
+    "recent_rows": [
+      [
+        1790723263,
+        "6.80200",
+        "6.81100"
+      ],
+      [
+        1790723263,
+        "6.80200",
+        "6.81500"
+      ],
+      [
+        1790723265,
+        "6.80200",
+        "6.81300"
+      ],
+      [
+        1790723265,
+        "6.80200",
+        "6.81200"
+      ],
+      [
+        1790723265,
+        "6.80200",
+        "6.81100"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=INJEUR",
+      "method": "GET",
+      "request_started_at": "2026-09-29T23:07:45.784Z",
+      "retrieved_at": "2026-09-29T23:07:45.894Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 23:07:45 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
   "depth": {
     "quality": "VERIFIED",
-    "best_bid": 6.813,
-    "best_ask": 6.821,
-    "mid": 6.817,
-    "spread_pct": 0.11735367463693717,
+    "best_bid": 6.802,
+    "best_ask": 6.811,
+    "mid": 6.8065,
+    "spread_pct": 0.1322265481525063,
     "band_pct": 0.5,
     "depth_each_side": {
       "asks": {
-        "notional_quote_lower_bound": 6064.051684,
+        "notional_quote_lower_bound": 7055.801905,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 101.06752806666667,
+        "multiple_of_test_notional": 117.59669841666667,
         "depth_20x_test": "PASS"
       },
       "bids": {
-        "notional_quote_lower_bound": 32217.080156999997,
+        "notional_quote_lower_bound": 30256.581227,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 536.9513359499999,
+        "multiple_of_test_notional": 504.2763537833333,
         "depth_20x_test": "PASS"
       }
     },
@@ -189,7 +189,7 @@
     "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
     "returned_levels": {
       "asks": 500,
-      "bids": 276
+      "bids": 280
     },
     "simulation": {
       "quality": "APPROXIMATE",
@@ -197,17 +197,17 @@
       "buy": {
         "fillable": true,
         "notional_quote": 60,
-        "base_quantity": 8.796364169476616,
+        "base_quantity": 8.809279107326384,
         "unfilled_quote": 0,
-        "average_price": 6.821,
+        "average_price": 6.811,
         "slippage_vs_best_ask_pct": 0
       },
       "sell_same_base_quantity": {
         "fillable": true,
-        "base_quantity": 8.796364169476616,
+        "base_quantity": 8.809279107326384,
         "unfilled_base": 0,
-        "proceeds_quote": 59.929629086644184,
-        "average_price": 6.813,
+        "proceeds_quote": 59.92071648803406,
+        "average_price": 6.802,
         "slippage_vs_best_bid_pct": 0
       },
       "fees_included": false,
@@ -217,16 +217,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/Depth?pair=INJEUR&count=500",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:08:07.410Z",
-      "retrieved_at": "2026-09-29T22:08:07.524Z",
+      "request_started_at": "2026-09-29T23:07:46.884Z",
+      "retrieved_at": "2026-09-29T23:07:47.000Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:07 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:46 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -882,14 +882,14 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=INJEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:08:01.910Z",
-      "retrieved_at": "2026-09-29T22:08:02.029Z",
+      "request_started_at": "2026-09-29T23:07:43.584Z",
+      "retrieved_at": "2026-09-29T23:07:43.761Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:02 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:43 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
@@ -1528,16 +1528,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=INJEUR&interval=1440",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:08:03.010Z",
-      "retrieved_at": "2026-09-29T22:08:03.120Z",
+      "request_started_at": "2026-09-29T23:07:44.684Z",
+      "retrieved_at": "2026-09-29T23:07:44.825Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:03 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:44 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1555,16 +1555,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-29T22:08:05.210Z",
-      "retrieved_at": "2026-09-29T22:08:05.321Z",
+      "request_started_at": "2026-09-29T23:07:32.909Z",
+      "retrieved_at": "2026-09-29T23:07:33.033Z",
       "http_status": 200,
       "market_observed_at": null,
-      "from_isolate_cache": false,
+      "from_isolate_cache": true,
       "ok": true,
       "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 22:08:05 GMT",
+        "Date": "Tue, 29 Sep 2026 23:07:33 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1582,18 +1582,18 @@
   "test_notional_is_recommendation": false,
   "test_minima": {
     "quality": "APPROXIMATE",
-    "base_quantity_rounded_down": 8.79636416,
+    "base_quantity_rounded_down": 8.8092791,
     "ordermin_met": true,
     "costmin_met": true,
     "fees_included": false
   },
   "same_exchange_quote_comparisons": {
     "Ticker_Spread": {
-      "difference_pct": 0,
+      "difference_pct": 0.007345649539069469,
       "within_1pct": true
     },
     "Ticker_Depth": {
-      "difference_pct": 0,
+      "difference_pct": 0.007345649539069469,
       "within_1pct": true
     },
     "Spread_Depth": {
