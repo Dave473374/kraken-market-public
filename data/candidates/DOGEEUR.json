@@ -1,59 +1,7 @@
 {
-  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
-  "contains_account_data": false,
-  "automatic_trading": false,
-  "private_exchange_api": false,
-  "production_ready": false,
-  "movers_live_pass": false,
-  "hourly_task_integration": "NOT_VALIDATED",
-  "trade_signal": null,
-  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-09-29T01:08:14.295Z",
-  "generated_at": "2026-09-29T01:08:15.508Z",
-  "data_health": "PARTIAL_DATA",
-  "pair_error": {
-    "quality": "CONFLICT",
-    "reason": "PAIR_NOT_UNIQUELY_RESOLVED"
-  },
-  "metadata_source": {
-    "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=DOGEEUR&country_code=SI&aclass_base=currency&execution_venue=international",
-    "method": "GET",
-    "request_started_at": "2026-09-29T01:08:15.395Z",
-    "retrieved_at": "2026-09-29T01:08:15.508Z",
-    "http_status": 200,
-    "market_observed_at": null,
-    "from_isolate_cache": false,
-    "ok": true,
-    "http_metadata": {
-      "Date": "Tue, 29 Sep 2026 01:08:15 GMT",
-      "Cache-Control": "public, max-age=1, s-maxage=1",
-      "CF-Cache-Status": "EXPIRED",
-      "Content-Type": "application/json"
-    },
-    "status": "PUBLIC_JSON_ENVELOPE_VALID"
-  },
-  "clock": {
-    "quality": "VERIFIED",
-    "server_unix": 1790644094,
-    "age_seconds_at_response": 0.4049999713897705,
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Time",
-      "method": "GET",
-      "request_started_at": "2026-09-29T01:08:14.295Z",
-      "retrieved_at": "2026-09-29T01:08:14.405Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Tue, 29 Sep 2026 01:08:14 GMT",
-        "Cache-Control": "no-store",
-        "CF-Cache-Status": "BYPASS",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "freshness_note": "Recompute every age at ingestion. cached source timestamps remain unchanged; generated_at is NOT a Ticker observation time."
+  "mirror_status": "SOURCE_FETCH_FAILED",
+  "mirror_generated_at": "2026-09-29T02:06:03.576209Z",
+  "source_url": "https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=DOGEEUR&notional_eur=60.0",
+  "error": "HTTP_429",
+  "detail": null
 }
