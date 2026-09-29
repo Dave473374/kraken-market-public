@@ -1,0 +1,1639 @@
+{
+  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
+  "contains_account_data": false,
+  "automatic_trading": false,
+  "private_exchange_api": false,
+  "production_ready": false,
+  "movers_live_pass": false,
+  "hourly_task_integration": "NOT_VALIDATED",
+  "trade_signal": null,
+  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
+  "request_started_at": "2026-09-29T06:53:20.393Z",
+  "generated_at": "2026-09-29T06:53:31.556Z",
+  "data_health": "PARTIAL_DATA",
+  "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
+  "pair_metadata": {
+    "pair_key": "QNTUSD",
+    "altname": "QNTUSD",
+    "wsname": "QNT/USD",
+    "asset": "QNT",
+    "base_display": "QNT",
+    "quote_display": "USD",
+    "base_code": "QNT",
+    "quote_code": "ZUSD",
+    "aclass_base": "currency",
+    "aclass_quote": "currency",
+    "status": "online",
+    "execution_venue": "international",
+    "country_filter": "SI",
+    "account_specific_eligibility": "NOT_CHECKED",
+    "pair_decimals": 2,
+    "lot_decimals": 8,
+    "cost_decimals": 5,
+    "ordermin_base": "0.08",
+    "costmin_quote": "0.5",
+    "tick_size_quote": "0.01",
+    "fee_tier_and_interface_fees": "UNKNOWN"
+  },
+  "metadata_source": {
+    "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=QNTUSD&country_code=SI&aclass_base=currency&execution_venue=international",
+    "method": "GET",
+    "request_started_at": "2026-09-29T06:53:21.493Z",
+    "retrieved_at": "2026-09-29T06:53:21.670Z",
+    "http_status": 200,
+    "market_observed_at": null,
+    "from_isolate_cache": false,
+    "ok": true,
+    "http_metadata": {
+      "Date": "Tue, 29 Sep 2026 06:53:21 GMT",
+      "Cache-Control": "public, max-age=1, s-maxage=1",
+      "CF-Cache-Status": "MISS",
+      "Content-Type": "application/json"
+    },
+    "status": "PUBLIC_JSON_ENVELOPE_VALID"
+  },
+  "clock": {
+    "quality": "VERIFIED",
+    "server_unix": 1790664800,
+    "age_seconds_at_response": 11.555999994277954,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Time",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:20.393Z",
+      "retrieved_at": "2026-09-29T06:53:20.566Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:20 GMT",
+        "Cache-Control": "no-store",
+        "CF-Cache-Status": "BYPASS",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "new_discovery_exclusion": null,
+  "ticker": {
+    "quality": "APPROXIMATE",
+    "observation_time": null,
+    "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
+    "bid": 249.48,
+    "ask": 249.88,
+    "last": 249.71,
+    "mid": 249.68,
+    "spread_pct": 0.16020506247997665,
+    "volume_24h_base": 221223.88399494,
+    "vwap_24h_quote": 235.7562,
+    "turnover_24h_quote": 52154902.23988788,
+    "change_since_midnight_utc_pct": 8.352859498394505,
+    "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
+    "rolling_24h_price_change_pct": null,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Ticker?pair=QNTUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:31.393Z",
+      "retrieved_at": "2026-09-29T06:53:31.556Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:31 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1790664809,
+    "observed_at": "2026-09-29T06:53:29.000Z",
+    "age_seconds_at_response": 2.555999994277954,
+    "bid": 249.61,
+    "ask": 249.92,
+    "mid": 249.765,
+    "spread_pct": 0.12411666966947886,
+    "recent_rows": [
+      [
+        1790664809,
+        "249.59000",
+        "249.94000"
+      ],
+      [
+        1790664809,
+        "249.60000",
+        "249.94000"
+      ],
+      [
+        1790664809,
+        "249.60000",
+        "249.93000"
+      ],
+      [
+        1790664809,
+        "249.60000",
+        "249.92000"
+      ],
+      [
+        1790664809,
+        "249.61000",
+        "249.92000"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=QNTUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:29.193Z",
+      "retrieved_at": "2026-09-29T06:53:29.359Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:29 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "depth": {
+    "quality": "VERIFIED",
+    "best_bid": 249.59,
+    "best_ask": 249.94,
+    "mid": 249.765,
+    "spread_pct": 0.1401317238203889,
+    "band_pct": 0.5,
+    "depth_each_side": {
+      "asks": {
+        "notional_quote_lower_bound": 34036.57674999999,
+        "band_fully_observed": true,
+        "multiple_of_test_notional": 499.33215309502634,
+        "depth_20x_test": "PASS"
+      },
+      "bids": {
+        "notional_quote_lower_bound": 42182.0245,
+        "band_fully_observed": true,
+        "multiple_of_test_notional": 618.8295982348506,
+        "depth_20x_test": "PASS"
+      }
+    },
+    "each_side_ge_20x": true,
+    "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
+    "returned_levels": {
+      "asks": 500,
+      "bids": 500
+    },
+    "simulation": {
+      "quality": "APPROXIMATE",
+      "notional_quote": 68.1642,
+      "buy": {
+        "fillable": true,
+        "notional_quote": 68.1642,
+        "base_quantity": 0.27272225334080175,
+        "unfilled_quote": 0,
+        "average_price": 249.94000000000003,
+        "slippage_vs_best_ask_pct": 2.220446049250313e-14
+      },
+      "sell_same_base_quantity": {
+        "fillable": true,
+        "base_quantity": 0.27272225334080175,
+        "unfilled_base": 0,
+        "proceeds_quote": 68.0687472113307,
+        "average_price": 249.58999999999997,
+        "slippage_vs_best_bid_pct": 1.1102230246251565e-14
+      },
+      "fees_included": false,
+      "executed": false,
+      "note": "MODELLED_FROM_ONE_BOOK_SNAPSHOT_NOT_A_FILL_OR_PROPOSAL"
+    },
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Depth?pair=QNTUSD&count=500",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:30.293Z",
+      "retrieved_at": "2026-09-29T06:53:30.478Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:30 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "closed_4h": {
+    "quality": "VERIFIED",
+    "interval_minutes": 240,
+    "unfinished_final_bar_excluded": true,
+    "closed_bars_received": 720,
+    "history_has_gaps": false,
+    "latest_closed_bar_start": "2026-09-29T00:00:00.000Z",
+    "latest_closed_bar_end": "2026-09-29T04:00:00.000Z",
+    "closed_24h": {
+      "quality": "VERIFIED",
+      "start_unix": 1790568000,
+      "end_unix": 1790654400,
+      "start_at": "2026-09-28T04:00:00.000Z",
+      "end_at": "2026-09-29T04:00:00.000Z",
+      "from_close": 258.93,
+      "to_close": 238.35,
+      "change_pct": -7.948094079480949
+    },
+    "volume_research": {
+      "quality": "VERIFIED",
+      "reason": null,
+      "last_24h_volume_base": 222059.84322745,
+      "prior_7_block_volumes_base": [
+        13180.42009401,
+        16848.74119218,
+        9017.865418399999,
+        40257.64155617,
+        56087.1781994,
+        142830.65833433002,
+        280938.67204644
+      ],
+      "median_prior_7_blocks_base": 40257.64155617,
+      "ratio": 5.515967519299861,
+      "ratio_ge_2_research_only": true
+    },
+    "columns": [
+      "start_unix",
+      "open",
+      "high",
+      "low",
+      "close",
+      "vwap",
+      "volume_base",
+      "trades"
+    ],
+    "recent_closed_rows": [
+      [
+        1789790400,
+        63.69,
+        63.82,
+        63.03,
+        63.45,
+        63.46,
+        420.70113324,
+        324
+      ],
+      [
+        1789804800,
+        63.9,
+        65.24,
+        63.86,
+        65.19,
+        64.52,
+        1194.11262695,
+        988
+      ],
+      [
+        1789819200,
+        65.32,
+        66,
+        65.17,
+        65.45,
+        65.45,
+        1724.48859401,
+        1144
+      ],
+      [
+        1789833600,
+        65.44,
+        65.64,
+        65.09,
+        65.41,
+        65.32,
+        987.51187227,
+        661
+      ],
+      [
+        1789848000,
+        65.36,
+        66.46,
+        64.9,
+        65.64,
+        65.67,
+        1050.24720052,
+        518
+      ],
+      [
+        1789862400,
+        65.65,
+        66.1,
+        64.2,
+        64.49,
+        65.22,
+        1032.92131525,
+        369
+      ],
+      [
+        1789876800,
+        64.48,
+        64.62,
+        63.88,
+        63.88,
+        64.17,
+        598.72378277,
+        283
+      ],
+      [
+        1789891200,
+        63.89,
+        64.13,
+        63.33,
+        63.97,
+        63.84,
+        1171.84225284,
+        746
+      ],
+      [
+        1789905600,
+        63.88,
+        64.44,
+        63.39,
+        64.44,
+        63.94,
+        1749.28372625,
+        654
+      ],
+      [
+        1789920000,
+        64.76,
+        65.34,
+        64.23,
+        64.49,
+        64.68,
+        1513.38333886,
+        694
+      ],
+      [
+        1789934400,
+        64.51,
+        64.68,
+        63.38,
+        64.02,
+        64.03,
+        1335.90617668,
+        567
+      ],
+      [
+        1789948800,
+        64.17,
+        65.44,
+        64.17,
+        65.44,
+        64.84,
+        1837.45934253,
+        1063
+      ],
+      [
+        1789963200,
+        65.47,
+        66.08,
+        65.28,
+        65.62,
+        65.61,
+        577.34721837,
+        313
+      ],
+      [
+        1789977600,
+        65.93,
+        67.53,
+        65.67,
+        67.2,
+        66.61,
+        1901.6267856,
+        1332
+      ],
+      [
+        1789992000,
+        67.35,
+        68.05,
+        66.75,
+        67.2,
+        67.37,
+        1403.69901047,
+        744
+      ],
+      [
+        1790006400,
+        67.26,
+        67.64,
+        66.07,
+        66.78,
+        66.69,
+        1294.18020256,
+        672
+      ],
+      [
+        1790020800,
+        66.85,
+        67.9,
+        66.23,
+        66.84,
+        67.31,
+        5640.08274946,
+        1271
+      ],
+      [
+        1790035200,
+        66.84,
+        67.22,
+        65.86,
+        67.08,
+        66.62,
+        2363.48412755,
+        892
+      ],
+      [
+        1790049600,
+        66.89,
+        67.97,
+        66.45,
+        67.65,
+        67.49,
+        2259.44247751,
+        939
+      ],
+      [
+        1790064000,
+        67.52,
+        71.58,
+        66.87,
+        70.97,
+        69.45,
+        3029.46333489,
+        1340
+      ],
+      [
+        1790078400,
+        70.98,
+        74.67,
+        70.41,
+        72.73,
+        72.41,
+        6613.98351719,
+        2301
+      ],
+      [
+        1790092800,
+        72.91,
+        73.86,
+        71.49,
+        71.91,
+        72.61,
+        1962.13046211,
+        652
+      ],
+      [
+        1790107200,
+        71.95,
+        75.09,
+        71.79,
+        73.77,
+        73.72,
+        1282.79030296,
+        749
+      ],
+      [
+        1790121600,
+        73.71,
+        76.34,
+        73.71,
+        75.13,
+        75.18,
+        1700.93109752,
+        732
+      ],
+      [
+        1790136000,
+        74.9,
+        75.91,
+        73.13,
+        74.91,
+        74.77,
+        2415.23849141,
+        981
+      ],
+      [
+        1790150400,
+        74.92,
+        75.68,
+        73.46,
+        74,
+        74.36,
+        2192.04974181,
+        989
+      ],
+      [
+        1790164800,
+        73.96,
+        74,
+        70.99,
+        72.5,
+        73.01,
+        3074.52536805,
+        1555
+      ],
+      [
+        1790179200,
+        72.52,
+        72.61,
+        70.74,
+        71,
+        71.41,
+        622.9969293,
+        455
+      ],
+      [
+        1790193600,
+        70.86,
+        71.5,
+        70.45,
+        70.6,
+        70.84,
+        158.65809462,
+        156
+      ],
+      [
+        1790208000,
+        70.68,
+        71.22,
+        69.77,
+        70.64,
+        70.22,
+        554.39679321,
+        215
+      ],
+      [
+        1790222400,
+        70.9,
+        72.32,
+        70.72,
+        72.02,
+        71.76,
+        698.4392058,
+        251
+      ],
+      [
+        1790236800,
+        71.85,
+        72.86,
+        70.44,
+        72.33,
+        71.47,
+        1425.03481558,
+        444
+      ],
+      [
+        1790251200,
+        72.64,
+        82.8,
+        72.48,
+        82.33,
+        79.15,
+        11429.95790306,
+        2952
+      ],
+      [
+        1790265600,
+        82.44,
+        86.72,
+        82.27,
+        86.08,
+        84.87,
+        6108.13344619,
+        1923
+      ],
+      [
+        1790280000,
+        86.1,
+        91.36,
+        86.08,
+        90.07,
+        89.16,
+        9039.95348896,
+        2938
+      ],
+      [
+        1790294400,
+        90.09,
+        94.17,
+        88.1,
+        93.81,
+        90.47,
+        11556.12269658,
+        3795
+      ],
+      [
+        1790308800,
+        93.92,
+        104.7,
+        92.28,
+        102.1,
+        99.32,
+        23824.24693828,
+        9118
+      ],
+      [
+        1790323200,
+        102.19,
+        102.6,
+        95.31,
+        98.24,
+        98.77,
+        12885.69380141,
+        5754
+      ],
+      [
+        1790337600,
+        97.79,
+        97.89,
+        92.6,
+        95.53,
+        95,
+        9885.00424275,
+        4619
+      ],
+      [
+        1790352000,
+        95.38,
+        99.09,
+        95.06,
+        97.07,
+        97.16,
+        5787.04138071,
+        2267
+      ],
+      [
+        1790366400,
+        97.05,
+        99.98,
+        96.63,
+        98.75,
+        98.16,
+        1957.79471445,
+        960
+      ],
+      [
+        1790380800,
+        98.63,
+        101.68,
+        98.02,
+        99.65,
+        99.88,
+        1747.3971218,
+        890
+      ],
+      [
+        1790395200,
+        99.73,
+        105.8,
+        98.47,
+        101.32,
+        101.92,
+        4684.26405415,
+        1586
+      ],
+      [
+        1790409600,
+        101.37,
+        110.02,
+        101.37,
+        104.6,
+        106.12,
+        7023.23101178,
+        2541
+      ],
+      [
+        1790424000,
+        104.63,
+        119.85,
+        103.34,
+        115.95,
+        112.4,
+        9540.45987501,
+        3322
+      ],
+      [
+        1790438400,
+        116.06,
+        124.9,
+        114.49,
+        122.67,
+        121.61,
+        25891.21279779,
+        6516
+      ],
+      [
+        1790452800,
+        122.69,
+        162.46,
+        118.56,
+        151.29,
+        141.39,
+        43523.56795121,
+        16290
+      ],
+      [
+        1790467200,
+        151.59,
+        195.5,
+        148.52,
+        173.23,
+        171.52,
+        52167.92264439,
+        25674
+      ],
+      [
+        1790481600,
+        173.25,
+        193.96,
+        167.65,
+        169.99,
+        179.64,
+        43113.98267295,
+        18908
+      ],
+      [
+        1790496000,
+        170.26,
+        182.73,
+        157.26,
+        162.62,
+        173.02,
+        27080.21820324,
+        11805
+      ],
+      [
+        1790510400,
+        163.74,
+        182.24,
+        156.63,
+        178.41,
+        165.99,
+        27777.02770157,
+        12945
+      ],
+      [
+        1790524800,
+        178.68,
+        193.77,
+        176.62,
+        185.67,
+        186.47,
+        27982.55814685,
+        13550
+      ],
+      [
+        1790539200,
+        186.06,
+        374.99,
+        185,
+        286.45,
+        260.36,
+        100632.12570246,
+        38320
+      ],
+      [
+        1790553600,
+        286.35,
+        319.99,
+        240.32,
+        258.93,
+        271.74,
+        54352.75961937,
+        20833
+      ],
+      [
+        1790568000,
+        258.15,
+        290,
+        248.54,
+        269.51,
+        268.57,
+        37007.16422846,
+        12032
+      ],
+      [
+        1790582400,
+        270.79,
+        271.68,
+        195.65,
+        237.05,
+        230.47,
+        64066.00876002,
+        19810
+      ],
+      [
+        1790596800,
+        237.09,
+        249.33,
+        218.38,
+        220.53,
+        234.1,
+        28508.10629484,
+        10718
+      ],
+      [
+        1790611200,
+        220.97,
+        257.71,
+        220.22,
+        241.76,
+        241.84,
+        33546.70983735,
+        13390
+      ],
+      [
+        1790625600,
+        242.12,
+        253.96,
+        224.54,
+        230.56,
+        238.87,
+        24952.20450694,
+        10047
+      ],
+      [
+        1790640000,
+        230.46,
+        238.82,
+        204.21,
+        238.35,
+        219.49,
+        33979.64959984,
+        14049
+      ]
+    ],
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=QNTUSD&interval=240",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:22.593Z",
+      "retrieved_at": "2026-09-29T06:53:22.776Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:22 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "closed_daily": {
+    "quality": "VERIFIED",
+    "interval_minutes": 1440,
+    "unfinished_final_bar_excluded": true,
+    "closed_bars_received": 720,
+    "history_has_gaps": false,
+    "latest_closed_bar_start": "2026-09-28T00:00:00.000Z",
+    "latest_closed_bar_end": "2026-09-29T00:00:00.000Z",
+    "closed_24h": {
+      "quality": "MISSING",
+      "reason": "STALE_SHORT_OR_GAPPED_COMPARABLE_HISTORY"
+    },
+    "volume_research": {
+      "quality": "MISSING",
+      "reason": "NEED_48_CONTIGUOUS_CLOSED_4H_BARS"
+    },
+    "columns": [
+      "start_unix",
+      "open",
+      "high",
+      "low",
+      "close",
+      "vwap",
+      "volume_base",
+      "trades"
+    ],
+    "recent_closed_rows": [
+      [
+        1785456000,
+        60.64,
+        61.06,
+        59.53,
+        60.12,
+        60.13,
+        5473.53762259,
+        1862
+      ],
+      [
+        1785542400,
+        60.23,
+        62.95,
+        60.23,
+        61.17,
+        61.91,
+        2971.0388279,
+        1263
+      ],
+      [
+        1785628800,
+        61.13,
+        61.97,
+        59.83,
+        60.4,
+        60.62,
+        1886.53083617,
+        1226
+      ],
+      [
+        1785715200,
+        60.39,
+        60.62,
+        59.27,
+        59.59,
+        59.8,
+        2557.99845563,
+        1201
+      ],
+      [
+        1785801600,
+        59.62,
+        61.24,
+        59.5,
+        61.23,
+        60.24,
+        4164.57424033,
+        1697
+      ],
+      [
+        1785888000,
+        61.23,
+        61.27,
+        59.31,
+        59.68,
+        60.07,
+        1738.25870336,
+        1074
+      ],
+      [
+        1785974400,
+        59.66,
+        60.09,
+        59.12,
+        59.33,
+        59.52,
+        2765.6412973,
+        1083
+      ],
+      [
+        1786060800,
+        59.45,
+        60.04,
+        58.89,
+        59.85,
+        59.34,
+        2161.47942091,
+        1077
+      ],
+      [
+        1786147200,
+        59.93,
+        60.07,
+        58.51,
+        59.23,
+        59.16,
+        3542.21353317,
+        1520
+      ],
+      [
+        1786233600,
+        59.07,
+        59.31,
+        57.99,
+        57.99,
+        58.64,
+        2847.66365532,
+        1285
+      ],
+      [
+        1786320000,
+        58.29,
+        58.7,
+        57.3,
+        58.07,
+        57.97,
+        2139.50867034,
+        1272
+      ],
+      [
+        1786406400,
+        58.05,
+        58.83,
+        56.65,
+        57.99,
+        57.66,
+        2444.59768649,
+        1219
+      ],
+      [
+        1786492800,
+        58.04,
+        59.53,
+        57.44,
+        58.3,
+        58.49,
+        1800.84887888,
+        1096
+      ],
+      [
+        1786579200,
+        58.38,
+        59.16,
+        57.55,
+        59.1,
+        58.19,
+        2878.90380522,
+        1244
+      ],
+      [
+        1786665600,
+        59.13,
+        59.17,
+        57.76,
+        58.18,
+        58.17,
+        2655.76284939,
+        1105
+      ],
+      [
+        1786752000,
+        58.12,
+        58.55,
+        57.58,
+        57.75,
+        58.05,
+        2150.57234268,
+        1152
+      ],
+      [
+        1786838400,
+        57.71,
+        57.8,
+        56.23,
+        56.9,
+        57.13,
+        1491.76895696,
+        925
+      ],
+      [
+        1786924800,
+        56.78,
+        57.77,
+        55.43,
+        56.86,
+        56.44,
+        7403.9371445,
+        3002
+      ],
+      [
+        1787011200,
+        56.86,
+        56.94,
+        55.51,
+        55.86,
+        56,
+        3241.33040842,
+        1481
+      ],
+      [
+        1787097600,
+        55.86,
+        59.22,
+        55.74,
+        58.77,
+        57.61,
+        3767.60513068,
+        1844
+      ],
+      [
+        1787184000,
+        58.89,
+        62.58,
+        58.69,
+        62.25,
+        61.26,
+        4464.78184356,
+        2235
+      ],
+      [
+        1787270400,
+        62.28,
+        66.87,
+        61.49,
+        66.74,
+        63.84,
+        7413.13822818,
+        3773
+      ],
+      [
+        1787356800,
+        66.63,
+        68.56,
+        62.41,
+        63.08,
+        64.67,
+        6817.4562923,
+        3559
+      ],
+      [
+        1787443200,
+        63.27,
+        65.65,
+        62.29,
+        64.9,
+        63.62,
+        4904.19849569,
+        2160
+      ],
+      [
+        1787529600,
+        64.89,
+        65.56,
+        63.56,
+        64.44,
+        64.63,
+        3324.57720156,
+        1489
+      ],
+      [
+        1787616000,
+        64.38,
+        66.38,
+        62.88,
+        63.32,
+        64.84,
+        3195.59756629,
+        2278
+      ],
+      [
+        1787702400,
+        63.23,
+        63.78,
+        60.75,
+        63.18,
+        62.26,
+        3948.34425259,
+        2377
+      ],
+      [
+        1787788800,
+        63.17,
+        63.76,
+        62.16,
+        63.26,
+        63.02,
+        4168.07787834,
+        1753
+      ],
+      [
+        1787875200,
+        63.2,
+        63.59,
+        60.42,
+        61.09,
+        61.76,
+        4164.00474662,
+        1787
+      ],
+      [
+        1787961600,
+        61.13,
+        61.73,
+        60.9,
+        61.46,
+        61.29,
+        1443.7135038,
+        945
+      ],
+      [
+        1788048000,
+        61.53,
+        62.15,
+        59.51,
+        59.89,
+        61.52,
+        2425.44345839,
+        1395
+      ],
+      [
+        1788134400,
+        60.05,
+        62.89,
+        59.84,
+        61.12,
+        61.54,
+        4164.95271401,
+        1685
+      ],
+      [
+        1788220800,
+        61.49,
+        64.38,
+        60.81,
+        63.67,
+        63.1,
+        6055.8156176,
+        3005
+      ],
+      [
+        1788307200,
+        63.63,
+        66.36,
+        62.94,
+        64.48,
+        64.44,
+        9931.29016222,
+        4949
+      ],
+      [
+        1788393600,
+        64.46,
+        66.23,
+        64.02,
+        65.3,
+        65.29,
+        4347.13235958,
+        2392
+      ],
+      [
+        1788480000,
+        65.44,
+        67.39,
+        63.38,
+        63.61,
+        64.95,
+        6239.96229407,
+        3030
+      ],
+      [
+        1788566400,
+        63.64,
+        65.45,
+        63.46,
+        64.9,
+        64.25,
+        1916.36367539,
+        1540
+      ],
+      [
+        1788652800,
+        64.84,
+        67.18,
+        64.83,
+        67.04,
+        65.98,
+        4641.02752078,
+        2442
+      ],
+      [
+        1788739200,
+        67.06,
+        67.16,
+        65.08,
+        66.71,
+        66.11,
+        7469.72834971,
+        2549
+      ],
+      [
+        1788825600,
+        66.62,
+        68.92,
+        65.56,
+        67.15,
+        67.18,
+        5251.16164074,
+        2565
+      ],
+      [
+        1788912000,
+        67.21,
+        69.87,
+        66.2,
+        67.13,
+        67.78,
+        3828.27205887,
+        2902
+      ],
+      [
+        1788998400,
+        67.17,
+        68.09,
+        64.51,
+        64.52,
+        66.07,
+        3241.52588918,
+        2205
+      ],
+      [
+        1789084800,
+        64.53,
+        65.98,
+        62.82,
+        63.32,
+        64.56,
+        6159.39082647,
+        2892
+      ],
+      [
+        1789171200,
+        63.36,
+        64.73,
+        63.36,
+        63.92,
+        64.09,
+        2149.32775473,
+        1849
+      ],
+      [
+        1789257600,
+        63.88,
+        65.54,
+        62.84,
+        63.05,
+        64.19,
+        3957.73333483,
+        1832
+      ],
+      [
+        1789344000,
+        63.13,
+        66.6,
+        62.2,
+        64.47,
+        64.14,
+        6938.89617796,
+        3390
+      ],
+      [
+        1789430400,
+        64.62,
+        65.01,
+        60.63,
+        61.19,
+        62.54,
+        4501.11100343,
+        2919
+      ],
+      [
+        1789516800,
+        61.26,
+        61.28,
+        58.71,
+        61.12,
+        60.03,
+        6114.06112722,
+        2008
+      ],
+      [
+        1789603200,
+        61.12,
+        62.03,
+        60.32,
+        61.13,
+        61.14,
+        5357.86578113,
+        2087
+      ],
+      [
+        1789689600,
+        61.09,
+        64.18,
+        60.88,
+        63.26,
+        63.1,
+        8094.24955198,
+        2951
+      ],
+      [
+        1789776000,
+        63.3,
+        66.46,
+        63.03,
+        65.64,
+        65,
+        5748.94348824,
+        3990
+      ],
+      [
+        1789862400,
+        65.65,
+        66.1,
+        63.33,
+        64.02,
+        64.29,
+        7402.06059265,
+        3313
+      ],
+      [
+        1789948800,
+        64.17,
+        68.05,
+        64.17,
+        66.84,
+        66.71,
+        12654.39530899,
+        5395
+      ],
+      [
+        1790035200,
+        66.84,
+        75.09,
+        65.86,
+        73.77,
+        70.6,
+        17511.29422221,
+        6873
+      ],
+      [
+        1790121600,
+        73.71,
+        76.34,
+        70.45,
+        70.6,
+        73.95,
+        10164.39972271,
+        4868
+      ],
+      [
+        1790208000,
+        70.68,
+        91.36,
+        69.77,
+        90.07,
+        82.72,
+        29255.9156528,
+        8723
+      ],
+      [
+        1790294400,
+        90.09,
+        104.7,
+        88.1,
+        98.75,
+        96.79,
+        65895.90377418,
+        26513
+      ],
+      [
+        1790380800,
+        98.63,
+        162.46,
+        98.02,
+        151.29,
+        127.39,
+        92410.13281174,
+        31145
+      ],
+      [
+        1790467200,
+        151.59,
+        374.99,
+        148.52,
+        286.45,
+        205.94,
+        278753.83507146,
+        121202
+      ],
+      [
+        1790553600,
+        286.35,
+        319.99,
+        195.65,
+        230.56,
+        248.4,
+        242432.95324698,
+        86830
+      ]
+    ],
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=QNTUSD&interval=1440",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:23.693Z",
+      "retrieved_at": "2026-09-29T06:53:23.868Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:23 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "btc_same_period_reference": {
+    "quality": "MISSING",
+    "reason": "COMPARABLE_RETURNS_MISSING",
+    "btc_pair": "XBT/USD",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTUSD&interval=240",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:25.893Z",
+      "retrieved_at": "2026-09-29T06:53:26.055Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": false,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:26 GMT",
+        "Cache-Control": "no-store",
+        "CF-Cache-Status": "BYPASS",
+        "Content-Type": "application/json"
+      },
+      "status": "KRAKEN_API_ERROR",
+      "errors": [
+        "EGeneral:Too many requests"
+      ]
+    }
+  },
+  "fx": {
+    "quality": "VERIFIED",
+    "pair": "EUR/USD",
+    "quote_currency": "USD",
+    "observed_at": "2026-09-29T06:53:26.000Z",
+    "observed_unix": 1790664806,
+    "eur_per_quote_bid": 0.8802197028378284,
+    "eur_per_quote_ask": 0.8802274507732799,
+    "eur_per_quote_mid": 0.8802235768055542,
+    "estimated_conversion_spread_pct": 0.0008802235767951378,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=EURUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-29T06:53:28.093Z",
+      "retrieved_at": "2026-09-29T06:53:28.270Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Tue, 29 Sep 2026 06:53:28 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "conversion_fees": "UNKNOWN"
+  },
+  "test_notional_eur": 60,
+  "test_notional_quote": 68.1642,
+  "test_notional_is_recommendation": false,
+  "test_minima": {
+    "quality": "APPROXIMATE",
+    "base_quantity_rounded_down": 0.27272225,
+    "ordermin_met": true,
+    "costmin_met": true,
+    "fees_included": false
+  },
+  "same_exchange_quote_comparisons": {
+    "Ticker_Spread": {
+      "difference_pct": 0.034037781937942935,
+      "within_1pct": true
+    },
+    "Ticker_Depth": {
+      "difference_pct": 0.034037781937942935,
+      "within_1pct": true
+    },
+    "Spread_Depth": {
+      "difference_pct": 0,
+      "within_1pct": true
+    }
+  },
+  "blocking_data_reasons": [
+    "btc:KRAKEN_API_ERROR",
+    "BTC_PERIOD_NOT_COMPARABLE"
+  ],
+  "not_checked": [
+    "independent venue/provider price cross-check",
+    "personal holdings/basis/cash/intents",
+    "interface fees and all-in budget",
+    "fundamentals/catalysts/security/unlocks",
+    "coin and correlated sector caps",
+    "actual executable fill or future market impact"
+  ],
+  "actionability": "NEVER_AUTHORIZED_BY_THIS_RELAY",
+  "note": "Even DATA_OK describes collection only, not a BUY/SELL signal or restored hourly-task delivery.",
+  "freshness_note": "Recompute every age at ingestion. cached source timestamps remain unchanged; generated_at is NOT a Ticker observation time."
+}
