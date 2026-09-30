@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T20:09:52.761858Z",
+  "generated_at": "2026-09-30T21:08:55.124354Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T20:06:55.831364Z"
+      "source_retrieved_at": "2026-09-30T21:05:57.892411Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T20:07:00.480642Z"
+      "source_retrieved_at": "2026-09-30T21:06:02.450590Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,19 +56,19 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T20:07:01.797223Z"
+      "source_retrieved_at": "2026-09-30T21:06:03.763460Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "SOLEUR",
@@ -128,7 +128,7 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "USUSD",
@@ -136,8 +136,8 @@
       "attempts": 1
     },
     {
-      "logical_pair": "MOVRUSD",
-      "requested_pair": "MOVRUSD",
+      "logical_pair": "KNTQEUR",
+      "requested_pair": "KNTQEUR",
       "attempts": 1
     },
     {
@@ -147,7 +147,6 @@
     }
   ],
   "candidate_pairs_ok": [
-    "XBTEUR",
     "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
@@ -162,9 +161,19 @@
     "RENDEREUR",
     "TAOEUR",
     "USUSD",
-    "MOVRUSD"
+    "KNTQEUR"
   ],
   "candidate_pairs_partial_or_failed": [
+    {
+      "logical_pair": "XBTEUR",
+      "requested_pair": "XBTEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
     {
       "logical_pair": "CTUSD",
       "requested_pair": "CTUSD",
@@ -189,7 +198,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 15,
+    "candidate_partial_or_failed_count": 2
   }
 }
