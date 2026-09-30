@@ -1,10 +1,10 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T10:10:09.944487Z",
+  "generated_at": "2026-09-30T11:09:52.878514Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "status": "PARTIAL",
+  "status": "OK",
   "pair_aliases": {
     "DOGEEUR": "XDGEUR"
   },
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T10:07:28.122808Z"
+      "source_retrieved_at": "2026-09-30T11:06:52.521307Z"
     },
     "universe.json": {
-      "ok": false,
-      "schema_ok": false,
-      "source_retrieved_at": "2026-09-30T10:07:28.152770Z"
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-09-30T11:06:57.139212Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T10:07:29.334770Z"
+      "source_retrieved_at": "2026-09-30T11:06:58.441372Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
@@ -78,7 +78,7 @@
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LTCEUR",
@@ -88,7 +88,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LINKEUR",
@@ -98,7 +98,7 @@
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "AAVEEUR",
@@ -113,7 +113,7 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -128,7 +128,22 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 2
+      "attempts": 1
+    },
+    {
+      "logical_pair": "MOVRUSD",
+      "requested_pair": "MOVRUSD",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "GTCUSD",
+      "requested_pair": "GTCUSD",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "GLMRUSD",
+      "requested_pair": "GLMRUSD",
+      "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
@@ -145,7 +160,10 @@
     "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
-    "TAOEUR"
+    "TAOEUR",
+    "MOVRUSD",
+    "GTCUSD",
+    "GLMRUSD"
   ],
   "candidate_pairs_partial_or_failed": [],
   "notes": [
@@ -157,11 +175,11 @@
     "A single optional candidate failure does not fail the core mirror workflow."
   ],
   "summary": {
-    "core_ok": false,
-    "universe_ok": false,
+    "core_ok": true,
+    "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 14,
+    "candidate_ok_count": 17,
     "candidate_partial_or_failed_count": 0
   }
 }
