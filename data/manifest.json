@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T02:09:38.740890Z",
+  "generated_at": "2026-09-30T03:09:21.652605Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T02:06:31.802844Z"
+      "source_retrieved_at": "2026-09-30T03:06:35.861493Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T02:06:36.494668Z"
+      "source_retrieved_at": "2026-09-30T03:06:40.441181Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T02:06:37.810298Z"
+      "source_retrieved_at": "2026-09-30T03:06:41.710611Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
@@ -103,7 +103,7 @@
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ONDOEUR",
@@ -113,7 +113,7 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -131,8 +131,8 @@
       "attempts": 1
     },
     {
-      "logical_pair": "USUSD",
-      "requested_pair": "USUSD",
+      "logical_pair": "ZROEUR",
+      "requested_pair": "ZROEUR",
       "attempts": 1
     },
     {
@@ -141,8 +141,8 @@
       "attempts": 1
     },
     {
-      "logical_pair": "PROSUSD",
-      "requested_pair": "PROSUSD",
+      "logical_pair": "COMPEUR",
+      "requested_pair": "COMPEUR",
       "attempts": 1
     }
   ],
@@ -161,21 +161,11 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "USUSD",
-    "PROSUSD"
+    "ZROEUR",
+    "QNTUSD",
+    "COMPEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "QNTUSD",
-      "requested_pair": "QNTUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
