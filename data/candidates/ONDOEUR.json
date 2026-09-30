@@ -9,8 +9,8 @@
   "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
   "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-09-30T18:10:11.023Z",
-  "generated_at": "2026-09-30T18:10:17.796Z",
+  "request_started_at": "2026-09-30T19:10:15.509Z",
+  "generated_at": "2026-09-30T19:10:24.372Z",
   "data_health": "DATA_OK",
   "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
   "pair_metadata": {
@@ -39,14 +39,14 @@
   "metadata_source": {
     "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=ONDOEUR&country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
-    "request_started_at": "2026-09-30T18:10:12.123Z",
-    "retrieved_at": "2026-09-30T18:10:12.295Z",
+    "request_started_at": "2026-09-30T19:10:16.609Z",
+    "retrieved_at": "2026-09-30T19:10:16.678Z",
     "http_status": 200,
     "market_observed_at": null,
     "from_isolate_cache": false,
     "ok": true,
     "http_metadata": {
-      "Date": "Wed, 30 Sep 2026 18:10:12 GMT",
+      "Date": "Wed, 30 Sep 2026 19:10:16 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1",
       "CF-Cache-Status": "EXPIRED",
       "Content-Type": "application/json"
@@ -55,19 +55,19 @@
   },
   "clock": {
     "quality": "VERIFIED",
-    "server_unix": 1790791811,
-    "age_seconds_at_response": 6.796000003814697,
+    "server_unix": 1790795415,
+    "age_seconds_at_response": 9.371999979019165,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Time",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:11.023Z",
-      "retrieved_at": "2026-09-30T18:10:11.172Z",
+      "request_started_at": "2026-09-30T19:10:15.509Z",
+      "retrieved_at": "2026-09-30T19:10:15.569Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:11 GMT",
+        "Date": "Wed, 30 Sep 2026 19:10:15 GMT",
         "Cache-Control": "no-store",
         "CF-Cache-Status": "BYPASS",
         "Content-Type": "application/json"
@@ -80,83 +80,28 @@
     "quality": "APPROXIMATE",
     "observation_time": null,
     "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
-    "bid": 0.44461,
-    "ask": 0.44508,
-    "last": 0.44502,
-    "mid": 0.444845,
-    "spread_pct": 0.10565477863075239,
-    "volume_24h_base": 2406489.19624,
-    "vwap_24h_quote": 0.447366457,
-    "turnover_24h_quote": 1076582.5455306666,
-    "change_since_midnight_utc_pct": 0.6058687887145586,
+    "bid": 0.42856,
+    "ask": 0.42874,
+    "last": 0.4286,
+    "mid": 0.42865,
+    "spread_pct": 0.041992301411411054,
+    "volume_24h_base": 3102660.40316,
+    "vwap_24h_quote": 0.443621641,
+    "turnover_24h_quote": 1376407.299515561,
+    "change_since_midnight_utc_pct": -3.1062078943798976,
     "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
     "rolling_24h_price_change_pct": null,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Ticker?pair=ONDOEUR",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:17.623Z",
-      "retrieved_at": "2026-09-30T18:10:17.796Z",
+      "request_started_at": "2026-09-30T19:10:24.309Z",
+      "retrieved_at": "2026-09-30T19:10:24.372Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:17 GMT",
-        "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "timestamped_spread": {
-    "quality": "VERIFIED",
-    "observed_unix": 1790791813,
-    "observed_at": "2026-09-30T18:10:13.000Z",
-    "age_seconds_at_response": 4.796000003814697,
-    "bid": 0.44446,
-    "ask": 0.44475,
-    "mid": 0.44460500000000003,
-    "spread_pct": 0.06522643694964225,
-    "recent_rows": [
-      [
-        1790791812,
-        "0.444460000",
-        "0.444740000"
-      ],
-      [
-        1790791813,
-        "0.444460000",
-        "0.444830000"
-      ],
-      [
-        1790791813,
-        "0.444460000",
-        "0.444770000"
-      ],
-      [
-        1790791813,
-        "0.444460000",
-        "0.444830000"
-      ],
-      [
-        1790791813,
-        "0.444460000",
-        "0.444750000"
-      ]
-    ],
-    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Spread?pair=ONDOEUR",
-      "method": "GET",
-      "request_started_at": "2026-09-30T18:10:15.423Z",
-      "retrieved_at": "2026-09-30T18:10:15.585Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:15 GMT",
+        "Date": "Wed, 30 Sep 2026 19:10:24 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -164,24 +109,79 @@
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     }
   },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1790795421,
+    "observed_at": "2026-09-30T19:10:21.000Z",
+    "age_seconds_at_response": 3.371999979019165,
+    "bid": 0.42856,
+    "ask": 0.42875,
+    "mid": 0.428655,
+    "spread_pct": 0.04432469001878515,
+    "recent_rows": [
+      [
+        1790795419,
+        "0.428550000",
+        "0.428780000"
+      ],
+      [
+        1790795420,
+        "0.428560000",
+        "0.428780000"
+      ],
+      [
+        1790795421,
+        "0.428560000",
+        "0.428760000"
+      ],
+      [
+        1790795421,
+        "0.428560000",
+        "0.428720000"
+      ],
+      [
+        1790795421,
+        "0.428560000",
+        "0.428750000"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=ONDOEUR",
+      "method": "GET",
+      "request_started_at": "2026-09-30T19:10:22.109Z",
+      "retrieved_at": "2026-09-30T19:10:22.174Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 19:10:22 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
   "depth": {
     "quality": "VERIFIED",
-    "best_bid": 0.44461,
-    "best_ask": 0.44508,
-    "mid": 0.444845,
-    "spread_pct": 0.10565477863075239,
+    "best_bid": 0.42856,
+    "best_ask": 0.42878,
+    "mid": 0.42867,
+    "spread_pct": 0.0513215293815751,
     "band_pct": 0.5,
     "depth_each_side": {
       "asks": {
-        "notional_quote_lower_bound": 34817.270341970005,
+        "notional_quote_lower_bound": 57730.37387825001,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 580.2878390328334,
+        "multiple_of_test_notional": 962.1728979708334,
         "depth_20x_test": "PASS"
       },
       "bids": {
-        "notional_quote_lower_bound": 43678.691214869985,
+        "notional_quote_lower_bound": 40561.00531423002,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 727.9781869144997,
+        "multiple_of_test_notional": 676.016755237167,
         "depth_20x_test": "PASS"
       }
     },
@@ -189,7 +189,7 @@
     "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
     "returned_levels": {
       "asks": 500,
-      "bids": 460
+      "bids": 424
     },
     "simulation": {
       "quality": "APPROXIMATE",
@@ -197,18 +197,18 @@
       "buy": {
         "fillable": true,
         "notional_quote": 60,
-        "base_quantity": 134.78150030324133,
+        "base_quantity": 139.9228968331701,
         "unfilled_quote": 0,
-        "average_price": 0.44516495116175137,
-        "slippage_vs_best_ask_pct": 0.019086717388194785
+        "average_price": 0.42880758873608743,
+        "slippage_vs_best_ask_pct": 0.006434240423391913
       },
       "sell_same_base_quantity": {
         "fillable": true,
-        "base_quantity": 134.78150030324133,
+        "base_quantity": 139.9228968331701,
         "unfilled_base": 0,
-        "proceeds_quote": 59.92229189481502,
-        "average_price": 0.44458840241425895,
-        "slippage_vs_best_bid_pct": 0.004857647318112779
+        "proceeds_quote": 59.96426435785505,
+        "average_price": 0.42855219349375223,
+        "slippage_vs_best_bid_pct": 0.0018215666995891056
       },
       "fees_included": false,
       "executed": false,
@@ -217,16 +217,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/Depth?pair=ONDOEUR&count=500",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:16.523Z",
-      "retrieved_at": "2026-09-30T18:10:16.692Z",
+      "request_started_at": "2026-09-30T19:10:23.209Z",
+      "retrieved_at": "2026-09-30T19:10:23.273Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:16 GMT",
-        "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "Date": "Wed, 30 Sep 2026 19:10:23 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -882,16 +882,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=ONDOEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:13.223Z",
-      "retrieved_at": "2026-09-30T18:10:13.376Z",
+      "request_started_at": "2026-09-30T19:10:17.709Z",
+      "retrieved_at": "2026-09-30T19:10:17.801Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:13 GMT",
+        "Date": "Wed, 30 Sep 2026 19:10:17 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1528,14 +1528,14 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=ONDOEUR&interval=1440",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:14.323Z",
-      "retrieved_at": "2026-09-30T18:10:14.485Z",
+      "request_started_at": "2026-09-30T19:10:18.809Z",
+      "retrieved_at": "2026-09-30T19:10:18.870Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:14 GMT",
+        "Date": "Wed, 30 Sep 2026 19:10:18 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -1555,16 +1555,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-09-30T18:10:01.494Z",
-      "retrieved_at": "2026-09-30T18:10:01.679Z",
+      "request_started_at": "2026-09-30T19:10:21.009Z",
+      "retrieved_at": "2026-09-30T19:10:21.071Z",
       "http_status": 200,
       "market_observed_at": null,
-      "from_isolate_cache": true,
+      "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Wed, 30 Sep 2026 18:10:01 GMT",
+        "Date": "Wed, 30 Sep 2026 19:10:21 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1582,22 +1582,22 @@
   "test_notional_is_recommendation": false,
   "test_minima": {
     "quality": "APPROXIMATE",
-    "base_quantity_rounded_down": 134.80722,
+    "base_quantity_rounded_down": 139.93189,
     "ordermin_met": true,
     "costmin_met": true,
     "fees_included": false
   },
   "same_exchange_quote_comparisons": {
     "Ticker_Spread": {
-      "difference_pct": 0.05396593400415143,
+      "difference_pct": 0.0011664460139700005,
       "within_1pct": true
     },
     "Ticker_Depth": {
-      "difference_pct": 0,
+      "difference_pct": 0.004665702421504223,
       "within_1pct": true
     },
     "Spread_Depth": {
-      "difference_pct": 0.05396593400415143,
+      "difference_pct": 0.0034992564080103218,
       "within_1pct": true
     }
   },
