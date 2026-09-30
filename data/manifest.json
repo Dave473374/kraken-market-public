@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T22:09:21.337312Z",
+  "generated_at": "2026-09-30T23:09:05.954098Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T22:06:06.698450Z"
+      "source_retrieved_at": "2026-09-30T23:05:19.903100Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T22:06:11.369730Z"
+      "source_retrieved_at": "2026-09-30T23:05:24.578662Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T22:06:12.687608Z"
+      "source_retrieved_at": "2026-09-30T23:05:25.933759Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 3
     },
     {
       "logical_pair": "ETHEUR",
@@ -83,7 +83,7 @@
     {
       "logical_pair": "LTCEUR",
       "requested_pair": "LTCEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "SUIEUR",
@@ -93,27 +93,27 @@
     {
       "logical_pair": "LINKEUR",
       "requested_pair": "LINKEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -141,14 +141,12 @@
       "attempts": 1
     },
     {
-      "logical_pair": "CTUSD",
-      "requested_pair": "CTUSD",
+      "logical_pair": "SHXEUR",
+      "requested_pair": "SHXEUR",
       "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
-    "XBTEUR",
-    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
@@ -162,13 +160,24 @@
     "RENDEREUR",
     "TAOEUR",
     "USUSD",
-    "KNTQUSD"
+    "KNTQUSD",
+    "SHXEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "CTUSD",
-      "requested_pair": "CTUSD",
-      "attempts": 1,
+      "logical_pair": "XBTEUR",
+      "requested_pair": "XBTEUR",
+      "attempts": 3,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "ETHEUR",
+      "requested_pair": "ETHEUR",
+      "attempts": 2,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -189,7 +198,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 15,
+    "candidate_partial_or_failed_count": 2
   }
 }
