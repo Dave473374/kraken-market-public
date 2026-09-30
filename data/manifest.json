@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T07:13:32.909036Z",
+  "generated_at": "2026-09-30T08:11:17.810985Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T07:10:38.859697Z"
+      "source_retrieved_at": "2026-09-30T08:08:29.680096Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T07:10:43.420685Z"
+      "source_retrieved_at": "2026-09-30T08:08:34.259019Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T07:10:44.665217Z"
+      "source_retrieved_at": "2026-09-30T08:08:35.514260Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
@@ -141,13 +141,14 @@
       "attempts": 1
     },
     {
-      "logical_pair": "PHAUSD",
-      "requested_pair": "PHAUSD",
+      "logical_pair": "NILEUR",
+      "requested_pair": "NILEUR",
       "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
+    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
@@ -162,20 +163,9 @@
     "TAOEUR",
     "USUSD",
     "MEWUSD",
-    "PHAUSD"
+    "NILEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
