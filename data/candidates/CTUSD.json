@@ -1,0 +1,403 @@
+{
+  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
+  "contains_account_data": false,
+  "automatic_trading": false,
+  "private_exchange_api": false,
+  "production_ready": false,
+  "movers_live_pass": false,
+  "hourly_task_integration": "NOT_VALIDATED",
+  "trade_signal": null,
+  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
+  "request_started_at": "2026-09-30T13:12:27.340Z",
+  "generated_at": "2026-09-30T13:12:38.437Z",
+  "data_health": "PARTIAL_DATA",
+  "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
+  "pair_metadata": {
+    "pair_key": "CTUSD",
+    "altname": "CTUSD",
+    "wsname": "CT/USD",
+    "asset": "CT",
+    "base_display": "CT",
+    "quote_display": "USD",
+    "base_code": "CT",
+    "quote_code": "ZUSD",
+    "aclass_base": "currency",
+    "aclass_quote": "currency",
+    "status": "online",
+    "execution_venue": "international",
+    "country_filter": "SI",
+    "account_specific_eligibility": "NOT_CHECKED",
+    "pair_decimals": 4,
+    "lot_decimals": 5,
+    "cost_decimals": 5,
+    "ordermin_base": "22",
+    "costmin_quote": "0.5",
+    "tick_size_quote": "0.0001",
+    "fee_tier_and_interface_fees": "UNKNOWN"
+  },
+  "metadata_source": {
+    "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=CTUSD&country_code=SI&aclass_base=currency&execution_venue=international",
+    "method": "GET",
+    "request_started_at": "2026-09-30T13:12:28.440Z",
+    "retrieved_at": "2026-09-30T13:12:28.538Z",
+    "http_status": 200,
+    "market_observed_at": null,
+    "from_isolate_cache": false,
+    "ok": true,
+    "http_metadata": {
+      "Date": "Wed, 30 Sep 2026 13:12:28 GMT",
+      "Cache-Control": "public, max-age=1, s-maxage=1",
+      "CF-Cache-Status": "EXPIRED",
+      "Content-Type": "application/json"
+    },
+    "status": "PUBLIC_JSON_ENVELOPE_VALID"
+  },
+  "clock": {
+    "quality": "VERIFIED",
+    "server_unix": 1790773947,
+    "age_seconds_at_response": 11.437000036239624,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Time",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:27.340Z",
+      "retrieved_at": "2026-09-30T13:12:27.435Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:27 GMT",
+        "Cache-Control": "no-store",
+        "CF-Cache-Status": "BYPASS",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "new_discovery_exclusion": null,
+  "ticker": {
+    "quality": "APPROXIMATE",
+    "observation_time": null,
+    "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
+    "bid": 0.3883,
+    "ask": 0.3893,
+    "last": 0.3901,
+    "mid": 0.3888,
+    "spread_pct": 0.2572016460905352,
+    "volume_24h_base": 501723.18264,
+    "vwap_24h_quote": 0.38551389,
+    "turnover_24h_quote": 193421.25584272688,
+    "change_since_midnight_utc_pct": 23.137626262626256,
+    "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
+    "rolling_24h_price_change_pct": null,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Ticker?pair=CTUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:38.340Z",
+      "retrieved_at": "2026-09-30T13:12:38.437Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:38 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1790773956,
+    "observed_at": "2026-09-30T13:12:36.000Z",
+    "age_seconds_at_response": 2.437000036239624,
+    "bid": 0.3883,
+    "ask": 0.3903,
+    "mid": 0.3893,
+    "spread_pct": 0.5137426149499106,
+    "recent_rows": [
+      [
+        1790773944,
+        "0.38710000",
+        "0.38900000"
+      ],
+      [
+        1790773945,
+        "0.38830000",
+        "0.39010000"
+      ],
+      [
+        1790773952,
+        "0.38830000",
+        "0.39010000"
+      ],
+      [
+        1790773952,
+        "0.38830000",
+        "0.38910000"
+      ],
+      [
+        1790773956,
+        "0.38830000",
+        "0.39030000"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=CTUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:36.140Z",
+      "retrieved_at": "2026-09-30T13:12:36.234Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:36 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "depth": {
+    "quality": "VERIFIED",
+    "best_bid": 0.3883,
+    "best_ask": 0.3893,
+    "mid": 0.3888,
+    "spread_pct": 0.2572016460905352,
+    "band_pct": 0.5,
+    "depth_each_side": {
+      "asks": {
+        "notional_quote_lower_bound": 428.91597299999995,
+        "band_fully_observed": true,
+        "multiple_of_test_notional": 6.291728980188173,
+        "depth_20x_test": "FAIL"
+      },
+      "bids": {
+        "notional_quote_lower_bound": 1212.4754401,
+        "band_fully_observed": true,
+        "multiple_of_test_notional": 17.78569077501709,
+        "depth_20x_test": "FAIL"
+      }
+    },
+    "each_side_ge_20x": false,
+    "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
+    "returned_levels": {
+      "asks": 23,
+      "bids": 62
+    },
+    "simulation": {
+      "quality": "APPROXIMATE",
+      "notional_quote": 68.17139999999999,
+      "buy": {
+        "fillable": true,
+        "notional_quote": 68.17139999999999,
+        "base_quantity": 174.63978494623655,
+        "unfilled_quote": 0,
+        "average_price": 0.3903543515069421,
+        "slippage_vs_best_ask_pct": 0.270832650126418
+      },
+      "sell_same_base_quantity": {
+        "fillable": true,
+        "base_quantity": 174.63978494623655,
+        "unfilled_base": 0,
+        "proceeds_quote": 67.67098870967742,
+        "average_price": 0.3874889603792753,
+        "slippage_vs_best_bid_pct": 0.20886933317657563
+      },
+      "fees_included": false,
+      "executed": false,
+      "note": "MODELLED_FROM_ONE_BOOK_SNAPSHOT_NOT_A_FILL_OR_PROPOSAL"
+    },
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Depth?pair=CTUSD&count=500",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:37.240Z",
+      "retrieved_at": "2026-09-30T13:12:37.333Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:37 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "closed_4h": {
+    "quality": "VERIFIED",
+    "interval_minutes": 240,
+    "unfinished_final_bar_excluded": true,
+    "closed_bars_received": 1,
+    "history_has_gaps": false,
+    "latest_closed_bar_start": "2026-09-30T08:00:00.000Z",
+    "latest_closed_bar_end": "2026-09-30T12:00:00.000Z",
+    "closed_24h": {
+      "quality": "MISSING",
+      "reason": "STALE_SHORT_OR_GAPPED_COMPARABLE_HISTORY"
+    },
+    "volume_research": {
+      "quality": "MISSING",
+      "reason": "NEED_48_CONTIGUOUS_CLOSED_4H_BARS"
+    },
+    "columns": [
+      "start_unix",
+      "open",
+      "high",
+      "low",
+      "close",
+      "vwap",
+      "volume_base",
+      "trades"
+    ],
+    "recent_closed_rows": [
+      [
+        1790755200,
+        0.3168,
+        0.4979,
+        0.2689,
+        0.3838,
+        0.3843,
+        412047.78688,
+        1959
+      ]
+    ],
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=CTUSD&interval=240",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:29.540Z",
+      "retrieved_at": "2026-09-30T13:12:29.638Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:29 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "closed_daily": {
+    "quality": "CONFLICT",
+    "reason": "INVALID_OHLC_ROW",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=CTUSD&interval=1440",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:30.640Z",
+      "retrieved_at": "2026-09-30T13:12:30.737Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:30 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "btc_same_period_reference": {
+    "quality": "MISSING",
+    "reason": "COMPARABLE_RETURNS_MISSING",
+    "btc_pair": "XBT/USD",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTUSD&interval=240",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:32.840Z",
+      "retrieved_at": "2026-09-30T13:12:32.857Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:32 GMT",
+        "Age": "1",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "HIT",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "fx": {
+    "quality": "VERIFIED",
+    "pair": "EUR/USD",
+    "quote_currency": "USD",
+    "observed_at": "2026-09-30T13:12:35.000Z",
+    "observed_unix": 1790773955,
+    "eur_per_quote_bid": 0.8801035001716201,
+    "eur_per_quote_ask": 0.8801344845492391,
+    "eur_per_quote_mid": 0.8801189923604296,
+    "estimated_conversion_spread_pct": 0.003520475968364284,
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=EURUSD",
+      "method": "GET",
+      "request_started_at": "2026-09-30T13:12:35.040Z",
+      "retrieved_at": "2026-09-30T13:12:35.143Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Wed, 30 Sep 2026 13:12:35 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "conversion_fees": "UNKNOWN"
+  },
+  "test_notional_eur": 60,
+  "test_notional_quote": 68.17139999999999,
+  "test_notional_is_recommendation": false,
+  "test_minima": {
+    "quality": "APPROXIMATE",
+    "base_quantity_rounded_down": 175.11276,
+    "ordermin_met": true,
+    "costmin_met": true,
+    "fees_included": false
+  },
+  "same_exchange_quote_comparisons": {
+    "Ticker_Spread": {
+      "difference_pct": 0.12851818532322334,
+      "within_1pct": true
+    },
+    "Ticker_Depth": {
+      "difference_pct": 0,
+      "within_1pct": true
+    },
+    "Spread_Depth": {
+      "difference_pct": 0.12851818532322334,
+      "within_1pct": true
+    }
+  },
+  "blocking_data_reasons": [
+    "daily:INVALID_OHLC_ROW",
+    "BTC_PERIOD_NOT_COMPARABLE"
+  ],
+  "not_checked": [
+    "independent venue/provider price cross-check",
+    "personal holdings/basis/cash/intents",
+    "interface fees and all-in budget",
+    "fundamentals/catalysts/security/unlocks",
+    "coin and correlated sector caps",
+    "actual executable fill or future market impact"
+  ],
+  "actionability": "NEVER_AUTHORIZED_BY_THIS_RELAY",
+  "note": "Even DATA_OK describes collection only, not a BUY/SELL signal or restored hourly-task delivery.",
+  "freshness_note": "Recompute every age at ingestion. cached source timestamps remain unchanged; generated_at is NOT a Ticker observation time."
+}
