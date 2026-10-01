@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T01:12:07.372051Z",
+  "generated_at": "2026-10-01T02:10:03.160703Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T01:09:16.168105Z"
+      "source_retrieved_at": "2026-10-01T02:06:57.975223Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T01:09:20.719380Z"
+      "source_retrieved_at": "2026-10-01T02:07:02.668518Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T01:09:21.957790Z"
+      "source_retrieved_at": "2026-10-01T02:07:04.012910Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -73,7 +73,7 @@
     {
       "logical_pair": "SOLEUR",
       "requested_pair": "SOLEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "DOGEEUR",
@@ -103,12 +103,12 @@
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "INJEUR",
@@ -131,18 +131,18 @@
       "attempts": 1
     },
     {
+      "logical_pair": "DRVEUR",
+      "requested_pair": "DRVEUR",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "PLUMEEUR",
+      "requested_pair": "PLUMEEUR",
+      "attempts": 2
+    },
+    {
       "logical_pair": "HNTUSD",
       "requested_pair": "HNTUSD",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "ZBCNUSD",
-      "requested_pair": "ZBCNUSD",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "PLAYUSD",
-      "requested_pair": "PLAYUSD",
       "attempts": 1
     }
   ],
@@ -152,48 +152,20 @@
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
+    "SUIEUR",
+    "LINKEUR",
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
     "PENDLEEUR",
+    "RENDEREUR",
     "TAOEUR",
-    "HNTUSD",
-    "ZBCNUSD",
-    "PLAYUSD"
+    "DRVEUR",
+    "PLUMEEUR",
+    "HNTUSD"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "SUIEUR",
-      "requested_pair": "SUIEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "LINKEUR",
-      "requested_pair": "LINKEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "RENDEREUR",
-      "requested_pair": "RENDEREUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -207,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 14,
-    "candidate_partial_or_failed_count": 3
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
