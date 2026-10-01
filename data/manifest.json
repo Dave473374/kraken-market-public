@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T13:12:34.459624Z",
+  "generated_at": "2026-10-01T14:12:01.278116Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T13:09:44.400020Z"
+      "source_retrieved_at": "2026-10-01T14:09:08.854044Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T13:09:49.012526Z"
+      "source_retrieved_at": "2026-10-01T14:09:13.472092Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T13:09:50.311694Z"
+      "source_retrieved_at": "2026-10-01T14:09:14.755640Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
@@ -131,13 +131,13 @@
       "attempts": 1
     },
     {
-      "logical_pair": "MOVRUSD",
-      "requested_pair": "MOVRUSD",
+      "logical_pair": "CTUSD",
+      "requested_pair": "CTUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "CTUSD",
-      "requested_pair": "CTUSD",
+      "logical_pair": "SYNEUR",
+      "requested_pair": "SYNEUR",
       "attempts": 1
     },
     {
@@ -157,25 +157,15 @@
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
+    "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "MOVRUSD",
     "CTUSD",
+    "SYNEUR",
     "MEGAEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
