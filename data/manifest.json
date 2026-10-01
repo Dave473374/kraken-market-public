@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T03:09:57.549598Z",
+  "generated_at": "2026-10-01T04:10:17.469975Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T03:06:50.354205Z"
+      "source_retrieved_at": "2026-10-01T04:07:27.711260Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T03:06:54.936192Z"
+      "source_retrieved_at": "2026-10-01T04:07:32.479772Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T03:06:56.206835Z"
+      "source_retrieved_at": "2026-10-01T04:07:33.809682Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
@@ -78,7 +78,7 @@
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LTCEUR",
@@ -88,7 +88,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LINKEUR",
@@ -118,7 +118,7 @@
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "RENDEREUR",
@@ -136,14 +136,14 @@
       "attempts": 1
     },
     {
-      "logical_pair": "TRUMPEUR",
-      "requested_pair": "TRUMPEUR",
+      "logical_pair": "MOVRUSD",
+      "requested_pair": "MOVRUSD",
       "attempts": 1
     },
     {
       "logical_pair": "MEGAEUR",
       "requested_pair": "MEGAEUR",
-      "attempts": 2
+      "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
@@ -161,21 +161,11 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "TRUMPEUR",
+    "PLUMEUSD",
+    "MOVRUSD",
     "MEGAEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "PLUMEUSD",
-      "requested_pair": "PLUMEUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
