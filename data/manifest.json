@@ -1,10 +1,10 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T09:11:00.785832Z",
+  "generated_at": "2026-10-01T10:11:10.326225Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "status": "OK",
+  "status": "PARTIAL",
   "pair_aliases": {
     "DOGEEUR": "XDGEUR"
   },
@@ -12,17 +12,17 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T09:08:05.313673Z"
+      "source_retrieved_at": "2026-10-01T10:08:22.506618Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T09:08:10.279916Z"
+      "source_retrieved_at": "2026-10-01T10:08:27.068362Z"
     },
     "owned-quotes.json": {
-      "ok": true,
-      "schema_ok": true,
-      "research_usable": true,
+      "ok": false,
+      "schema_ok": false,
+      "research_usable": false,
       "executable_evidence": false,
       "requested_pairs": [
         "XBTEUR",
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T09:08:12.589312Z"
+      "source_retrieved_at": "2026-10-01T10:08:27.098404Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -131,18 +131,18 @@
       "attempts": 1
     },
     {
-      "logical_pair": "JASMYEUR",
-      "requested_pair": "JASMYEUR",
+      "logical_pair": "MOVRUSD",
+      "requested_pair": "MOVRUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "MEGAEUR",
-      "requested_pair": "MEGAEUR",
+      "logical_pair": "CTUSD",
+      "requested_pair": "CTUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "NIGHTEUR",
-      "requested_pair": "NIGHTEUR",
+      "logical_pair": "JASMYUSD",
+      "requested_pair": "JASMYUSD",
       "attempts": 1
     }
   ],
@@ -161,13 +161,13 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "MEGAEUR",
-    "NIGHTEUR"
+    "MOVRUSD",
+    "JASMYUSD"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "JASMYEUR",
-      "requested_pair": "JASMYEUR",
+      "logical_pair": "CTUSD",
+      "requested_pair": "CTUSD",
       "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
@@ -185,9 +185,9 @@
     "A single optional candidate failure does not fail the core mirror workflow."
   ],
   "summary": {
-    "core_ok": true,
+    "core_ok": false,
     "universe_ok": true,
-    "owned_quotes_research_usable": true,
+    "owned_quotes_research_usable": false,
     "owned_quotes_executable_evidence": false,
     "candidate_ok_count": 16,
     "candidate_partial_or_failed_count": 1
