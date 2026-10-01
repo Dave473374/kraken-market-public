@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T17:11:22.314313Z",
+  "generated_at": "2026-10-01T18:12:28.550631Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T17:08:26.873235Z"
+      "source_retrieved_at": "2026-10-01T18:09:40.089749Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T17:08:31.514463Z"
+      "source_retrieved_at": "2026-10-01T18:09:45.098636Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T17:08:32.845660Z"
+      "source_retrieved_at": "2026-10-01T18:09:46.497013Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -68,7 +68,7 @@
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
@@ -108,7 +108,7 @@
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "INJEUR",
@@ -162,20 +162,10 @@
     "RENDEREUR",
     "TAOEUR",
     "MOVRUSD",
+    "MEGAEUR",
     "SYNEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "MEGAEUR",
-      "requested_pair": "MEGAEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
