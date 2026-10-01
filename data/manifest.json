@@ -1,10 +1,10 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T08:12:20.951211Z",
+  "generated_at": "2026-10-01T09:11:00.785832Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "status": "PARTIAL",
+  "status": "OK",
   "pair_aliases": {
     "DOGEEUR": "XDGEUR"
   },
@@ -12,17 +12,17 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T08:08:20.768070Z"
+      "source_retrieved_at": "2026-10-01T09:08:05.313673Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T08:08:25.406539Z"
+      "source_retrieved_at": "2026-10-01T09:08:10.279916Z"
     },
     "owned-quotes.json": {
-      "ok": false,
-      "schema_ok": false,
-      "research_usable": false,
+      "ok": true,
+      "schema_ok": true,
+      "research_usable": true,
       "executable_evidence": false,
       "requested_pairs": [
         "XBTEUR",
@@ -56,94 +56,94 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T08:08:25.449302Z"
+      "source_retrieved_at": "2026-10-01T09:08:12.589312Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
       "requested_pair": "SOLEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LTCEUR",
       "requested_pair": "LTCEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LINKEUR",
       "requested_pair": "LINKEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "RENDEREUR",
       "requested_pair": "RENDEREUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "JASMYUSD",
-      "requested_pair": "JASMYUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "TRACEUR",
-      "requested_pair": "TRACEUR",
-      "attempts": 2
+      "logical_pair": "JASMYEUR",
+      "requested_pair": "JASMYEUR",
+      "attempts": 1
     },
     {
-      "logical_pair": "MEGAUSD",
-      "requested_pair": "MEGAUSD",
-      "attempts": 2
+      "logical_pair": "MEGAEUR",
+      "requested_pair": "MEGAEUR",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "NIGHTEUR",
+      "requested_pair": "NIGHTEUR",
+      "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
@@ -161,11 +161,21 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "JASMYUSD",
-    "TRACEUR",
-    "MEGAUSD"
+    "MEGAEUR",
+    "NIGHTEUR"
   ],
-  "candidate_pairs_partial_or_failed": [],
+  "candidate_pairs_partial_or_failed": [
+    {
+      "logical_pair": "JASMYEUR",
+      "requested_pair": "JASMYEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    }
+  ],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -175,11 +185,11 @@
     "A single optional candidate failure does not fail the core mirror workflow."
   ],
   "summary": {
-    "core_ok": false,
+    "core_ok": true,
     "universe_ok": true,
-    "owned_quotes_research_usable": false,
+    "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 17,
-    "candidate_partial_or_failed_count": 0
+    "candidate_ok_count": 16,
+    "candidate_partial_or_failed_count": 1
   }
 }
