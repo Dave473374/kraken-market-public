@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-09-30T23:09:05.954098Z",
+  "generated_at": "2026-10-01T00:11:56.061444Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T23:05:19.903100Z"
+      "source_retrieved_at": "2026-10-01T00:09:07.136589Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-09-30T23:05:24.578662Z"
+      "source_retrieved_at": "2026-10-01T00:09:11.813284Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,19 +56,19 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-09-30T23:05:25.933759Z"
+      "source_retrieved_at": "2026-10-01T00:09:13.194885Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
@@ -78,12 +78,12 @@
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LTCEUR",
       "requested_pair": "LTCEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SUIEUR",
@@ -98,22 +98,22 @@
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -123,7 +123,7 @@
     {
       "logical_pair": "RENDEREUR",
       "requested_pair": "RENDEREUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "TAOEUR",
@@ -131,43 +131,42 @@
       "attempts": 1
     },
     {
-      "logical_pair": "USUSD",
-      "requested_pair": "USUSD",
+      "logical_pair": "SOONEUR",
+      "requested_pair": "SOONEUR",
       "attempts": 1
     },
     {
-      "logical_pair": "KNTQUSD",
-      "requested_pair": "KNTQUSD",
+      "logical_pair": "WLDEUR",
+      "requested_pair": "WLDEUR",
       "attempts": 1
     },
     {
-      "logical_pair": "SHXEUR",
-      "requested_pair": "SHXEUR",
+      "logical_pair": "PHAEUR",
+      "requested_pair": "PHAEUR",
       "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
+    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
     "SUIEUR",
-    "LINKEUR",
     "BNBEUR",
     "AAVEEUR",
-    "ONDOEUR",
     "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "USUSD",
-    "KNTQUSD",
-    "SHXEUR"
+    "SOONEUR",
+    "WLDEUR",
+    "PHAEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3,
+      "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -175,9 +174,19 @@
       "error": null
     },
     {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
-      "attempts": 2,
+      "logical_pair": "LINKEUR",
+      "requested_pair": "LINKEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "ONDOEUR",
+      "requested_pair": "ONDOEUR",
+      "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -198,7 +207,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 15,
-    "candidate_partial_or_failed_count": 2
+    "candidate_ok_count": 14,
+    "candidate_partial_or_failed_count": 3
   }
 }
