@@ -9,8 +9,8 @@
   "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
   "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-10-01T09:10:51.511Z",
-  "generated_at": "2026-10-01T09:10:59.763Z",
+  "request_started_at": "2026-10-02T14:24:43.629Z",
+  "generated_at": "2026-10-02T14:24:51.343Z",
   "data_health": "DATA_OK",
   "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
   "pair_metadata": {
@@ -31,7 +31,7 @@
     "pair_decimals": 5,
     "lot_decimals": 5,
     "cost_decimals": 5,
-    "ordermin_base": "250",
+    "ordermin_base": "120",
     "costmin_quote": "0.45",
     "tick_size_quote": "0.00001",
     "fee_tier_and_interface_fees": "UNKNOWN"
@@ -39,14 +39,14 @@
   "metadata_source": {
     "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=NIGHTEUR&country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
-    "request_started_at": "2026-10-01T09:10:52.611Z",
-    "retrieved_at": "2026-10-01T09:10:53.576Z",
+    "request_started_at": "2026-10-02T14:24:44.729Z",
+    "retrieved_at": "2026-10-02T14:24:44.865Z",
     "http_status": 200,
     "market_observed_at": null,
     "from_isolate_cache": false,
     "ok": true,
     "http_metadata": {
-      "Date": "Thu, 01 Oct 2026 09:10:53 GMT",
+      "Date": "Fri, 02 Oct 2026 14:24:44 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1",
       "CF-Cache-Status": "EXPIRED",
       "Content-Type": "application/json"
@@ -55,19 +55,19 @@
   },
   "clock": {
     "quality": "VERIFIED",
-    "server_unix": 1790845851,
-    "age_seconds_at_response": 8.763000011444092,
+    "server_unix": 1790951083,
+    "age_seconds_at_response": 8.342999935150146,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Time",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:51.511Z",
-      "retrieved_at": "2026-10-01T09:10:51.717Z",
+      "request_started_at": "2026-10-02T14:24:43.629Z",
+      "retrieved_at": "2026-10-02T14:24:43.883Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:51 GMT",
+        "Date": "Fri, 02 Oct 2026 14:24:43 GMT",
         "Cache-Control": "no-store",
         "CF-Cache-Status": "BYPASS",
         "Content-Type": "application/json"
@@ -80,30 +80,31 @@
     "quality": "APPROXIMATE",
     "observation_time": null,
     "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
-    "bid": 0.03714,
-    "ask": 0.0372,
-    "last": 0.03706,
-    "mid": 0.037169999999999995,
-    "spread_pct": 0.1614205004035447,
-    "volume_24h_base": 22902882.94103,
-    "vwap_24h_quote": 0.03380229,
-    "turnover_24h_quote": 774169.8910087489,
-    "change_since_midnight_utc_pct": 6.8627450980392135,
+    "bid": 0.04219,
+    "ask": 0.04244,
+    "last": 0.04251,
+    "mid": 0.042315,
+    "spread_pct": 0.5908070424199462,
+    "volume_24h_base": 20654886.56906,
+    "vwap_24h_quote": 0.038554804,
+    "turnover_24h_quote": 796345.1033123408,
+    "change_since_midnight_utc_pct": 24.443793911007017,
     "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
     "rolling_24h_price_change_pct": null,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Ticker?pair=NIGHTEUR",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:59.211Z",
-      "retrieved_at": "2026-10-01T09:10:59.763Z",
+      "request_started_at": "2026-10-02T14:24:51.329Z",
+      "retrieved_at": "2026-10-02T14:24:51.343Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:59 GMT",
-        "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "Date": "Fri, 02 Oct 2026 14:24:51 GMT",
+        "Age": "0",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -111,53 +112,53 @@
   },
   "timestamped_spread": {
     "quality": "VERIFIED",
-    "observed_unix": 1790845855,
-    "observed_at": "2026-10-01T09:10:55.000Z",
-    "age_seconds_at_response": 4.763000011444092,
-    "bid": 0.03714,
-    "ask": 0.0372,
-    "mid": 0.037169999999999995,
-    "spread_pct": 0.1614205004035447,
+    "observed_unix": 1790951089,
+    "observed_at": "2026-10-02T14:24:49.000Z",
+    "age_seconds_at_response": 2.3429999351501465,
+    "bid": 0.04218,
+    "ask": 0.04244,
+    "mid": 0.04231,
+    "spread_pct": 0.6145119357125889,
     "recent_rows": [
       [
-        1790845847,
-        "0.037110000",
-        "0.037210000"
+        1790951088,
+        "0.042210000",
+        "0.042450000"
       ],
       [
-        1790845848,
-        "0.037110000",
-        "0.037200000"
+        1790951088,
+        "0.042150000",
+        "0.042450000"
       ],
       [
-        1790845852,
-        "0.037120000",
-        "0.037200000"
+        1790951089,
+        "0.042160000",
+        "0.042450000"
       ],
       [
-        1790845855,
-        "0.037130000",
-        "0.037200000"
+        1790951089,
+        "0.042180000",
+        "0.042450000"
       ],
       [
-        1790845855,
-        "0.037140000",
-        "0.037200000"
+        1790951089,
+        "0.042180000",
+        "0.042440000"
       ]
     ],
     "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
     "source": {
       "source_url": "https://api.kraken.com/0/public/Spread?pair=NIGHTEUR",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:57.011Z",
-      "retrieved_at": "2026-10-01T09:10:57.267Z",
+      "request_started_at": "2026-10-02T14:24:49.129Z",
+      "retrieved_at": "2026-10-02T14:24:49.262Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:57 GMT",
-        "Cache-Control": "max-age=2, public",
+        "Date": "Fri, 02 Oct 2026 14:24:49 GMT",
+        "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
@@ -166,49 +167,49 @@
   },
   "depth": {
     "quality": "VERIFIED",
-    "best_bid": 0.03714,
-    "best_ask": 0.0372,
-    "mid": 0.037169999999999995,
-    "spread_pct": 0.1614205004035447,
+    "best_bid": 0.04221,
+    "best_ask": 0.04244,
+    "mid": 0.042325,
+    "spread_pct": 0.543414057885413,
     "band_pct": 0.5,
     "depth_each_side": {
       "asks": {
-        "notional_quote_lower_bound": 17854.47106525,
+        "notional_quote_lower_bound": 1827.51747561,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 297.57451775416666,
+        "multiple_of_test_notional": 30.4586245935,
         "depth_20x_test": "PASS"
       },
       "bids": {
-        "notional_quote_lower_bound": 35044.50583024,
+        "notional_quote_lower_bound": 19313.70275717,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 584.0750971706667,
+        "multiple_of_test_notional": 321.8950459528333,
         "depth_20x_test": "PASS"
       }
     },
     "each_side_ge_20x": true,
     "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
     "returned_levels": {
-      "asks": 118,
-      "bids": 148
+      "asks": 134,
+      "bids": 130
     },
     "simulation": {
       "quality": "APPROXIMATE",
       "notional_quote": 60,
       "buy": {
         "fillable": true,
-        "notional_quote": 59.99999999999999,
-        "base_quantity": 1612.229091324201,
+        "notional_quote": 60,
+        "base_quantity": 1413.7606032045242,
         "unfilled_quote": 0,
-        "average_price": 0.0372155547390099,
-        "slippage_vs_best_ask_pct": 0.04181381454275712
+        "average_price": 0.04244,
+        "slippage_vs_best_ask_pct": 0
       },
       "sell_same_base_quantity": {
         "fillable": true,
-        "base_quantity": 1612.229091324201,
+        "base_quantity": 1413.7606032045242,
         "unfilled_base": 0,
-        "proceeds_quote": 59.862230299954334,
-        "average_price": 0.037130101808786134,
-        "slippage_vs_best_bid_pct": 0.026651026423973878
+        "proceeds_quote": 59.67483506126296,
+        "average_price": 0.04221,
+        "slippage_vs_best_bid_pct": 0
       },
       "fees_included": false,
       "executed": false,
@@ -217,16 +218,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/Depth?pair=NIGHTEUR&count=500",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:58.111Z",
-      "retrieved_at": "2026-10-01T09:10:58.674Z",
+      "request_started_at": "2026-10-02T14:24:50.229Z",
+      "retrieved_at": "2026-10-02T14:24:50.364Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:58 GMT",
-        "Cache-Control": "max-age=2, public",
-        "CF-Cache-Status": "HIT",
+        "Date": "Fri, 02 Oct 2026 14:24:50 GMT",
+        "Cache-Control": "public, max-age=2",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -238,33 +239,33 @@
     "unfinished_final_bar_excluded": true,
     "closed_bars_received": 720,
     "history_has_gaps": false,
-    "latest_closed_bar_start": "2026-10-01T04:00:00.000Z",
-    "latest_closed_bar_end": "2026-10-01T08:00:00.000Z",
+    "latest_closed_bar_start": "2026-10-02T08:00:00.000Z",
+    "latest_closed_bar_end": "2026-10-02T12:00:00.000Z",
     "closed_24h": {
       "quality": "VERIFIED",
-      "start_unix": 1790755200,
-      "end_unix": 1790841600,
-      "start_at": "2026-09-30T08:00:00.000Z",
-      "end_at": "2026-10-01T08:00:00.000Z",
-      "from_close": 0.02877,
-      "to_close": 0.03684,
-      "change_pct": 28.050052137643377
+      "start_unix": 1790856000,
+      "end_unix": 1790942400,
+      "start_at": "2026-10-01T12:00:00.000Z",
+      "end_at": "2026-10-02T12:00:00.000Z",
+      "from_close": 0.03891,
+      "to_close": 0.04089,
+      "change_pct": 5.088666152659993
     },
     "volume_research": {
       "quality": "VERIFIED",
       "reason": null,
-      "last_24h_volume_base": 22295150.16844,
+      "last_24h_volume_base": 19429964.82818,
       "prior_7_block_volumes_base": [
-        4511597.87439,
-        5036523.431489999,
-        4804950.81208,
-        3600131.85217,
-        7128615.01682,
-        11756140.10502,
-        15037911.453860002
+        6657956.855289999,
+        4482201.08794,
+        2825738.17192,
+        8205413.34414,
+        14852792.69324,
+        16886027.38823,
+        21419353.325769998
       ],
-      "median_prior_7_blocks_base": 5036523.431489999,
-      "ratio": 4.426694419615601,
+      "median_prior_7_blocks_base": 8205413.34414,
+      "ratio": 2.367944674238277,
       "ratio_ge_2_research_only": true
     },
     "columns": [
@@ -278,76 +279,6 @@
       "trades"
     ],
     "recent_closed_rows": [
-      [
-        1789977600,
-        0.02039,
-        0.02121,
-        0.02039,
-        0.02101,
-        0.02093,
-        1417714.06681,
-        221
-      ],
-      [
-        1789992000,
-        0.021,
-        0.0215,
-        0.02092,
-        0.02106,
-        0.02113,
-        1428463.62638,
-        230
-      ],
-      [
-        1790006400,
-        0.02102,
-        0.02148,
-        0.02093,
-        0.0212,
-        0.02123,
-        992921.03422,
-        212
-      ],
-      [
-        1790020800,
-        0.02125,
-        0.02126,
-        0.02105,
-        0.02123,
-        0.02112,
-        472534.3319,
-        76
-      ],
-      [
-        1790035200,
-        0.0212,
-        0.02126,
-        0.02099,
-        0.02099,
-        0.02111,
-        279549.26298,
-        16
-      ],
-      [
-        1790049600,
-        0.02118,
-        0.0212,
-        0.02061,
-        0.02062,
-        0.02076,
-        772622.84843,
-        50
-      ],
-      [
-        1790064000,
-        0.02069,
-        0.02073,
-        0.02047,
-        0.02053,
-        0.02065,
-        514403.68557,
-        37
-      ],
       [
         1790078400,
         0.02057,
@@ -877,19 +808,89 @@
         0.03662,
         3622644.35284,
         1064
+      ],
+      [
+        1790841600,
+        0.03718,
+        0.04,
+        0.0359,
+        0.03891,
+        0.03834,
+        5858157.46041,
+        798
+      ],
+      [
+        1790856000,
+        0.03906,
+        0.03956,
+        0.03342,
+        0.03518,
+        0.03622,
+        7604746.15366,
+        1390
+      ],
+      [
+        1790870400,
+        0.03532,
+        0.03729,
+        0.03328,
+        0.03404,
+        0.03487,
+        3162828.78503,
+        821
+      ],
+      [
+        1790884800,
+        0.03419,
+        0.03513,
+        0.0341,
+        0.03414,
+        0.03467,
+        722587.38929,
+        425
+      ],
+      [
+        1790899200,
+        0.03416,
+        0.0354,
+        0.03371,
+        0.03417,
+        0.03461,
+        852845.39491,
+        326
+      ],
+      [
+        1790913600,
+        0.03428,
+        0.03871,
+        0.03405,
+        0.03871,
+        0.03618,
+        2559976.74828,
+        479
+      ],
+      [
+        1790928000,
+        0.03806,
+        0.04089,
+        0.03745,
+        0.04089,
+        0.03894,
+        4526980.35701,
+        803
       ]
     ],
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=NIGHTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:53.711Z",
-      "retrieved_at": "2026-10-01T09:10:53.899Z",
+      "request_started_at": "2026-10-02T14:24:45.829Z",
+      "retrieved_at": "2026-10-02T14:24:45.966Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:53 GMT",
+        "Date": "Fri, 02 Oct 2026 14:24:45 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
@@ -901,10 +902,10 @@
     "quality": "VERIFIED",
     "interval_minutes": 1440,
     "unfinished_final_bar_excluded": true,
-    "closed_bars_received": 296,
+    "closed_bars_received": 297,
     "history_has_gaps": false,
-    "latest_closed_bar_start": "2026-09-30T00:00:00.000Z",
-    "latest_closed_bar_end": "2026-10-01T00:00:00.000Z",
+    "latest_closed_bar_start": "2026-10-01T00:00:00.000Z",
+    "latest_closed_bar_end": "2026-10-02T00:00:00.000Z",
     "closed_24h": {
       "quality": "MISSING",
       "reason": "STALE_SHORT_OR_GAPPED_COMPARABLE_HISTORY"
@@ -924,16 +925,6 @@
       "trades"
     ],
     "recent_closed_rows": [
-      [
-        1785628800,
-        0.01596,
-        0.01829,
-        0.01596,
-        0.01679,
-        0.01673,
-        4239651.62703,
-        694
-      ],
       [
         1785715200,
         0.01673,
@@ -1523,21 +1514,31 @@
         0.03216,
         18308056.8691,
         3157
+      ],
+      [
+        1790812800,
+        0.03468,
+        0.04,
+        0.03328,
+        0.03414,
+        0.0365,
+        23381004.41406,
+        5031
       ]
     ],
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=NIGHTEUR&interval=1440",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:54.811Z",
-      "retrieved_at": "2026-10-01T09:10:55.252Z",
+      "request_started_at": "2026-10-02T14:24:46.929Z",
+      "retrieved_at": "2026-10-02T14:24:47.077Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:55 GMT",
+        "Date": "Fri, 02 Oct 2026 14:24:47 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "HIT",
+        "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1546,25 +1547,25 @@
   "btc_same_period_reference": {
     "quality": "VERIFIED",
     "quote_currency": "EUR",
-    "start_at": "2026-09-30T08:00:00.000Z",
-    "end_at": "2026-10-01T08:00:00.000Z",
-    "asset_change_pct": 28.050052137643377,
-    "btc_change_pct": 0.48695149832278517,
-    "difference_percentage_points": 27.56310063932059,
+    "start_at": "2026-10-01T12:00:00.000Z",
+    "end_at": "2026-10-02T12:00:00.000Z",
+    "asset_change_pct": 5.088666152659993,
+    "btc_change_pct": 3.682365640957208,
+    "difference_percentage_points": 1.406300511702785,
     "btc_pair": "XBT/EUR",
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-10-01T09:10:55.911Z",
-      "retrieved_at": "2026-10-01T09:10:56.116Z",
+      "request_started_at": "2026-10-02T14:24:48.029Z",
+      "retrieved_at": "2026-10-02T14:24:48.163Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Thu, 01 Oct 2026 09:10:56 GMT",
+        "Date": "Fri, 02 Oct 2026 14:24:48 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1582,22 +1583,22 @@
   "test_notional_is_recommendation": false,
   "test_minima": {
     "quality": "APPROXIMATE",
-    "base_quantity_rounded_down": 1612.90322,
+    "base_quantity_rounded_down": 1413.7606,
     "ordermin_met": true,
     "costmin_met": true,
     "fees_included": false
   },
   "same_exchange_quote_comparisons": {
     "Ticker_Spread": {
-      "difference_pct": 0,
+      "difference_pct": 0.011816838995564103,
       "within_1pct": true
     },
     "Ticker_Depth": {
-      "difference_pct": 0,
+      "difference_pct": 0.023629489603031812,
       "within_1pct": true
     },
     "Spread_Depth": {
-      "difference_pct": 0,
+      "difference_pct": 0.035446328351157616,
       "within_1pct": true
     }
   },
