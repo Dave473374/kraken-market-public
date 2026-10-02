@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-02T01:16:22.679923Z",
+  "generated_at": "2026-10-02T07:52:09.945998Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T01:13:26.211730Z"
+      "source_retrieved_at": "2026-10-02T07:48:54.222724Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T01:13:30.816385Z"
+      "source_retrieved_at": "2026-10-02T07:48:58.829091Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-02T01:13:32.076475Z"
+      "source_retrieved_at": "2026-10-02T07:49:00.109201Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
@@ -93,7 +93,7 @@
     {
       "logical_pair": "LINKEUR",
       "requested_pair": "LINKEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "BNBEUR",
@@ -108,17 +108,17 @@
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "RENDEREUR",
@@ -128,22 +128,22 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "MEGAUSD",
-      "requested_pair": "MEGAUSD",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "AREUR",
-      "requested_pair": "AREUR",
       "attempts": 2
     },
     {
-      "logical_pair": "GRASSUSD",
-      "requested_pair": "GRASSUSD",
+      "logical_pair": "SANDEUR",
+      "requested_pair": "SANDEUR",
+      "attempts": 2
+    },
+    {
+      "logical_pair": "MANAEUR",
+      "requested_pair": "MANAEUR",
       "attempts": 1
+    },
+    {
+      "logical_pair": "CVXEUR",
+      "requested_pair": "CVXEUR",
+      "attempts": 2
     }
   ],
   "candidate_pairs_ok": [
@@ -161,21 +161,11 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "MEGAUSD",
-    "GRASSUSD"
+    "SANDEUR",
+    "MANAEUR",
+    "CVXEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "AREUR",
-      "requested_pair": "AREUR",
-      "attempts": 2,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -189,7 +179,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 17,
+    "candidate_partial_or_failed_count": 0
   }
 }
