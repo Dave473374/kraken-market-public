@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-01T21:09:08.611916Z",
+  "generated_at": "2026-10-02T01:16:22.679923Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T21:05:57.606433Z"
+      "source_retrieved_at": "2026-10-02T01:13:26.211730Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-01T21:06:02.224842Z"
+      "source_retrieved_at": "2026-10-02T01:13:30.816385Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,19 +56,19 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-01T21:06:03.534149Z"
+      "source_retrieved_at": "2026-10-02T01:13:32.076475Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
@@ -88,7 +88,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "LINKEUR",
@@ -103,12 +103,12 @@
     {
       "logical_pair": "AAVEEUR",
       "requested_pair": "AAVEEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "ONDOEUR",
       "requested_pair": "ONDOEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "INJEUR",
@@ -123,7 +123,7 @@
     {
       "logical_pair": "RENDEREUR",
       "requested_pair": "RENDEREUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "TAOEUR",
@@ -131,23 +131,24 @@
       "attempts": 1
     },
     {
-      "logical_pair": "MOVREUR",
-      "requested_pair": "MOVREUR",
+      "logical_pair": "MEGAUSD",
+      "requested_pair": "MEGAUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "ALICEUSD",
-      "requested_pair": "ALICEUSD",
-      "attempts": 1
+      "logical_pair": "AREUR",
+      "requested_pair": "AREUR",
+      "attempts": 2
     },
     {
-      "logical_pair": "MEGAEUR",
-      "requested_pair": "MEGAEUR",
+      "logical_pair": "GRASSUSD",
+      "requested_pair": "GRASSUSD",
       "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
+    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
@@ -160,14 +161,13 @@
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "MOVREUR",
-    "ALICEUSD",
-    "MEGAEUR"
+    "MEGAUSD",
+    "GRASSUSD"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
+      "logical_pair": "AREUR",
+      "requested_pair": "AREUR",
       "attempts": 2,
       "transport_ok": true,
       "schema_ok": true,
