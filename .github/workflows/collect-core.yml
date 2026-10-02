@@ -2,6 +2,12 @@ name: Collect Kraken fast core mirror
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/collect-core.yml"
+      - "scripts/collect_core.py"
   schedule:
     - cron: "17,47 * * * *"
 
