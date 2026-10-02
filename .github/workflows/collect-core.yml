@@ -3,7 +3,7 @@ name: Collect Kraken fast core mirror
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "17,47 * * * *"
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   collect-core:
     runs-on: ubuntu-latest
-    timeout-minutes: 70
+    timeout-minutes: 350
 
     steps:
       - name: Checkout main
@@ -35,10 +35,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # One scheduled run protects freshness for about an hour.
-          # A newer scheduled run cancels this one and immediately takes over.
-          for cycle in $(seq 1 16); do
-            echo "=== FAST CORE cycle $cycle/16 ==="
+          # Keep core-live fresh for about 5.5 hours inside one workflow run.
+          # The external cron only needs to hand off/restart periodically.
+          # If GitHub delays scheduled starts, the current run keeps publishing.
+          for cycle in $(seq 1 92); do
+            echo "=== FAST CORE cycle $cycle/92 ==="
 
             git checkout -f main
             git branch -D core-live-publish >/dev/null 2>&1 || true
@@ -61,7 +62,7 @@ jobs:
             cat > README.md <<'EOF'
           # Kraken fast core live snapshot
 
-          Rolling public read-only market snapshot for Crypto Portfolio v2.1 / Kraken Movers KM1.0.
+          Rolling public read-only market snapshot for Crypto Portfolio v2.2 / Kraken Movers KM1.1.
           This branch is force-replaced on each fast-core publication so repository history does not grow every few minutes.
 
           Files:
@@ -83,7 +84,7 @@ jobs:
               echo "Collector returned $collect_status; PARTIAL snapshot was still published."
             fi
 
-            if [ "$cycle" -lt 16 ]; then
+            if [ "$cycle" -lt 92 ]; then
               sleep 180
             fi
           done
