@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-02T19:45:32.802652Z",
+  "generated_at": "2026-10-02T23:31:33.586585Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T19:42:16.131609Z"
+      "source_retrieved_at": "2026-10-02T23:28:48.043670Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T19:42:20.768394Z"
+      "source_retrieved_at": "2026-10-02T23:28:52.613289Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,14 +56,14 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-02T19:42:22.055693Z"
+      "source_retrieved_at": "2026-10-02T23:28:53.860225Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
@@ -98,7 +98,7 @@
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "AAVEEUR",
@@ -113,7 +113,7 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -123,7 +123,7 @@
     {
       "logical_pair": "RENDEREUR",
       "requested_pair": "RENDEREUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "TAOEUR",
@@ -131,18 +131,18 @@
       "attempts": 1
     },
     {
-      "logical_pair": "SANDEUR",
-      "requested_pair": "SANDEUR",
+      "logical_pair": "SANDUSD",
+      "requested_pair": "SANDUSD",
       "attempts": 1
     },
     {
       "logical_pair": "NIGHTEUR",
       "requested_pair": "NIGHTEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
-      "logical_pair": "ATHUSD",
-      "requested_pair": "ATHUSD",
+      "logical_pair": "GALAEUR",
+      "requested_pair": "GALAEUR",
       "attempts": 1
     }
   ],
@@ -157,15 +157,25 @@
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
-    "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "SANDEUR",
+    "SANDUSD",
     "NIGHTEUR",
-    "ATHUSD"
+    "GALAEUR"
   ],
-  "candidate_pairs_partial_or_failed": [],
+  "candidate_pairs_partial_or_failed": [
+    {
+      "logical_pair": "INJEUR",
+      "requested_pair": "INJEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    }
+  ],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -179,7 +189,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 17,
-    "candidate_partial_or_failed_count": 0
+    "candidate_ok_count": 16,
+    "candidate_partial_or_failed_count": 1
   }
 }
