@@ -1,0 +1,24 @@
+{
+  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
+  "contains_account_data": false,
+  "automatic_trading": false,
+  "private_exchange_api": false,
+  "production_ready": false,
+  "movers_live_pass": false,
+  "hourly_task_integration": "NOT_VALIDATED",
+  "trade_signal": null,
+  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
+  "worker_status": "RESPONDING",
+  "generated_at": "2026-10-03T23:46:31.337Z",
+  "kraken_status": "NOT_TESTED_BY_THIS_ROUTE",
+  "routes": [
+    "/test.json",
+    "/universe.json",
+    "/candidate.json?pair=GRTEUR&notional_eur=60",
+    "/quotes.json?pairs=XBTEUR,ETHEUR"
+  ],
+  "test_notional_note": "60 EUR is an optional synthetic order-size probe, NOT a trade budget.",
+  "operational_status": "V2_STAGED_REQUIRES_LIVE_ENDPOINT_AND_HOURLY_INGESTION_VALIDATION",
+  "limits": "No cron, KV, account data or trading. Cooldowns/cache are per isolate, not guaranteed global quota protection."
+}

@@ -1,0 +1,187 @@
+{
+  "schema": "KRAKEN_FAST_CORE_MIRROR_V1",
+  "revision": "1.0-fast-core",
+  "coverage_revision": "1.1-owned-priority",
+  "generated_at": "2026-10-03T23:47:37.453396Z",
+  "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "status": "OK",
+  "files": {
+    "health.json": {
+      "ok": true,
+      "schema_ok": true,
+      "attempts": 1,
+      "source_retrieved_at": "2026-10-03T23:46:31.343615Z"
+    },
+    "universe.json": {
+      "ok": true,
+      "schema_ok": true,
+      "attempts": 1,
+      "source_retrieved_at": "2026-10-03T23:46:35.885132Z"
+    },
+    "owned-quotes.json": {
+      "ok": true,
+      "schema_ok": true,
+      "attempts": 1,
+      "requested_pairs": [
+        "XBTEUR",
+        "ETHEUR",
+        "SOLEUR",
+        "XDGEUR",
+        "LTCEUR",
+        "SUIEUR",
+        "LINKEUR",
+        "BNBEUR",
+        "AAVEEUR",
+        "ONDOEUR",
+        "INJEUR",
+        "PENDLEEUR",
+        "RENDEREUR",
+        "TAOEUR",
+        "GALAEUR",
+        "NIGHTEUR",
+        "MEGAEUR"
+      ],
+      "logical_pairs": [
+        "XBTEUR",
+        "ETHEUR",
+        "SOLEUR",
+        "DOGEEUR",
+        "LTCEUR",
+        "SUIEUR",
+        "LINKEUR",
+        "BNBEUR",
+        "AAVEEUR",
+        "ONDOEUR",
+        "INJEUR",
+        "PENDLEEUR",
+        "RENDEREUR",
+        "TAOEUR",
+        "GALAEUR",
+        "NIGHTEUR",
+        "MEGAEUR"
+      ],
+      "source_retrieved_at": "2026-10-03T23:46:37.118201Z",
+      "research_usable": true,
+      "expected_count": 17,
+      "received_count": 17,
+      "missing_pairs": [],
+      "duplicate_pairs": [],
+      "unexpected_pairs": [],
+      "invalid_or_stale_pairs": [],
+      "executable_evidence": false
+    }
+  },
+  "candidate_pairs_attempted": [
+    {
+      "logical_pair": "GALAEUR",
+      "requested_pair": "GALAEUR",
+      "role": "OWNED_PRIORITY",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "NIGHTEUR",
+      "requested_pair": "NIGHTEUR",
+      "role": "OWNED_PRIORITY",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "MEGAEUR",
+      "requested_pair": "MEGAEUR",
+      "role": "OWNED_PRIORITY",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "GLMRUSD",
+      "requested_pair": "GLMRUSD",
+      "role": "DISCOVERY_ONLY",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "TREADUSD",
+      "requested_pair": "TREADUSD",
+      "role": "DISCOVERY_ONLY",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "STRKEUR",
+      "requested_pair": "STRKEUR",
+      "role": "DISCOVERY_ONLY",
+      "attempts": 1
+    }
+  ],
+  "candidate_pairs_ok": [
+    "GALAEUR",
+    "NIGHTEUR",
+    "MEGAEUR",
+    "GLMRUSD",
+    "TREADUSD",
+    "STRKEUR"
+  ],
+  "candidate_pairs_partial_or_failed": [],
+  "owned_priority_status": {
+    "GALAEUR": {
+      "data_health": "DATA_OK",
+      "source_data_health": "DATA_OK",
+      "pair_matches": true,
+      "fresh_quote_evidence": true,
+      "spread_observed_at": "2026-10-03T23:46:34.000Z",
+      "spread_source_retrieved_at": "2026-10-03T23:46:43.866Z",
+      "depth_source_retrieved_at": "2026-10-03T23:46:44.952Z",
+      "best_bid": 0.002229,
+      "best_ask": 0.002231,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    },
+    "NIGHTEUR": {
+      "data_health": "DATA_OK",
+      "source_data_health": "DATA_OK",
+      "pair_matches": true,
+      "fresh_quote_evidence": true,
+      "spread_observed_at": "2026-10-03T23:46:52.000Z",
+      "spread_source_retrieved_at": "2026-10-03T23:46:53.189Z",
+      "depth_source_retrieved_at": "2026-10-03T23:46:54.293Z",
+      "best_bid": 0.04264,
+      "best_ask": 0.04275,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    },
+    "MEGAEUR": {
+      "data_health": "DATA_OK",
+      "source_data_health": "DATA_OK",
+      "pair_matches": true,
+      "fresh_quote_evidence": true,
+      "spread_observed_at": "2026-10-03T23:46:57.000Z",
+      "spread_source_retrieved_at": "2026-10-03T23:47:02.515Z",
+      "depth_source_retrieved_at": "2026-10-03T23:47:03.616Z",
+      "best_bid": 0.04456,
+      "best_ask": 0.04461,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    }
+  },
+  "notes": [
+    "Public read-only evidence only. No private APIs, trades or account data.",
+    "Recompute freshness from embedded source times.",
+    "Ticker rows are research support, not timestamped executable evidence.",
+    "Priority-owned candidates are mandatory and separate from max-three Movers discovery.",
+    "Optional discovery failure does not fail the owned-risk core.",
+    "An evidence snapshot is not a BUY/SELL signal or independent cross-check."
+  ],
+  "summary": {
+    "core_ok": true,
+    "health_schema_ok": true,
+    "universe_ok": true,
+    "owned_quotes_research_usable": true,
+    "owned_quotes_executable_evidence": false,
+    "owned_priority_complete": true,
+    "owned_priority_count": 3,
+    "candidate_ok_count": 6,
+    "candidate_partial_or_failed_count": 0
+  }
+}
