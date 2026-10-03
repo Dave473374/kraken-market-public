@@ -1,0 +1,75 @@
+name: Crypto v2.3 Shadow research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "research/v23_shadow/**"
+      - ".github/workflows/research-v23-shadow.yml"
+      - "config/assets.json"
+      - "scripts/quote_guard.py"
+      - "scripts/test_quote_guard.py"
+  schedule:
+    - cron: "37 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-v23-shadow-research
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    if: github.repository == 'Dave473374/kraken-market-public' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Read code and M1 market snapshot
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read FAST CORE snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: core-live
+          path: mirror-core
+          persist-credentials: false
+      - name: Checkout isolated research history
+        uses: actions/checkout@v4
+        with:
+          ref: shadow-v23-live
+          path: shadow-output
+          fetch-depth: 1
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test research and quote integrity
+        run: |
+          python -m unittest discover -s research/v23_shadow -p 'test_*.py' -v
+          python -m unittest discover -s scripts -p test_quote_guard.py -v
+          python -m unittest discover -s scripts -p test_owned_coverage.py -v
+      - name: Run bounded public-data research
+        run: >-
+          python research/v23_shadow/run.py
+          --main-data data
+          --core-data mirror-core/data/core
+          --out shadow-output/research/v23
+      - name: Publish research only
+        working-directory: shadow-output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "shadow-v23-live"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/v23
+          if git diff --cached --name-only | grep -v '^research/v23/'; then
+            echo 'Unsafe publication path' >&2
+            exit 1
+          fi
+          git diff --cached --quiet && exit 0
+          git commit -m 'Record Crypto v2.3 research observation (no real trades)'
+          git push origin HEAD:refs/heads/shadow-v23-live
