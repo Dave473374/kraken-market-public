@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-03T03:16:08.402263Z",
+  "generated_at": "2026-10-03T04:53:41.910781Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T03:13:19.943276Z"
+      "source_retrieved_at": "2026-10-03T04:50:02.489887Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T03:13:24.539461Z"
+      "source_retrieved_at": "2026-10-03T04:50:07.167829Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -38,7 +38,10 @@
         "INJEUR",
         "PENDLEEUR",
         "RENDEREUR",
-        "TAOEUR"
+        "TAOEUR",
+        "GALAEUR",
+        "NIGHTEUR",
+        "MEGAEUR"
       ],
       "logical_pairs": [
         "XBTEUR",
@@ -54,16 +57,19 @@
         "INJEUR",
         "PENDLEEUR",
         "RENDEREUR",
-        "TAOEUR"
+        "TAOEUR",
+        "GALAEUR",
+        "NIGHTEUR",
+        "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-03T03:13:25.835274Z"
+      "source_retrieved_at": "2026-10-03T04:50:08.486825Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
@@ -88,7 +94,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "LINKEUR",
@@ -113,7 +119,7 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -131,18 +137,33 @@
       "attempts": 1
     },
     {
-      "logical_pair": "CTUSD",
-      "requested_pair": "CTUSD",
+      "logical_pair": "GALAEUR",
+      "requested_pair": "GALAEUR",
+      "attempts": 2
+    },
+    {
+      "logical_pair": "NIGHTEUR",
+      "requested_pair": "NIGHTEUR",
       "attempts": 1
     },
     {
-      "logical_pair": "ENJUSD",
-      "requested_pair": "ENJUSD",
+      "logical_pair": "MEGAEUR",
+      "requested_pair": "MEGAEUR",
       "attempts": 1
     },
     {
-      "logical_pair": "SANDUSD",
-      "requested_pair": "SANDUSD",
+      "logical_pair": "SANDEUR",
+      "requested_pair": "SANDEUR",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "TREADUSD",
+      "requested_pair": "TREADUSD",
+      "attempts": 2
+    },
+    {
+      "logical_pair": "MANAEUR",
+      "requested_pair": "MANAEUR",
       "attempts": 1
     }
   ],
@@ -160,40 +181,15 @@
     "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
-    "ENJUSD"
+    "TAOEUR",
+    "GALAEUR",
+    "NIGHTEUR",
+    "MEGAEUR",
+    "SANDEUR",
+    "TREADUSD",
+    "MANAEUR"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "TAOEUR",
-      "requested_pair": "TAOEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "CTUSD",
-      "requested_pair": "CTUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "SANDUSD",
-      "requested_pair": "SANDUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
@@ -207,7 +203,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 14,
-    "candidate_partial_or_failed_count": 3
+    "candidate_ok_count": 20,
+    "candidate_partial_or_failed_count": 0
   }
 }
