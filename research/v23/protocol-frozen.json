@@ -1,0 +1,60 @@
+{
+  "auto_promotion": false,
+  "automatic_trading": false,
+  "candidate_retention_count": 20,
+  "candidate_retention_hours": 48,
+  "cost_scenarios_are_assumptions_not_user_fees": true,
+  "cost_scenarios_per_side": {
+    "BASE": 0.0175,
+    "LOW": 0.0125,
+    "STRESS": 0.025
+  },
+  "depth_multiple": 10,
+  "discovery_limit": 3,
+  "exit_variants": [
+    "STRUCTURE_2R",
+    "HALF_1_5R_TRAIL",
+    "TRAIL_ONLY",
+    "TIME_24H",
+    "HOLD_30D"
+  ],
+  "experiment_id": "V23-SHADOW-20261003-01",
+  "max_new_24h_gain_pct": 30,
+  "max_new_setups_per_run": 1,
+  "max_open_cohorts": 5,
+  "max_public_requests_per_run": 26,
+  "max_spread_pct": 0.8,
+  "max_stop_distance_pct": 20,
+  "min_aggregate_turnover_eur": 40000,
+  "min_pair_turnover_eur": 15000,
+  "min_stop_distance_pct": 2,
+  "min_target_room_over_base_cost_multiple": 3,
+  "observation_gap_seconds": 5400,
+  "observe_only_assets": [
+    "BTC",
+    "XBT",
+    "ETH",
+    "SOL",
+    "DOGE",
+    "XDG",
+    "LTC",
+    "SHIB"
+  ],
+  "paired_review_checkpoint": 30,
+  "pending_expiry_seconds": 21600,
+  "production_changes_allowed": false,
+  "promotion_policy": "MANUAL_ONLY; checkpoint is not proof; comparison to real v2.2 is unavailable without its actual signal and execution history",
+  "public_request_pause_seconds": 1.0,
+  "public_request_timeout_seconds": 15,
+  "quote_max_age_seconds": 600,
+  "reentry_cooldown_seconds": 86400,
+  "role": "RESEARCH_ONLY",
+  "schema": "CRYPTO_V23_SHADOW_PROTOCOL_V1",
+  "synthetic_entry_budget_eur": 20,
+  "synthetic_initial_cash_eur": 1000,
+  "watch_pairs": [
+    "IOEUR",
+    "HYPEEUR",
+    "SHIBEUR"
+  ]
+}
