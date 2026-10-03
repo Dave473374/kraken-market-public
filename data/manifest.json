@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-02T23:31:33.586585Z",
+  "generated_at": "2026-10-03T03:16:08.402263Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T23:28:48.043670Z"
+      "source_retrieved_at": "2026-10-03T03:13:19.943276Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-02T23:28:52.613289Z"
+      "source_retrieved_at": "2026-10-03T03:13:24.539461Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -56,7 +56,7 @@
         "RENDEREUR",
         "TAOEUR"
       ],
-      "source_retrieved_at": "2026-10-02T23:28:53.860225Z"
+      "source_retrieved_at": "2026-10-03T03:13:25.835274Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -131,18 +131,18 @@
       "attempts": 1
     },
     {
+      "logical_pair": "CTUSD",
+      "requested_pair": "CTUSD",
+      "attempts": 1
+    },
+    {
+      "logical_pair": "ENJUSD",
+      "requested_pair": "ENJUSD",
+      "attempts": 1
+    },
+    {
       "logical_pair": "SANDUSD",
       "requested_pair": "SANDUSD",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "NIGHTEUR",
-      "requested_pair": "NIGHTEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "GALAEUR",
-      "requested_pair": "GALAEUR",
       "attempts": 1
     }
   ],
@@ -157,17 +157,35 @@
     "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
+    "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
-    "TAOEUR",
-    "SANDUSD",
-    "NIGHTEUR",
-    "GALAEUR"
+    "ENJUSD"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
+      "logical_pair": "TAOEUR",
+      "requested_pair": "TAOEUR",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "CTUSD",
+      "requested_pair": "CTUSD",
+      "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "SANDUSD",
+      "requested_pair": "SANDUSD",
       "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
@@ -189,7 +207,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 16,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 14,
+    "candidate_partial_or_failed_count": 3
   }
 }
