@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-03T06:14:23.850092Z",
+  "generated_at": "2026-10-03T09:38:05.062860Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T06:10:54.483610Z"
+      "source_retrieved_at": "2026-10-03T09:34:35.433247Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T06:10:59.086416Z"
+      "source_retrieved_at": "2026-10-03T09:34:40.045732Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -62,7 +62,7 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-03T06:11:00.367858Z",
+      "source_retrieved_at": "2026-10-03T09:34:41.332903Z",
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
@@ -75,12 +75,12 @@
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 3
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
@@ -110,7 +110,7 @@
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "AAVEEUR",
@@ -145,7 +145,7 @@
     {
       "logical_pair": "GALAEUR",
       "requested_pair": "GALAEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "NIGHTEUR",
@@ -158,24 +158,23 @@
       "attempts": 1
     },
     {
-      "logical_pair": "SANDEUR",
-      "requested_pair": "SANDEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "TREADUSD",
-      "requested_pair": "TREADUSD",
+      "logical_pair": "FOLDUSD",
+      "requested_pair": "FOLDUSD",
       "attempts": 1
     },
     {
       "logical_pair": "SYNEUR",
       "requested_pair": "SYNEUR",
       "attempts": 1
+    },
+    {
+      "logical_pair": "XDPUSD",
+      "requested_pair": "XDPUSD",
+      "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
-    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
     "LTCEUR",
@@ -191,13 +190,14 @@
     "GALAEUR",
     "NIGHTEUR",
     "MEGAEUR",
-    "SANDEUR",
-    "SYNEUR"
+    "FOLDUSD",
+    "SYNEUR",
+    "XDPUSD"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "TREADUSD",
-      "requested_pair": "TREADUSD",
+      "logical_pair": "ETHEUR",
+      "requested_pair": "ETHEUR",
       "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
