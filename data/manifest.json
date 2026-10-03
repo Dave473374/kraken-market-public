@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-03T09:38:05.062860Z",
+  "generated_at": "2026-10-03T14:32:49.213982Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T09:34:35.433247Z"
+      "source_retrieved_at": "2026-10-03T14:29:25.206463Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T09:34:40.045732Z"
+      "source_retrieved_at": "2026-10-03T14:29:29.897584Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -62,7 +62,7 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-03T09:34:41.332903Z",
+      "source_retrieved_at": "2026-10-03T14:29:31.244910Z",
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
@@ -75,12 +75,12 @@
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 3
+      "attempts": 1
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "SOLEUR",
@@ -158,26 +158,26 @@
       "attempts": 1
     },
     {
-      "logical_pair": "FOLDUSD",
-      "requested_pair": "FOLDUSD",
+      "logical_pair": "GLMRUSD",
+      "requested_pair": "GLMRUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "SYNEUR",
-      "requested_pair": "SYNEUR",
+      "logical_pair": "TREADUSD",
+      "requested_pair": "TREADUSD",
       "attempts": 1
     },
     {
-      "logical_pair": "XDPUSD",
-      "requested_pair": "XDPUSD",
+      "logical_pair": "ZROEUR",
+      "requested_pair": "ZROEUR",
       "attempts": 1
     }
   ],
   "candidate_pairs_ok": [
     "XBTEUR",
+    "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
-    "LTCEUR",
     "SUIEUR",
     "LINKEUR",
     "BNBEUR",
@@ -190,14 +190,14 @@
     "GALAEUR",
     "NIGHTEUR",
     "MEGAEUR",
-    "FOLDUSD",
-    "SYNEUR",
-    "XDPUSD"
+    "GLMRUSD",
+    "TREADUSD",
+    "ZROEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
+      "logical_pair": "LTCEUR",
+      "requested_pair": "LTCEUR",
       "attempts": 1,
       "transport_ok": true,
       "schema_ok": true,
