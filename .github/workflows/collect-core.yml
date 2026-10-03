@@ -8,6 +8,9 @@ on:
     paths:
       - ".github/workflows/collect-core.yml"
       - "scripts/collect_core.py"
+      - "scripts/collect.py"
+      - "scripts/test_owned_coverage.py"
+      - "config/assets.json"
   schedule:
     - cron: "17,47 * * * *"
 
@@ -34,6 +37,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test owned coverage guards
+        run: python -m unittest discover -s scripts -p test_owned_coverage.py -v
+
       - name: Keep fast core fresh
         shell: bash
         run: |
@@ -41,9 +47,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Keep core-live fresh for about 5.5 hours inside one workflow run.
-          # The external cron only needs to hand off/restart periodically.
-          # If GitHub delays scheduled starts, the current run keeps publishing.
+          # Publish repeatedly between scheduler starts; job timeout bounds runtime.
+          # Three minutes is the pause after collection, not a freshness guarantee.
           for cycle in $(seq 1 92); do
             echo "=== FAST CORE cycle $cycle/92 ==="
 
