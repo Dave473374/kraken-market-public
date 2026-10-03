@@ -2,6 +2,7 @@
 import json, os, sys, time, urllib.parse, urllib.request, urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
+from quote_guard import coverage
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
@@ -66,11 +67,12 @@ def candidate_usable(result):
     body=result.get("body",{})
     return body.get("data_health")=="DATA_OK" and not body.get("pair_error")
 
-def quotes_research_usable(result,expected_count):
-    if not schema_ok(result): return False
-    body=result.get("body",{})
-    rows=body.get("rows"); unresolved=body.get("unresolved") or []
-    return isinstance(rows,list) and len(rows)==expected_count and len(unresolved)==0
+def quotes_research_usable(result,expected_pairs):
+    # Kept as a compatibility wrapper; the expected identities must be known.
+    if isinstance(expected_pairs, int):
+        if expected_pairs != len(CFG["quotes_pairs"]): return False
+        expected_pairs = CFG["quotes_pairs"]
+    return coverage(result, expected_pairs, EXPECTED, ALIASES)["research_usable"]
 
 def save_result(filename,result):
     if result.get("ok"):
@@ -127,7 +129,7 @@ def main():
     requested_quotes=[request_pair(p) for p in logical_quotes]
     quotes=public_get("/quotes.json?pairs="+urllib.parse.quote(",".join(requested_quotes),safe=","))
     save_result("owned-quotes.json",quotes)
-    quotes_ok=quotes_research_usable(quotes,len(logical_quotes))
+    quotes_ok=quotes_research_usable(quotes,logical_quotes)
     manifest["files"]["owned-quotes.json"]={
       "ok":quotes.get("ok",False),
       "schema_ok":schema_ok(quotes),
@@ -165,6 +167,9 @@ def main():
             })
         time.sleep(delay)
 
+    quote_coverage = coverage(quotes, logical_quotes, EXPECTED, ALIASES)
+    manifest["files"]["owned-quotes.json"].update(quote_coverage)
+    quotes_ok = quote_coverage["research_usable"]
     core_ok=schema_ok(universe) and quotes_ok
     manifest["status"]="OK" if core_ok else "PARTIAL"
     manifest["generated_at"]=now_iso()
