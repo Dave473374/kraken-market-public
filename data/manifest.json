@@ -1,7 +1,7 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-03T14:32:49.213982Z",
+  "generated_at": "2026-10-03T18:32:21.363294Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +12,12 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T14:29:25.206463Z"
+      "source_retrieved_at": "2026-10-03T18:28:31.148170Z"
     },
     "universe.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-03T14:29:29.897584Z"
+      "source_retrieved_at": "2026-10-03T18:28:35.708300Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -62,7 +62,7 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-03T14:29:31.244910Z",
+      "source_retrieved_at": "2026-10-03T18:28:36.953611Z",
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
@@ -75,12 +75,12 @@
     {
       "logical_pair": "XBTEUR",
       "requested_pair": "XBTEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
-      "attempts": 2
+      "attempts": 1
     },
     {
       "logical_pair": "SOLEUR",
@@ -90,7 +90,7 @@
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "LTCEUR",
@@ -100,7 +100,7 @@
     {
       "logical_pair": "SUIEUR",
       "requested_pair": "SUIEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "LINKEUR",
@@ -110,7 +110,7 @@
     {
       "logical_pair": "BNBEUR",
       "requested_pair": "BNBEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "AAVEEUR",
@@ -125,12 +125,12 @@
     {
       "logical_pair": "INJEUR",
       "requested_pair": "INJEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "PENDLEEUR",
       "requested_pair": "PENDLEEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "RENDEREUR",
@@ -140,7 +140,7 @@
     {
       "logical_pair": "TAOEUR",
       "requested_pair": "TAOEUR",
-      "attempts": 1
+      "attempts": 2
     },
     {
       "logical_pair": "GALAEUR",
@@ -163,14 +163,14 @@
       "attempts": 1
     },
     {
-      "logical_pair": "TREADUSD",
-      "requested_pair": "TREADUSD",
+      "logical_pair": "FUNEUR",
+      "requested_pair": "FUNEUR",
       "attempts": 1
     },
     {
-      "logical_pair": "ZROEUR",
-      "requested_pair": "ZROEUR",
-      "attempts": 1
+      "logical_pair": "STRKEUR",
+      "requested_pair": "STRKEUR",
+      "attempts": 2
     }
   ],
   "candidate_pairs_ok": [
@@ -178,27 +178,36 @@
     "ETHEUR",
     "SOLEUR",
     "DOGEEUR",
+    "LTCEUR",
     "SUIEUR",
     "LINKEUR",
     "BNBEUR",
-    "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
-    "TAOEUR",
     "GALAEUR",
     "NIGHTEUR",
     "MEGAEUR",
     "GLMRUSD",
-    "TREADUSD",
-    "ZROEUR"
+    "FUNEUR",
+    "STRKEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "LTCEUR",
-      "requested_pair": "LTCEUR",
+      "logical_pair": "AAVEEUR",
+      "requested_pair": "AAVEEUR",
       "attempts": 1,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
+      "pair_error": null,
+      "error": null
+    },
+    {
+      "logical_pair": "TAOEUR",
+      "requested_pair": "TAOEUR",
+      "attempts": 2,
       "transport_ok": true,
       "schema_ok": true,
       "data_health": "PARTIAL_DATA",
@@ -219,7 +228,7 @@
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 19,
-    "candidate_partial_or_failed_count": 1
+    "candidate_ok_count": 18,
+    "candidate_partial_or_failed_count": 2
   }
 }
