@@ -196,8 +196,8 @@
   "convert_execution": "UNOBSERVED_COST_SENSITIVITY_ONLY",
   "evidence_stage": "COLLECTING",
   "fully_closed_paired_cohorts": 0,
-  "generated_at": "2026-10-03T12:02:36.119331Z",
-  "git_run_id": "37121382173",
+  "generated_at": "2026-10-03T16:44:00.155288Z",
+  "git_run_id": "37137752791",
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "independent_crosscheck": "NOT_COLLECTED",
   "limitations": [
@@ -211,12 +211,12 @@
   "market_coverage": {
     "data_health": "PARTIAL_DATA",
     "discovery_pairs": [
-      "SYNEUR",
-      "TRACUSD",
-      "TREADUSD"
+      "ZROEUR",
+      "GLMRUSD",
+      "STRKEUR"
     ],
-    "public_429_stop": true,
-    "public_requests": 20,
+    "public_429_stop": false,
+    "public_requests": 19,
     "scope": "All configured watched pairs plus open shadow positions plus at most 3 discovery candidates; not an exhaustive deep scan.",
     "selected_pairs": [
       "XBTEUR",
@@ -239,21 +239,17 @@
       "IOEUR",
       "HYPEEUR",
       "SHIBEUR",
-      "SYNEUR",
-      "TRACUSD",
-      "TREADUSD"
+      "ZROEUR",
+      "GLMRUSD",
+      "STRKEUR"
     ],
     "unavailable": {
-      "ETHEUR": "PARTIAL_SOURCE",
-      "IOEUR": "PARTIAL_SOURCE",
-      "SHIBEUR": "HTTP_429",
-      "SYNEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
-      "TRACUSD": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
-      "TREADUSD": "PUBLIC_REQUEST_BUDGET_OR_429_STOP"
+      "IOEUR": "PARTIAL_SOURCE"
     },
     "universe_fresh": true,
     "valid_pairs": [
       "XBTEUR",
+      "ETHEUR",
       "SOLEUR",
       "DOGEEUR",
       "LTCEUR",
@@ -269,7 +265,11 @@
       "GALAEUR",
       "NIGHTEUR",
       "MEGAEUR",
-      "HYPEEUR"
+      "HYPEEUR",
+      "SHIBEUR",
+      "ZROEUR",
+      "GLMRUSD",
+      "STRKEUR"
     ],
     "watched_pairs": [
       "XBTEUR",
@@ -294,17 +294,17 @@
       "SHIBEUR"
     ]
   },
-  "observation_gaps": 1,
-  "pending_setups": 0,
+  "observation_gaps": 2,
+  "pending_setups": 1,
   "production_changes_allowed": false,
   "production_mutations_by_this_job": false,
   "production_v22_comparison": "UNAVAILABLE_NO_ACTUAL_SIGNAL_HISTORY_IMPORTED",
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "realized_user_pnl": null,
   "role": "RESEARCH_ONLY",
-  "run_count": 2,
+  "run_count": 3,
   "schema": "CRYPTO_V23_SHADOW_REPORT_V1",
-  "source_code_commit": "8d8a4e01acdafce87cabb5a806f4a7c2c2dbe02e",
+  "source_code_commit": "9ca8aa1f55c2424118820bbdaae5b7a42ce0fc73",
   "started_at": "2026-10-03T06:17:07.833490Z",
   "unique_entry_cohorts": 0,
   "variant_cost_paths_are_not_independent_trades": true
