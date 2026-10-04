@@ -20,7 +20,7 @@ REPO = 'Dave473374/kraken-market-public'
 BRANCH = 'paper-sol500-20261004'
 REL = 'research/paper-sol500-20261004'
 WORKFLOW = 'paper-sol500-20261004.yml'
-REV = 'SUPERVISOR-1.0-20261004'
+REV = 'SUPERVISOR-1.1-20261004'
 INTERVAL = 300
 END = int(datetime(2026, 10, 11, 7, tzinfo=timezone.utc).timestamp())
 HARD_STOP = END + 5400  # Original scheduler shutdown; NOT an extended trading window.
@@ -82,7 +82,9 @@ def next_due(state, now):
         raise ValueError('Future last_attempt_at')
     due = max(now, last + INTERVAL)
     # Close at fixed END, not another full polling interval later.
-    if now < END:
+    if last < END <= now:
+        due = now  # Recheck after sleep must not postpone the first end observation.
+    elif now < END:
         due = min(due, END)
     return due if due < HARD_STOP else None
 
