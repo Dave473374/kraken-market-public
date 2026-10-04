@@ -1,0 +1,42 @@
+{
+  "id": "SOL500-FWD-20261004-v1",
+  "paper_only": true,
+  "automatic_real_trading": false,
+  "start_utc": "2026-10-04T07:00:00Z",
+  "end_utc": "2026-10-11T07:00:00Z",
+  "capital_eur": 500.0,
+  "pair": "SOLEUR",
+  "venue": "Kraken international spot",
+  "fee_each_side": 0.008,
+  "additional_adverse_slippage_each_side": 0.001,
+  "fee_assumption": "Frozen public Tier 1 taker rate; no account-specific discount assumed",
+  "signal": "Closed 1h SMA20>SMA50, close>SMA50, SMA20 rising vs 3h ago; volume>=0.8*prior20 mean; breakout above prior6 highs OR pullback low<=SMA20 and bullish close>SMA20 and previous close",
+  "entry_bar_max_age_seconds": 900,
+  "entry_limit_rolling_24h": 2,
+  "entry_spread_max": 0.003,
+  "risk_budget": "min(10 EUR,2% net liquidating equity)",
+  "max_position_all_in": "80% net liquidating equity; one position",
+  "initial_stop_distance": "max(3%,2.5*ATR14/entry); skip above6%",
+  "take_profit": "Sell half at observed bid >= entry*1.06; rest has no fixed profit ceiling",
+  "after_partial": "Cost-adjusted breakeven stop and 3% trailing from highest OBSERVED bid",
+  "trend_exit": "Two latest closed 1h closes below their SMA20",
+  "max_hold_hours": 72,
+  "cooldown_after_close_hours": 3,
+  "three_consecutive_losses_pause_hours": 24,
+  "daily_loss_pause": "4% below local-day starting net liquidation equity; close and pause until next local day",
+  "experiment_stop": "Net liquidation equity<=450 EUR triggers full exit and permanent halt",
+  "loss_limit_note": "Triggers, not guaranteed loss ceilings: fills occur at actual later observed quotes",
+  "poll_target_seconds": 300,
+  "fills": "Walk observed book, then adverse slippage and fees. No invented intrabar or missed-poll executions",
+  "end_policy": "No new entries in last hour; close at first valid observation at/after fixed end; disclose delay",
+  "sources": [
+    "https://www.kraken.com/features/fee-schedule",
+    "https://docs.kraken.com/api-reference/market-data/get-ohlc-data"
+  ],
+  "excluded": [
+    "tax",
+    "hosting cost",
+    "future account-specific fees",
+    "actual order matching/queue"
+  ]
+}
