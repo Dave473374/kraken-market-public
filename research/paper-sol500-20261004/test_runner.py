@@ -88,6 +88,15 @@ class SupervisorTests(unittest.TestCase):
         s, _ = ledger(); s['last_attempt_at'] = e.iso(e.END - 10)
         self.assertEqual(r.next_due(s, e.END - 9), e.END)
 
+    def test_end_recheck_after_sleep_is_immediate(self):
+        s, _ = ledger(); s['last_attempt_at'] = e.iso(e.END - 120)
+        self.assertEqual(r.next_due(s, e.END), e.END)
+        self.assertEqual(r.next_due(s, e.END + 1), e.END + 1)
+
+    def test_failed_end_observation_retries_at_normal_cadence(self):
+        s, _ = ledger(); s['last_attempt_at'] = e.iso(e.END)
+        self.assertEqual(r.next_due(s, e.END + 1), e.END + 300)
+
     def test_no_more_ticks_after_final(self):
         s, _ = ledger(); s['final'] = True
         self.assertIsNone(r.next_due(s, e.END))
