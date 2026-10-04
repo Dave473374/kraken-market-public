@@ -7,57 +7,73 @@ on:
       - 'research/paper-sol500-20261004/**'
   workflow_dispatch:
   schedule:
-    - cron: '2-57/5 * 4-11 10 *'
+    # Backup starter only. Actual 300-second cadence is inside runner.py.
+    - cron: '17,47 * 4-11 10 *'
 permissions:
   contents: write
   actions: write
 concurrency:
+  # Same lock as before: never two writers; keep the active worker running.
   group: paper-sol500-20261004
   cancel-in-progress: false
 jobs:
   paper:
+    if: github.repository == 'Dave473374/kraken-market-public' && github.ref == 'refs/heads/main' && github.event.repository.private == false
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 195
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           path: engine
           persist-credentials: false
-      - name: Check fixed trial window and engine availability
+      - name: Check fixed operational window
         id: gate
         shell: bash
         run: |
-          if [ -f engine/research/paper-sol500-20261004/engine.py ] && [ "$(date -u +%s)" -le "$(date -u -d '2026-10-11 09:00:00 UTC' +%s)" ]; then
+          if [ "$(date -u +%s)" -lt "$(date -u -d '2026-10-11 08:30:00 UTC' +%s)" ]; then
             echo 'run=true' >> "$GITHUB_OUTPUT"
           else
             echo 'run=false' >> "$GITHUB_OUTPUT"
           fi
+      - name: Test unchanged strategy and operational safeguards
+        if: steps.gate.outputs.run == 'true'
+        run: python3 -m unittest discover -s engine/research/paper-sol500-20261004 -p 'test_*.py' -v
       - uses: actions/checkout@v4
         if: steps.gate.outputs.run == 'true'
         with:
           ref: paper-sol500-20261004
           path: ledger
-      - name: Evaluate public market data; model paper fills only
+          fetch-depth: 1
+      - name: Supervise public-only paper engine and persist every observation
         if: steps.gate.outputs.run == 'true'
-        run: python3 engine/research/paper-sol500-20261004/engine.py --state-dir ledger/research/paper-sol500-20261004
-      - name: Persist isolated paper ledger
-        if: always() && steps.gate.outputs.run == 'true'
-        working-directory: ledger
-        shell: bash
-        run: |
-          git config user.name 'paper-simulation[bot]'
-          git config user.email 'paper-simulation@users.noreply.github.com'
-          git add research/paper-sol500-20261004
-          if ! git diff --cached --quiet; then
-            git commit -m 'Record SOL500 paper observation [skip ci]'
-            git push origin HEAD:paper-sol500-20261004
-          fi
-      - name: Disable this trial scheduler after fixed end
-        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PYTHONUNBUFFERED: '1'
+          # Short bootstrap exercises handoff; normal workers run for three hours.
+          BURST_MINUTES: ${{ github.event_name == 'push' && '6' || '180' }}
+        run: python3 engine/research/paper-sol500-20261004/runner.py --ledger ledger --minutes "$BURST_MINUTES"
+      - name: Preserve unpublished recovery evidence on failure
+        if: failure() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sol500-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            ledger/research/paper-sol500-20261004/state.json
+            ledger/research/paper-sol500-20261004/report.json
+            ledger/research/paper-sol500-20261004/operations.json
+      - name: Disable only this scheduler after completion or fixed cutoff
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          if [ "$(date -u +%s)" -ge "$(date -u -d '2026-10-11 08:30:00 UTC' +%s)" ]; then
+          finished=false
+          if [ -f ledger/research/paper-sol500-20261004/state.json ]; then
+            finished=$(python3 -c "import json; print(str(json.load(open('ledger/research/paper-sol500-20261004/state.json')).get('final') is True).lower())")
+          fi
+          if [ "$finished" = true ] || [ "$(date -u +%s)" -ge "$(date -u -d '2026-10-11 08:30:00 UTC' +%s)" ]; then
             gh api --method PUT repos/${{ github.repository }}/actions/workflows/paper-sol500-20261004.yml/disable
           fi
