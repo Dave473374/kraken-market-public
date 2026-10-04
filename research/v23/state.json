@@ -1,5 +1,68 @@
 {
   "cohorts": {
+    "2171c4c08028b5f742448b5a": {
+      "asset": "SUI",
+      "budget_eur": 20,
+      "decision_at": "2026-10-04T18:47:40.899180Z",
+      "decision_quote_retrieved_at": "2026-10-04T18:47:18.912Z",
+      "decision_source_hash": "196b711e127722e4625e1d6dc486f6ed7c73f15ed92cbe7bebc27ed72994cd1a",
+      "entered_at": "2026-10-04T22:33:16.811785Z",
+      "entry_ask": 1.074,
+      "entry_ask_eur": 1.074,
+      "entry_quote_retrieved_at": "2026-10-04T22:30:55.751Z",
+      "entry_source_hash": "ba03ab03167524c1b88bc5da6591c7a3150fb0556c234675b7e04698cecbd653",
+      "initial_risk": 0.03999285714285716,
+      "pair": "SUIEUR",
+      "paths": {
+        "HALF_1_5R_TRAIL": {
+          "exits": [],
+          "highest_observed": 1.0735,
+          "last_bar_end": 1791144000.0,
+          "partial_done": false,
+          "remaining": 1.0,
+          "trail_stop": 1.034007142857143
+        },
+        "HOLD_30D": {
+          "exits": [],
+          "highest_observed": 1.0735,
+          "last_bar_end": 1791144000.0,
+          "partial_done": false,
+          "remaining": 1.0,
+          "trail_stop": 1.034007142857143
+        },
+        "STRUCTURE_2R": {
+          "exits": [],
+          "highest_observed": 1.0735,
+          "last_bar_end": 1791144000.0,
+          "partial_done": false,
+          "remaining": 1.0,
+          "trail_stop": 1.034007142857143
+        },
+        "TIME_24H": {
+          "exits": [],
+          "highest_observed": 1.0735,
+          "last_bar_end": 1791144000.0,
+          "partial_done": false,
+          "remaining": 1.0,
+          "trail_stop": 1.034007142857143
+        },
+        "TRAIL_ONLY": {
+          "exits": [],
+          "highest_observed": 1.0735,
+          "last_bar_end": 1791144000.0,
+          "partial_done": false,
+          "remaining": 1.0,
+          "trail_stop": 1.034007142857143
+        }
+      },
+      "setup": {
+        "atr": 0.029571428571428564,
+        "bar_end": 1791129600.0,
+        "family": "TREND_PULLBACK",
+        "max_entry": 1.130585714285714,
+        "stop": 1.034007142857143
+      }
+    },
     "549715baf42b6982b5458ec2": {
       "asset": "ZRO",
       "budget_eur": 20,
@@ -17,7 +80,7 @@
         "HALF_1_5R_TRAIL": {
           "exits": [],
           "highest_observed": 1.831,
-          "last_bar_end": 1791100800.0,
+          "last_bar_end": 1791144000.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.5085892857142855
@@ -25,7 +88,7 @@
         "HOLD_30D": {
           "exits": [],
           "highest_observed": 1.831,
-          "last_bar_end": 1791100800.0,
+          "last_bar_end": 1791144000.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.5085892857142855
@@ -33,26 +96,35 @@
         "STRUCTURE_2R": {
           "exits": [],
           "highest_observed": 1.831,
-          "last_bar_end": 1791100800.0,
+          "last_bar_end": 1791144000.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.5085892857142855
         },
         "TIME_24H": {
-          "exits": [],
+          "exits": [
+            {
+              "at": "2026-10-04T22:33:16.811785Z",
+              "bid_eur": 1.757,
+              "fraction": 1.0,
+              "quote_retrieved_at": "2026-10-04T22:32:40.589Z",
+              "reason": "TIME_STOP_NO_PROGRESS",
+              "source_hash": "e8fdaee2a967ced623e7d12d05dc54571f200a821d8cc4a070d5ed95bbb2f888"
+            }
+          ],
           "highest_observed": 1.831,
-          "last_bar_end": 1791100800.0,
-          "partial_done": false,
-          "remaining": 1.0,
+          "last_bar_end": 1791144000.0,
+          "partial_done": true,
+          "remaining": 0,
           "trail_stop": 1.5085892857142855
         },
         "TRAIL_ONLY": {
           "exits": [],
           "highest_observed": 1.831,
-          "last_bar_end": 1791100800.0,
+          "last_bar_end": 1791144000.0,
           "partial_done": false,
           "remaining": 1.0,
-          "trail_stop": 1.5820714285714284
+          "trail_stop": 1.583142857142857
         }
       },
       "setup": {
@@ -64,204 +136,215 @@
       }
     }
   },
-  "discovery_cursor": 27,
+  "discovery_cursor": 30,
   "equity": {
     "HALF_1_5R_TRAIL:BASE": {
-      "max_drawdown_pct": 0.09934975892422244,
+      "max_drawdown_pct": 0.218562947969815,
       "peak": 1000
     },
     "HALF_1_5R_TRAIL:LOW": {
-      "max_drawdown_pct": 0.08024354596458352,
+      "max_drawdown_pct": 0.1805501984127659,
       "peak": 1000
     },
     "HALF_1_5R_TRAIL:STRESS": {
-      "max_drawdown_pct": 0.12765957446808898,
+      "max_drawdown_pct": 0.2748867171305733,
       "peak": 1000
     },
     "HOLD_30D:BASE": {
-      "max_drawdown_pct": 0.09934975892422244,
+      "max_drawdown_pct": 0.218562947969815,
       "peak": 1000
     },
     "HOLD_30D:LOW": {
-      "max_drawdown_pct": 0.08024354596458352,
+      "max_drawdown_pct": 0.1805501984127659,
       "peak": 1000
     },
     "HOLD_30D:STRESS": {
-      "max_drawdown_pct": 0.12765957446808898,
+      "max_drawdown_pct": 0.2748867171305733,
       "peak": 1000
     },
     "STRUCTURE_2R:BASE": {
-      "max_drawdown_pct": 0.09934975892422244,
+      "max_drawdown_pct": 0.218562947969815,
       "peak": 1000
     },
     "STRUCTURE_2R:LOW": {
-      "max_drawdown_pct": 0.08024354596458352,
+      "max_drawdown_pct": 0.1805501984127659,
       "peak": 1000
     },
     "STRUCTURE_2R:STRESS": {
-      "max_drawdown_pct": 0.12765957446808898,
+      "max_drawdown_pct": 0.2748867171305733,
       "peak": 1000
     },
     "TIME_24H:BASE": {
-      "max_drawdown_pct": 0.09934975892422244,
+      "max_drawdown_pct": 0.218562947969815,
       "peak": 1000
     },
     "TIME_24H:LOW": {
-      "max_drawdown_pct": 0.08024354596458352,
+      "max_drawdown_pct": 0.1805501984127659,
       "peak": 1000
     },
     "TIME_24H:STRESS": {
-      "max_drawdown_pct": 0.12765957446808898,
+      "max_drawdown_pct": 0.2748867171305733,
       "peak": 1000
     },
     "TRAIL_ONLY:BASE": {
-      "max_drawdown_pct": 0.09934975892422244,
+      "max_drawdown_pct": 0.218562947969815,
       "peak": 1000
     },
     "TRAIL_ONLY:LOW": {
-      "max_drawdown_pct": 0.08024354596458352,
+      "max_drawdown_pct": 0.1805501984127659,
       "peak": 1000
     },
     "TRAIL_ONLY:STRESS": {
-      "max_drawdown_pct": 0.12765957446808898,
+      "max_drawdown_pct": 0.2748867171305733,
       "peak": 1000
     }
   },
-  "events_total": 11,
-  "gap_count": 8,
+  "events_total": 14,
+  "gap_count": 9,
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "last_entry": {
+    "SUIEUR": 1791153196.8117855,
     "ZROEUR": 1791058403.450653
   },
-  "last_run_at": "2026-10-04T18:47:40.899180Z",
+  "last_run_at": "2026-10-04T22:33:16.811785Z",
   "last_sources": {
-    "AAVEEUR": 1791108337.192,
+    "AAVEEUR": 1791153083.28,
     "BMTEUR": 1791108424.946,
-    "BNBEUR": 1791139657.712,
-    "DOGEEUR": 1791139620.154,
+    "BNBEUR": 1791153074.459,
+    "DOGEEUR": 1791153038.161,
     "ETHEUR": 1791139602.57,
-    "GALAEUR": 1791139412.222,
+    "GALAEUR": 1791152710.585,
     "GLMRUSD": 1791045429.681,
-    "HYPEEUR": 1791108396.093,
-    "INJEUR": 1791108356.064,
-    "LINKEUR": 1791139647.766,
-    "LTCEUR": 1791139630.145,
-    "MEGAEUR": 1791139431.282,
-    "NIGHTEUR": 1791139421.876,
-    "ONDOEUR": 1791108346.059,
-    "PENDLEEUR": 1791108366.053,
+    "HYPEEUR": 1791153141.816,
+    "INJEUR": 1791153103.131,
+    "LINKEUR": 1791153064.554,
+    "LTCEUR": 1791153046.917,
+    "MEGAEUR": 1791152728.182,
+    "NIGHTEUR": 1791152719.939,
+    "ONDOEUR": 1791153093.189,
+    "PENDLEEUR": 1791153111.962,
     "PHAUSD": 1791108449.324,
-    "RENDEREUR": 1791108374.95,
+    "PROSUSD": 1791153172.718,
+    "RENDEREUR": 1791153120.796,
     "SANDEUR": 1791008154.102,
-    "SHIBEUR": 1791108404.969,
-    "SOLEUR": 1791139611.375,
+    "SEUR": 1791153182.564,
+    "SHIBEUR": 1791153150.652,
+    "SOLEUR": 1791153029.246,
     "STRKEUR": 1791045838.038,
-    "SUIEUR": 1791139638.912,
+    "SUIEUR": 1791153055.751,
     "SYNEUR": 1791008173.757,
-    "TAOEUR": 1791108383.828,
+    "TAOEUR": 1791153129.637,
     "TREADUSD": 1791008260.101,
     "TRUMPEUR": 1791058380.265,
-    "USUSD": 1791058392.44,
+    "USUSD": 1791153194.699,
     "XBTEUR": 1791139592.576,
     "ZAMAEUR": 1791058401.33,
-    "ZROEUR": 1791108414.949
+    "ZROEUR": 1791153160.589
   },
   "latest_marks": {
     "AAVEEUR": {
-      "bid_eur": 161.56,
-      "retrieved_at": "2026-10-04T10:05:37.192Z"
+      "bid_eur": 158.69,
+      "retrieved_at": "2026-10-04T22:31:23.280Z"
     },
     "BMTEUR": {
       "bid_eur": 0.01665,
       "retrieved_at": "2026-10-04T10:07:04.946Z"
     },
     "BNBEUR": {
-      "bid_eur": 701.16,
-      "retrieved_at": "2026-10-04T18:47:37.712Z"
+      "bid_eur": 706.38,
+      "retrieved_at": "2026-10-04T22:31:14.459Z"
     },
     "DOGEEUR": {
-      "bid_eur": 0.0848386,
-      "retrieved_at": "2026-10-04T18:47:00.154Z"
+      "bid_eur": 0.0858101,
+      "retrieved_at": "2026-10-04T22:30:38.161Z"
     },
     "ETHEUR": {
       "bid_eur": 2401.76,
       "retrieved_at": "2026-10-04T18:46:42.570Z"
     },
     "GALAEUR": {
-      "bid_eur": 0.002264,
-      "retrieved_at": "2026-10-04T18:43:32.222Z"
+      "bid_eur": 0.002241,
+      "retrieved_at": "2026-10-04T22:25:10.585Z"
     },
     "GLMRUSD": {
       "bid_eur": 0.010257185812523908,
       "retrieved_at": "2026-10-03T16:37:09.681Z"
     },
     "HYPEEUR": {
-      "bid_eur": 80.69,
-      "retrieved_at": "2026-10-04T10:06:36.093Z"
+      "bid_eur": 80.43,
+      "retrieved_at": "2026-10-04T22:32:21.816Z"
     },
     "INJEUR": {
-      "bid_eur": 6.741,
-      "retrieved_at": "2026-10-04T10:05:56.064Z"
+      "bid_eur": 6.692,
+      "retrieved_at": "2026-10-04T22:31:43.131Z"
     },
     "LINKEUR": {
-      "bid_eur": 12.62146,
-      "retrieved_at": "2026-10-04T18:47:27.766Z"
+      "bid_eur": 12.62611,
+      "retrieved_at": "2026-10-04T22:31:04.554Z"
     },
     "LTCEUR": {
-      "bid_eur": 63.43,
-      "retrieved_at": "2026-10-04T18:47:10.145Z"
+      "bid_eur": 62.66,
+      "retrieved_at": "2026-10-04T22:30:46.917Z"
     },
     "MEGAEUR": {
-      "bid_eur": 0.04386,
-      "retrieved_at": "2026-10-04T18:43:51.282Z"
+      "bid_eur": 0.04358,
+      "retrieved_at": "2026-10-04T22:25:28.182Z"
     },
     "NIGHTEUR": {
-      "bid_eur": 0.0424,
-      "retrieved_at": "2026-10-04T18:43:41.876Z"
+      "bid_eur": 0.03969,
+      "retrieved_at": "2026-10-04T22:25:19.939Z"
     },
     "ONDOEUR": {
-      "bid_eur": 0.43867,
-      "retrieved_at": "2026-10-04T10:05:46.059Z"
+      "bid_eur": 0.4397,
+      "retrieved_at": "2026-10-04T22:31:33.189Z"
     },
     "PENDLEEUR": {
-      "bid_eur": 2.181,
-      "retrieved_at": "2026-10-04T10:06:06.053Z"
+      "bid_eur": 2.16,
+      "retrieved_at": "2026-10-04T22:31:51.962Z"
     },
     "PHAUSD": {
       "bid_eur": 0.06698743318599418,
       "retrieved_at": "2026-10-04T10:07:29.324Z"
     },
+    "PROSUSD": {
+      "bid_eur": 0.7212776919113859,
+      "retrieved_at": "2026-10-04T22:32:52.718Z"
+    },
     "RENDEREUR": {
-      "bid_eur": 1.737,
-      "retrieved_at": "2026-10-04T10:06:14.950Z"
+      "bid_eur": 1.752,
+      "retrieved_at": "2026-10-04T22:32:00.796Z"
     },
     "SANDEUR": {
       "bid_eur": 0.0709,
       "retrieved_at": "2026-10-03T06:15:54.102Z"
     },
+    "SEUR": {
+      "bid_eur": 0.0358,
+      "retrieved_at": "2026-10-04T22:33:02.564Z"
+    },
     "SHIBEUR": {
-      "bid_eur": 5.086e-06,
-      "retrieved_at": "2026-10-04T10:06:44.969Z"
+      "bid_eur": 5.287e-06,
+      "retrieved_at": "2026-10-04T22:32:30.652Z"
     },
     "SOLEUR": {
-      "bid_eur": 108.06,
-      "retrieved_at": "2026-10-04T18:46:51.375Z"
+      "bid_eur": 108.11,
+      "retrieved_at": "2026-10-04T22:30:29.246Z"
     },
     "STRKEUR": {
       "bid_eur": 0.04323,
       "retrieved_at": "2026-10-03T16:43:58.038Z"
     },
     "SUIEUR": {
-      "bid_eur": 1.0945,
-      "retrieved_at": "2026-10-04T18:47:18.912Z"
+      "bid_eur": 1.0735,
+      "retrieved_at": "2026-10-04T22:30:55.751Z"
     },
     "SYNEUR": {
       "bid_eur": 0.1674,
       "retrieved_at": "2026-10-03T06:16:13.757Z"
     },
     "TAOEUR": {
-      "bid_eur": 270.4546,
-      "retrieved_at": "2026-10-04T10:06:23.828Z"
+      "bid_eur": 270.1249,
+      "retrieved_at": "2026-10-04T22:32:09.637Z"
     },
     "TREADUSD": {
       "bid_eur": 0.8319260510176874,
@@ -272,8 +355,8 @@
       "retrieved_at": "2026-10-03T20:13:00.265Z"
     },
     "USUSD": {
-      "bid_eur": 0.01754557668182182,
-      "retrieved_at": "2026-10-03T20:13:12.440Z"
+      "bid_eur": 0.012302799886299032,
+      "retrieved_at": "2026-10-04T22:33:14.699Z"
     },
     "XBTEUR": {
       "bid_eur": 75869.9,
@@ -284,90 +367,75 @@
       "retrieved_at": "2026-10-03T20:13:21.330Z"
     },
     "ZROEUR": {
-      "bid_eur": 1.804,
-      "retrieved_at": "2026-10-04T10:06:54.949Z"
+      "bid_eur": 1.757,
+      "retrieved_at": "2026-10-04T22:32:40.589Z"
     }
   },
-  "pending": {
-    "2171c4c08028b5f742448b5a": {
-      "asset": "SUI",
-      "decision_at": "2026-10-04T18:47:40.899180Z",
-      "decision_quote_retrieved_at": "2026-10-04T18:47:18.912Z",
-      "decision_source_hash": "196b711e127722e4625e1d6dc486f6ed7c73f15ed92cbe7bebc27ed72994cd1a",
-      "pair": "SUIEUR",
-      "setup": {
-        "atr": 0.029571428571428564,
-        "bar_end": 1791129600.0,
-        "family": "TREND_PULLBACK",
-        "max_entry": 1.130585714285714,
-        "stop": 1.034007142857143
-      }
-    }
-  },
+  "pending": {},
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "retained_candidates": {
     "AKTEUR": {
-      "seen_unix": 1791139403.002
-    },
-    "AXSEUR": {
-      "seen_unix": 1791139403.002
-    },
-    "BATEUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
     "BEAMUSD": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
     "CAPUSD": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
+    },
+    "CHEXUSD": {
+      "seen_unix": 1791152699.459
+    },
+    "CHIPUSD": {
+      "seen_unix": 1791152699.459
     },
     "FETEUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
     "FUNEUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
-    "GLMREUR": {
-      "seen_unix": 1791139403.002
+    "GLMRUSD": {
+      "seen_unix": 1791152699.459
     },
     "GRASSEUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
     "GTCUSD": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
-    "LSKUSD": {
-      "seen_unix": 1791139403.002
+    "HNTUSD": {
+      "seen_unix": 1791152699.459
+    },
+    "HONEYUSD": {
+      "seen_unix": 1791152699.459
+    },
+    "LCXUSD": {
+      "seen_unix": 1791152699.459
+    },
+    "MINAEUR": {
+      "seen_unix": 1791152699.459
     },
     "MOVREUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
-    "MUBARAKUSD": {
-      "seen_unix": 1791139403.002
-    },
-    "ORCAEUR": {
-      "seen_unix": 1791139403.002
-    },
-    "PONDUSD": {
-      "seen_unix": 1791139403.002
+    "NIGHTEUR": {
+      "seen_unix": 1791152699.459
     },
     "PROSUSD": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
     "SEUR": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     },
-    "SUPEREUR": {
-      "seen_unix": 1791139403.002
-    },
-    "TREADUSD": {
-      "seen_unix": 1791139403.002
+    "SUPERUSD": {
+      "seen_unix": 1791152699.459
     },
     "USUSD": {
-      "seen_unix": 1791139403.002
+      "seen_unix": 1791152699.459
     }
   },
-  "run_count": 9,
+  "run_count": 10,
   "schema": "CRYPTO_V23_SHADOW_STATE_V1",
   "seen_setups": [
     "549715baf42b6982b5458ec2",
