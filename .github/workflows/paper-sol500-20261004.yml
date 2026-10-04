@@ -1,0 +1,63 @@
+name: SOL 500 EUR Paper Trial
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/paper-sol500-20261004.yml'
+      - 'research/paper-sol500-20261004/**'
+  workflow_dispatch:
+  schedule:
+    - cron: '2-57/5 * 4-11 10 *'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: paper-sol500-20261004
+  cancel-in-progress: false
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: engine
+          persist-credentials: false
+      - name: Check fixed trial window and engine availability
+        id: gate
+        shell: bash
+        run: |
+          if [ -f engine/research/paper-sol500-20261004/engine.py ] && [ "$(date -u +%s)" -le "$(date -u -d '2026-10-11 09:00:00 UTC' +%s)" ]; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          ref: paper-sol500-20261004
+          path: ledger
+      - name: Evaluate public market data; model paper fills only
+        if: steps.gate.outputs.run == 'true'
+        run: python3 engine/research/paper-sol500-20261004/engine.py --state-dir ledger/research/paper-sol500-20261004
+      - name: Persist isolated paper ledger
+        if: always() && steps.gate.outputs.run == 'true'
+        working-directory: ledger
+        shell: bash
+        run: |
+          git config user.name 'paper-simulation[bot]'
+          git config user.email 'paper-simulation@users.noreply.github.com'
+          git add research/paper-sol500-20261004
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record SOL500 paper observation [skip ci]'
+            git push origin HEAD:paper-sol500-20261004
+          fi
+      - name: Disable this trial scheduler after fixed end
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if [ "$(date -u +%s)" -ge "$(date -u -d '2026-10-11 08:30:00 UTC' +%s)" ]; then
+            gh api --method PUT repos/${{ github.repository }}/actions/workflows/paper-sol500-20261004.yml/disable
+          fi
