@@ -82,8 +82,7 @@ class OperationalIntegration(unittest.TestCase):
 
     def execute(self):
         with patch.object(sys, 'argv', ['runner', '--ledger', str(self.git), '--minutes', '6']), \
-             patch.object(r.time, 'time', self.clock.time), \
-             patch.object(r.time, 'sleep', self.clock.sleep), \
+             patch.object(r, 'time', self.clock), \
              patch.object(r, 'command', self.fake_command), \
              patch.dict(r.os.environ, {'GITHUB_REPOSITORY': r.REPO}):
             r.main()
@@ -118,6 +117,26 @@ class OperationalIntegration(unittest.TestCase):
         self.assertEqual(self.times, [start, start + 300])
         self.assertEqual(state['failure_count'], 1)
         self.assertTrue(all(fill['unix'] != start for fill in state['fills']))
+
+    def test_fixed_end_and_finalized_worker_do_not_restart_trading(self):
+        self.clock.now = e.END - 120
+        state = e.evaluate(e.fresh_state(), snap(e.END - 7200))
+        self.assertIsNotNone(state['position'])
+        state['last_attempt_at'] = e.iso(e.END - 3000)
+        self.write_state(state)
+        for args in (['git', 'add', '.'], ['git', 'commit', '-m', 'near-end fixture'],
+                     ['git', 'push', 'origin', r.BRANCH]):
+            self.real_command(args, self.git)
+        self.execute()
+        final = r.load_ledger(self.root)
+        self.assertEqual(self.times, [e.END - 120, e.END])
+        self.assertTrue(final['final'])
+        self.assertIsNone(final['position'])
+        self.assertEqual(final['final_delay_seconds'], 0)
+        dispatches = len(self.dispatches)
+        self.execute()
+        self.assertEqual(self.times, [e.END - 120, e.END])
+        self.assertEqual(len(self.dispatches), dispatches)
 
     def test_push_failure_stops_before_another_engine_tick(self):
         self.fail_push = True
