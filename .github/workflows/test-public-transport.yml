@@ -2,16 +2,23 @@ name: Test Kraken public evidence transport
 
 on:
   push:
-    branches: [main, fix/transport-429-20261005]
+    branches: [main]
     paths:
       - "scripts/**"
       - "config/assets.json"
+      - ".github/workflows/collect.yml"
+      - ".github/workflows/collect-core.yml"
       - ".github/workflows/test-public-transport.yml"
   pull_request:
     paths:
       - "scripts/**"
       - "config/assets.json"
+      - ".github/workflows/collect.yml"
+      - ".github/workflows/collect-core.yml"
       - ".github/workflows/test-public-transport.yml"
+
+env:
+  PYTHONPYCACHEPREFIX: /tmp/caw-python-cache
 
 permissions:
   contents: read
@@ -25,8 +32,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Offline transport and evidence regression tests
-        run: |
-          python -m unittest discover -s scripts -p test_public_transport.py -v
-          python -m unittest discover -s scripts -p test_owned_coverage.py -v
-          python -m unittest discover -s scripts -p test_quote_guard.py -v
+      - name: All offline evidence, transport, archive and publication regressions
+        run: python -B -m unittest discover -s scripts -p 'test_*.py' -v
