@@ -17,7 +17,7 @@
         "HALF_1_5R_TRAIL": {
           "exits": [],
           "highest_observed": 1.1084,
-          "last_bar_end": 1791172800.0,
+          "last_bar_end": 1791230400.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.034007142857143
@@ -25,7 +25,7 @@
         "HOLD_30D": {
           "exits": [],
           "highest_observed": 1.1084,
-          "last_bar_end": 1791172800.0,
+          "last_bar_end": 1791230400.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.034007142857143
@@ -33,23 +33,32 @@
         "STRUCTURE_2R": {
           "exits": [],
           "highest_observed": 1.1084,
-          "last_bar_end": 1791172800.0,
+          "last_bar_end": 1791230400.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.034007142857143
         },
         "TIME_24H": {
-          "exits": [],
+          "exits": [
+            {
+              "at": "2026-10-05T23:21:34.152776Z",
+              "bid_eur": 1.0814,
+              "fraction": 1.0,
+              "quote_retrieved_at": "2026-10-05T23:19:43.011Z",
+              "reason": "TIME_STOP_NO_PROGRESS",
+              "source_hash": "dfc61f06e7bdee7af395a4cf8c743f52c9c7ae83d848ed3871d96f9c0dae86e4"
+            }
+          ],
           "highest_observed": 1.1084,
-          "last_bar_end": 1791172800.0,
-          "partial_done": false,
-          "remaining": 1.0,
+          "last_bar_end": 1791230400.0,
+          "partial_done": true,
+          "remaining": 0,
           "trail_stop": 1.034007142857143
         },
         "TRAIL_ONLY": {
           "exits": [],
           "highest_observed": 1.1084,
-          "last_bar_end": 1791172800.0,
+          "last_bar_end": 1791230400.0,
           "partial_done": false,
           "remaining": 1.0,
           "trail_stop": 1.0390785714285715
@@ -136,7 +145,7 @@
       }
     }
   },
-  "discovery_cursor": 42,
+  "discovery_cursor": 45,
   "equity": {
     "HALF_1_5R_TRAIL:BASE": {
       "max_drawdown_pct": 0.218562947969815,
@@ -199,27 +208,27 @@
       "peak": 1000
     }
   },
-  "events_total": 18,
-  "gap_count": 13,
+  "events_total": 20,
+  "gap_count": 14,
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "last_entry": {
     "SUIEUR": 1791153196.8117855,
     "ZROEUR": 1791058403.450653
   },
-  "last_run_at": "2026-10-05T19:17:18.089782Z",
+  "last_run_at": "2026-10-05T23:21:34.152776Z",
   "last_sources": {
     "AAVEEUR": 1791185652.176,
     "BMTEUR": 1791108424.946,
     "BNBEUR": 1791185643.24,
     "DOGEEUR": 1791185605.313,
-    "ETHEUR": 1791220984.89,
+    "ETHEUR": 1791242482.123,
     "GALAEUR": 1791227740.295,
     "GLMRUSD": 1791045429.681,
     "HNTUSD": 1791186021.856,
     "HYPEEUR": 1791185978.554,
     "INJEUR": 1791185670.029,
-    "LINKEUR": 1791185633.227,
-    "LTCEUR": 1791185615.356,
+    "LINKEUR": 1791242393.256,
+    "LTCEUR": 1791242312.638,
     "MEGAEUR": 1791227760.876,
     "NIGHTEUR": 1791185958.953,
     "ONDOEUR": 1791185661.073,
@@ -230,15 +239,15 @@
     "SANDEUR": 1791008154.102,
     "SEUR": 1791153182.564,
     "SHIBEUR": 1791185987.402,
-    "SOLEUR": 1791185595.267,
+    "SOLEUR": 1791242490.989,
     "STRKEUR": 1791045838.038,
-    "SUIEUR": 1791185624.308,
+    "SUIEUR": 1791242383.011,
     "SYNEUR": 1791008173.757,
     "TAOEUR": 1791185699.001,
     "TREADUSD": 1791008260.101,
     "TRUMPEUR": 1791058380.265,
     "USUSD": 1791153194.699,
-    "XBTEUR": 1791227834.849,
+    "XBTEUR": 1791242473.295,
     "ZAMAEUR": 1791186030.528,
     "ZROEUR": 1791185997.382
   },
@@ -260,8 +269,8 @@
       "retrieved_at": "2026-10-05T07:33:25.313Z"
     },
     "ETHEUR": {
-      "bid_eur": 2409.57,
-      "retrieved_at": "2026-10-05T17:23:04.890Z"
+      "bid_eur": 2419.82,
+      "retrieved_at": "2026-10-05T23:21:22.123Z"
     },
     "GALAEUR": {
       "bid_eur": 0.002219,
@@ -284,12 +293,12 @@
       "retrieved_at": "2026-10-05T07:34:30.029Z"
     },
     "LINKEUR": {
-      "bid_eur": 12.71585,
-      "retrieved_at": "2026-10-05T07:33:53.227Z"
+      "bid_eur": 12.35271,
+      "retrieved_at": "2026-10-05T23:19:53.256Z"
     },
     "LTCEUR": {
-      "bid_eur": 62.61,
-      "retrieved_at": "2026-10-05T07:33:35.356Z"
+      "bid_eur": 62.59,
+      "retrieved_at": "2026-10-05T23:18:32.638Z"
     },
     "MEGAEUR": {
       "bid_eur": 0.04387,
@@ -332,16 +341,16 @@
       "retrieved_at": "2026-10-05T07:39:47.402Z"
     },
     "SOLEUR": {
-      "bid_eur": 108.68,
-      "retrieved_at": "2026-10-05T07:33:15.267Z"
+      "bid_eur": 107.68,
+      "retrieved_at": "2026-10-05T23:21:30.989Z"
     },
     "STRKEUR": {
       "bid_eur": 0.04323,
       "retrieved_at": "2026-10-03T16:43:58.038Z"
     },
     "SUIEUR": {
-      "bid_eur": 1.1084,
-      "retrieved_at": "2026-10-05T07:33:44.308Z"
+      "bid_eur": 1.0814,
+      "retrieved_at": "2026-10-05T23:19:43.011Z"
     },
     "SYNEUR": {
       "bid_eur": 0.1674,
@@ -364,8 +373,8 @@
       "retrieved_at": "2026-10-04T22:33:14.699Z"
     },
     "XBTEUR": {
-      "bid_eur": 76376.4,
-      "retrieved_at": "2026-10-05T19:17:14.849Z"
+      "bid_eur": 76563.3,
+      "retrieved_at": "2026-10-05T23:21:13.295Z"
     },
     "ZAMAEUR": {
       "bid_eur": 0.07427,
@@ -379,68 +388,68 @@
   "pending": {},
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "retained_candidates": {
+    "BTREUR": {
+      "seen_unix": 1791242466.56
+    },
     "CAPUSD": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "CTUSD": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
+    },
+    "EGLDEUR": {
+      "seen_unix": 1791242466.56
     },
     "FILEUR": {
-      "seen_unix": 1791227767.899
-    },
-    "GRASSUSD": {
-      "seen_unix": 1791227767.899
-    },
-    "HNTUSD": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "LIGHTERUSD": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
-    "MOVREUR": {
-      "seen_unix": 1791227767.899
+    "MONEUR": {
+      "seen_unix": 1791242466.56
+    },
+    "MOVRUSD": {
+      "seen_unix": 1791242466.56
     },
     "MUBARAKUSD": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
+    },
+    "NIGHTEUR": {
+      "seen_unix": 1791242466.56
     },
     "NILEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
+    },
+    "ORCAEUR": {
+      "seen_unix": 1791242466.56
+    },
+    "PEAQUSD": {
+      "seen_unix": 1791242466.56
     },
     "PHAEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "PROSUSD": {
-      "seen_unix": 1791227767.899
-    },
-    "RLCEUR": {
-      "seen_unix": 1791227767.899
-    },
-    "SANDEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "SHXEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "SKYEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
     "STRKEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     },
-    "SUPERUSD": {
-      "seen_unix": 1791227767.899
+    "TRACUSD": {
+      "seen_unix": 1791242466.56
     },
     "USUSD": {
-      "seen_unix": 1791227767.899
-    },
-    "VVVEUR": {
-      "seen_unix": 1791227767.899
-    },
-    "ZEUSEUR": {
-      "seen_unix": 1791227767.899
+      "seen_unix": 1791242466.56
     }
   },
-  "run_count": 14,
+  "run_count": 15,
   "schema": "CRYPTO_V23_SHADOW_STATE_V1",
   "seen_setups": [
     "549715baf42b6982b5458ec2",
