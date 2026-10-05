@@ -1,0 +1,32 @@
+name: Test Kraken public evidence transport
+
+on:
+  push:
+    branches: [main, fix/transport-429-20261005]
+    paths:
+      - "scripts/**"
+      - "config/assets.json"
+      - ".github/workflows/test-public-transport.yml"
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "config/assets.json"
+      - ".github/workflows/test-public-transport.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Offline transport and evidence regression tests
+        run: |
+          python -m unittest discover -s scripts -p test_public_transport.py -v
+          python -m unittest discover -s scripts -p test_owned_coverage.py -v
+          python -m unittest discover -s scripts -p test_quote_guard.py -v

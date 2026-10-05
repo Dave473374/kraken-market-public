@@ -23,7 +23,7 @@ def retry_get(path, delays=(2, 4)):
     result = public_get(path)
     attempts = 1
     for delay in delays:
-        if result.get("ok"):
+        if result.get("ok") or result.get("error") in ("HTTP_429", "LOCAL_RATE_LIMIT_COOLDOWN"):
             break
         time.sleep(float(delay))
         attempts += 1
@@ -32,13 +32,8 @@ def retry_get(path, delays=(2, 4)):
 
 
 def candidate_get_fast(path):
-    result = public_get(path)
-    attempts = 1
-    if result.get("error") == "HTTP_429":
-        time.sleep(2)
-        attempts += 1
-        result = public_get(path)
-    return result, attempts
+    # Respect transport cooldown instead of issuing a two-second 429 retry.
+    return public_get(path), 1
 
 
 def save_core(filename, result):
@@ -46,6 +41,8 @@ def save_core(filename, result):
         "mirror_status": "SOURCE_FETCH_FAILED", "mirror_generated_at": now_iso(),
         "source_url": result.get("url"), "error": result.get("error"),
         "detail": result.get("detail"),
+        "retry_after_seconds": result.get("retry_after_seconds"),
+        "http_request_made": result.get("http_request_made", True),
     }
     atomic_write(CORE / filename, body)
 
@@ -163,6 +160,7 @@ def main():
     CORE_CANDIDATES.mkdir(parents=True, exist_ok=True)
     manifest = {"schema": CORE_SCHEMA, "revision": REVISION,
         "coverage_revision": "1.1-owned-priority", "generated_at": now_iso(),
+        "transport_revision": "1.3-paced-owned-first",
         "expected_worker_schema": EXPECTED, "status": "STARTED", "files": {},
         "candidate_pairs_attempted": [], "candidate_pairs_ok": [],
         "candidate_pairs_partial_or_failed": [], "owned_priority_status": {},
@@ -172,14 +170,11 @@ def main():
                   "Priority-owned candidates are mandatory and separate from max-three Movers discovery.",
                   "Optional discovery failure does not fail the owned-risk core.",
                   "An evidence snapshot is not a BUY/SELL signal or independent cross-check."]}
-    for filename, path in [("health.json", "/health"), ("universe.json", "/universe.json")]:
-        result, attempts = retry_get(path)
-        save_core(filename, result)
-        manifest["files"][filename] = {"ok": bool(result.get("ok")),
-            "schema_ok": schema_ok(result), "attempts": attempts,
-            "source_retrieved_at": result.get("retrieved_at")}
-        if filename == "universe.json":
-            universe = result
+    health, attempts = retry_get("/health")
+    save_core("health.json", health)
+    manifest["files"]["health.json"] = {"ok": bool(health.get("ok")),
+        "schema_ok": schema_ok(health), "attempts": attempts,
+        "source_retrieved_at": health.get("retrieved_at")}
     logical = [normalize_pair(p) for p in CFG["quotes_pairs"]]
     requested = [request_pair(p) for p in logical]
     path = "/quotes.json?pairs=" + urllib.parse.quote(",".join(requested), safe=",")
@@ -190,14 +185,28 @@ def main():
         "ok": bool(quotes.get("ok")), "schema_ok": schema_ok(quotes),
         "attempts": attempts, "requested_pairs": requested, "logical_pairs": logical,
         "source_retrieved_at": quotes.get("retrieved_at"), **coverage}
+    universe = {"ok": False}
+    def priority_then_discovery():
+        nonlocal universe
+        # Do not spend the request budget on discovery before owned-risk books.
+        yield from selected_pairs({"ok": False})
+        universe, attempts = retry_get("/universe.json")
+        save_core("universe.json", universe)
+        manifest["files"]["universe.json"] = {"ok": bool(universe.get("ok")),
+            "schema_ok": schema_ok(universe), "attempts": attempts,
+            "source_retrieved_at": universe.get("retrieved_at")}
+        for pair, role in selected_pairs(universe):
+            if role == "DISCOVERY_ONLY":
+                yield pair, role
     notional = float(CFG.get("synthetic_notional_eur", 60))
     owned_results = {}
-    for pair, role in selected_pairs(universe):
+    for pair, role in priority_then_discovery():
         requested_pair = request_pair(pair)
         path = "/candidate.json?pair=" + urllib.parse.quote(requested_pair) + "&notional_eur=" + urllib.parse.quote(str(notional))
         result, attempts = candidate_get_fast(path)
         manifest["candidate_pairs_attempted"].append({"logical_pair": pair,
-            "requested_pair": requested_pair, "role": role, "attempts": attempts})
+            "requested_pair": requested_pair, "role": role, "attempts": attempts,
+            "http_request_made": result.get("http_request_made", True)})
         save_core(f"candidates/{pair}.json", result)
         usable = candidate_usable(result)
         if role == "OWNED_PRIORITY":
@@ -213,7 +222,7 @@ def main():
                 "requested_pair": requested_pair, "role": role, "attempts": attempts,
                 "transport_ok": bool(result.get("ok")), "schema_ok": schema_ok(result),
                 "data_health": body.get("data_health"), "pair_error": body.get("pair_error"),
-                "error": result.get("error")})
+                "error": result.get("error"), "detail": result.get("detail")})
         time.sleep(0.4)
     # Recheck at publication too: slow optional fetches must not extend freshness.
     coverage = owned_quote_coverage(quotes, logical)

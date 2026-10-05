@@ -9,6 +9,8 @@ on:
       - ".github/workflows/collect.yml"
       - "scripts/collect.py"
       - "scripts/collect_core.py"
+      - "scripts/public_transport.py"
+      - "scripts/test_public_transport.py"
       - "scripts/test_owned_coverage.py"
       - "config/assets.json"
   schedule:
@@ -19,39 +21,69 @@ permissions:
 
 concurrency:
   group: kraken-market-public-collector
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 350
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Test owned coverage guards
-        run: python -m unittest discover -s scripts -p test_owned_coverage.py -v
+      - name: Test owned coverage and transport guards
+        run: |
+          python -m unittest discover -s scripts -p test_owned_coverage.py -v
+          python -m unittest discover -s scripts -p test_public_transport.py -v
 
-      - name: Collect public Kraken snapshots
-        run: python scripts/collect.py
-
-      - name: Commit updated mirror
-        if: always()
+      - name: Keep hourly public mirror refreshed
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          if git diff --cached --quiet; then
-            echo "No mirror changes to commit."
-            exit 0
-          fi
-          git commit -m "Update Kraken public mirror"
-          git push
+          # Preserve the hourly cadence even when scheduler starts are delayed.
+          # A newer scheduled/push run takes over this same concurrency group.
+          collect_status=0
+          for cycle in $(seq 1 6); do
+            cycle_started=$SECONDS
+            git fetch origin main
+            git checkout -B main origin/main
+            python -m unittest discover -s scripts -p test_owned_coverage.py -v
+            python -m unittest discover -s scripts -p test_public_transport.py -v
+            collect_status=0
+            python scripts/collect.py || collect_status=$?
+            test -f data/manifest.json
+            git add data
+            if ! git diff --cached --quiet; then
+              git commit -m "Update Kraken public mirror"
+              published=false
+              for attempt in 1 2 3; do
+                if git push origin HEAD:main; then
+                  published=true
+                  break
+                fi
+                # Preserve concurrent code changes; never force-push main.
+                git pull --rebase origin main
+              done
+              if [ "$published" != true ]; then
+                echo "Mirror publication failed; do not claim fresh data."
+                exit 1
+              fi
+            fi
+            echo "M1 cycle $cycle/6 collector status: $collect_status"
+            if [ "$cycle" -lt 6 ]; then
+              remaining=$((3600 - (SECONDS - cycle_started)))
+              if [ "$remaining" -gt 0 ]; then sleep "$remaining"; fi
+            fi
+          done
+          exit "$collect_status"
