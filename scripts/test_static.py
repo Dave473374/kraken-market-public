@@ -12,8 +12,10 @@ assert cfg["discovery_deep_review_limit"] <= 3
 workflow = (root / ".github/workflows/collect.yml").read_text(encoding="utf-8")
 assert 'cron: "1 * * * *"' in workflow
 assert "contents: write" in workflow
-assert "python scripts/collect.py" in workflow
-collector = (root / "scripts/collect.py").read_text(encoding="utf-8")
+# The secondary workflow is an archive, not a second upstream request owner.
+assert "run_public_collector.py archive" in workflow
+assert "python scripts/collect.py" not in workflow
+collector = (root / "scripts/collect_core.py").read_text(encoding="utf-8")
 for route in ["/health", "/universe.json", "/quotes.json?pairs=", "/candidate.json?pair="]:
     assert route in collector
 print("STATIC TESTS OK")
