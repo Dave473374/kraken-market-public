@@ -1,7 +1,8 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
-  "generated_at": "2026-10-05T03:29:05.753035Z",
+  "transport_revision": "1.3-paced-owned-first",
+  "generated_at": "2026-10-05T07:35:39.192576Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "OK",
@@ -12,12 +13,7 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-05T03:25:22.675983Z"
-    },
-    "universe.json": {
-      "ok": true,
-      "schema_ok": true,
-      "source_retrieved_at": "2026-10-05T03:25:27.372158Z"
+      "source_retrieved_at": "2026-10-05T07:32:23.495556Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -62,218 +58,180 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-05T03:25:28.731856Z",
+      "source_retrieved_at": "2026-10-05T07:32:25.944955Z",
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
       "duplicate_pairs": [],
       "unexpected_pairs": [],
       "invalid_or_stale_pairs": []
+    },
+    "universe.json": {
+      "ok": true,
+      "schema_ok": true,
+      "source_retrieved_at": "2026-10-05T07:35:05.750692Z"
     }
   },
   "candidate_pairs_attempted": [
     {
-      "logical_pair": "XBTEUR",
-      "requested_pair": "XBTEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "SOLEUR",
-      "requested_pair": "SOLEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "DOGEEUR",
-      "requested_pair": "XDGEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "LTCEUR",
-      "requested_pair": "LTCEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "SUIEUR",
-      "requested_pair": "SUIEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "LINKEUR",
-      "requested_pair": "LINKEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "BNBEUR",
-      "requested_pair": "BNBEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "AAVEEUR",
-      "requested_pair": "AAVEEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "ONDOEUR",
-      "requested_pair": "ONDOEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
-      "attempts": 2
-    },
-    {
-      "logical_pair": "PENDLEEUR",
-      "requested_pair": "PENDLEEUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "RENDEREUR",
-      "requested_pair": "RENDEREUR",
-      "attempts": 1
-    },
-    {
-      "logical_pair": "TAOEUR",
-      "requested_pair": "TAOEUR",
-      "attempts": 1
-    },
-    {
       "logical_pair": "GALAEUR",
       "requested_pair": "GALAEUR",
-      "attempts": 1
+      "attempts": 1,
+      "http_request_made": true
     },
     {
       "logical_pair": "NIGHTEUR",
       "requested_pair": "NIGHTEUR",
-      "attempts": 2
+      "attempts": 1,
+      "http_request_made": true
     },
     {
       "logical_pair": "MEGAEUR",
       "requested_pair": "MEGAEUR",
-      "attempts": 1
+      "attempts": 1,
+      "http_request_made": true
     },
     {
-      "logical_pair": "NILEUR",
-      "requested_pair": "NILEUR",
-      "attempts": 2
+      "logical_pair": "XBTEUR",
+      "requested_pair": "XBTEUR",
+      "attempts": 1,
+      "http_request_made": true
     },
     {
-      "logical_pair": "AKTUSD",
-      "requested_pair": "AKTUSD",
-      "attempts": 1
+      "logical_pair": "ETHEUR",
+      "requested_pair": "ETHEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "SOLEUR",
+      "requested_pair": "SOLEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "DOGEEUR",
+      "requested_pair": "XDGEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "LTCEUR",
+      "requested_pair": "LTCEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "SUIEUR",
+      "requested_pair": "SUIEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "LINKEUR",
+      "requested_pair": "LINKEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "BNBEUR",
+      "requested_pair": "BNBEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "AAVEEUR",
+      "requested_pair": "AAVEEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "ONDOEUR",
+      "requested_pair": "ONDOEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "INJEUR",
+      "requested_pair": "INJEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "PENDLEEUR",
+      "requested_pair": "PENDLEEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "RENDEREUR",
+      "requested_pair": "RENDEREUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "TAOEUR",
+      "requested_pair": "TAOEUR",
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "CARVUSD",
+      "requested_pair": "CARVUSD",
+      "attempts": 1,
+      "http_request_made": true
     },
     {
       "logical_pair": "MUBARAKUSD",
       "requested_pair": "MUBARAKUSD",
-      "attempts": 1
+      "attempts": 1,
+      "http_request_made": true
+    },
+    {
+      "logical_pair": "MOVRUSD",
+      "requested_pair": "MOVRUSD",
+      "attempts": 1,
+      "http_request_made": true
     }
   ],
   "candidate_pairs_ok": [
+    "GALAEUR",
+    "NIGHTEUR",
+    "MEGAEUR",
+    "XBTEUR",
+    "ETHEUR",
+    "SOLEUR",
+    "DOGEEUR",
     "LTCEUR",
     "SUIEUR",
+    "LINKEUR",
+    "BNBEUR",
     "AAVEEUR",
     "ONDOEUR",
     "INJEUR",
     "PENDLEEUR",
     "RENDEREUR",
     "TAOEUR",
-    "GALAEUR",
-    "NIGHTEUR",
-    "MEGAEUR",
-    "NILEUR",
-    "MUBARAKUSD"
+    "CARVUSD",
+    "MUBARAKUSD",
+    "MOVRUSD"
   ],
-  "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "XBTEUR",
-      "requested_pair": "XBTEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "SOLEUR",
-      "requested_pair": "SOLEUR",
-      "attempts": 2,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "DOGEEUR",
-      "requested_pair": "XDGEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "LINKEUR",
-      "requested_pair": "LINKEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "BNBEUR",
-      "requested_pair": "BNBEUR",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    },
-    {
-      "logical_pair": "AKTUSD",
-      "requested_pair": "AKTUSD",
-      "attempts": 1,
-      "transport_ok": true,
-      "schema_ok": true,
-      "data_health": "PARTIAL_DATA",
-      "pair_error": null,
-      "error": null
-    }
-  ],
+  "candidate_pairs_partial_or_failed": [],
   "notes": [
     "Public read-only market-data mirror only.",
     "Mirror success is not a BUY/SELL signal.",
     "Consumer must recompute freshness from source timestamps.",
     "Logical DOGEEUR is requested from Kraken REST as XDGEUR.",
     "owned-quotes may be research-usable while data_health is PARTIAL_DATA; it is never executable evidence.",
-    "A single optional candidate failure does not fail the core mirror workflow."
+    "A single optional candidate failure does not fail the core mirror workflow.",
+    "A local rate-limit cooldown is missing evidence, not a negative market signal."
   ],
   "summary": {
     "core_ok": true,
     "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 13,
-    "candidate_partial_or_failed_count": 7
+    "candidate_ok_count": 20,
+    "candidate_partial_or_failed_count": 0
   }
 }
