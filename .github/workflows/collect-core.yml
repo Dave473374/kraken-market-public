@@ -9,6 +9,8 @@ on:
       - ".github/workflows/collect-core.yml"
       - "scripts/collect_core.py"
       - "scripts/collect.py"
+      - "scripts/public_transport.py"
+      - "scripts/test_public_transport.py"
       - "scripts/test_owned_coverage.py"
       - "config/assets.json"
   schedule:
@@ -37,8 +39,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Test owned coverage guards
-        run: python -m unittest discover -s scripts -p test_owned_coverage.py -v
+      - name: Test owned coverage and transport guards
+        run: |
+          python -m unittest discover -s scripts -p test_owned_coverage.py -v
+          python -m unittest discover -s scripts -p test_public_transport.py -v
 
       - name: Keep fast core fresh
         shell: bash
