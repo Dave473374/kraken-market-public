@@ -1,25 +1,22 @@
 {
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
-  "mirror_revision": "1.2-core-health",
+  "revision": "1.0-fast-core",
+  "coverage_revision": "1.1-owned-priority",
+  "generated_at": "2026-10-05T19:16:33.711017Z",
   "transport_revision": "1.3-paced-owned-first",
-  "generated_at": "2026-10-05T16:05:30.390719Z",
-  "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "PARTIAL",
-  "pair_aliases": {
-    "DOGEEUR": "XDGEUR"
-  },
   "files": {
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-05T16:04:14.168959Z"
+      "attempts": 1,
+      "source_retrieved_at": "2026-10-05T19:15:28.484682Z"
     },
     "owned-quotes.json": {
       "ok": true,
       "schema_ok": true,
-      "research_usable": true,
-      "executable_evidence": false,
+      "attempts": 1,
       "requested_pairs": [
         "XBTEUR",
         "ETHEUR",
@@ -58,260 +55,171 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-05T16:04:16.801469Z",
+      "source_retrieved_at": "2026-10-05T19:15:31.100430Z",
+      "research_usable": true,
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
       "duplicate_pairs": [],
       "unexpected_pairs": [],
-      "invalid_or_stale_pairs": []
+      "invalid_or_stale_pairs": [],
+      "executable_evidence": false
     },
     "universe.json": {
-      "ok": false,
-      "schema_ok": false,
-      "source_retrieved_at": "2026-10-05T16:05:30.389694Z"
+      "ok": true,
+      "schema_ok": true,
+      "attempts": 1,
+      "source_retrieved_at": "2026-10-05T19:16:07.950445Z"
     }
   },
   "candidate_pairs_attempted": [
     {
       "logical_pair": "GALAEUR",
       "requested_pair": "GALAEUR",
+      "role": "OWNED_PRIORITY",
       "attempts": 1,
       "http_request_made": true
     },
     {
       "logical_pair": "NIGHTEUR",
       "requested_pair": "NIGHTEUR",
+      "role": "OWNED_PRIORITY",
       "attempts": 1,
       "http_request_made": true
     },
     {
       "logical_pair": "MEGAEUR",
       "requested_pair": "MEGAEUR",
+      "role": "OWNED_PRIORITY",
       "attempts": 1,
       "http_request_made": true
     },
     {
-      "logical_pair": "XBTEUR",
-      "requested_pair": "XBTEUR",
+      "logical_pair": "RLCEUR",
+      "requested_pair": "RLCEUR",
+      "role": "DISCOVERY_ONLY",
       "attempts": 1,
       "http_request_made": true
     },
     {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
+      "logical_pair": "ZEUSEUR",
+      "requested_pair": "ZEUSEUR",
+      "role": "DISCOVERY_ONLY",
       "attempts": 1,
       "http_request_made": true
     },
     {
-      "logical_pair": "SOLEUR",
-      "requested_pair": "SOLEUR",
+      "logical_pair": "SHXEUR",
+      "requested_pair": "SHXEUR",
+      "role": "DISCOVERY_ONLY",
       "attempts": 1,
       "http_request_made": true
-    },
-    {
-      "logical_pair": "DOGEEUR",
-      "requested_pair": "XDGEUR",
-      "attempts": 1,
-      "http_request_made": true
-    },
-    {
-      "logical_pair": "LTCEUR",
-      "requested_pair": "LTCEUR",
-      "attempts": 1,
-      "http_request_made": true
-    },
-    {
-      "logical_pair": "SUIEUR",
-      "requested_pair": "SUIEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "LINKEUR",
-      "requested_pair": "LINKEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "BNBEUR",
-      "requested_pair": "BNBEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "AAVEEUR",
-      "requested_pair": "AAVEEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "ONDOEUR",
-      "requested_pair": "ONDOEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "PENDLEEUR",
-      "requested_pair": "PENDLEEUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "RENDEREUR",
-      "requested_pair": "RENDEREUR",
-      "attempts": 1,
-      "http_request_made": false
-    },
-    {
-      "logical_pair": "TAOEUR",
-      "requested_pair": "TAOEUR",
-      "attempts": 1,
-      "http_request_made": false
     }
   ],
   "candidate_pairs_ok": [
     "GALAEUR",
-    "NIGHTEUR",
     "MEGAEUR",
-    "XBTEUR",
-    "ETHEUR",
-    "SOLEUR",
-    "DOGEEUR"
+    "RLCEUR",
+    "SHXEUR"
   ],
   "candidate_pairs_partial_or_failed": [
     {
-      "logical_pair": "LTCEUR",
-      "requested_pair": "LTCEUR",
+      "logical_pair": "NIGHTEUR",
+      "requested_pair": "NIGHTEUR",
+      "role": "OWNED_PRIORITY",
       "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
       "pair_error": null,
-      "error": "HTTP_429",
-      "detail": "{\"schema\":\"KRAKEN_PUBLIC_TRANSPORT_V2.0.2\",\"role\":\"PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT\",\"contains_account_data\":false,\"automatic_trading\":false,\"private_exchange_api\":false,\"production_ready\":false,\"movers_live_pass\":false,\"hourly_task_integration\":\"NOT_VALIDATED\",\"trade_signal\":null,\"independent_crosscheck\":\"NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY\",\"status\":\"LOCAL_COOLDOWN\",\"data_health\":\"PARTIAL_DATA\",\"note\":\"BEST_EFFORT_PER_ISOLATE_ONLY\"}"
+      "error": null,
+      "detail": null
     },
     {
-      "logical_pair": "SUIEUR",
-      "requested_pair": "SUIEUR",
+      "logical_pair": "ZEUSEUR",
+      "requested_pair": "ZEUSEUR",
+      "role": "DISCOVERY_ONLY",
       "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
+      "transport_ok": true,
+      "schema_ok": true,
+      "data_health": "PARTIAL_DATA",
       "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "LINKEUR",
-      "requested_pair": "LINKEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "BNBEUR",
-      "requested_pair": "BNBEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "AAVEEUR",
-      "requested_pair": "AAVEEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "ONDOEUR",
-      "requested_pair": "ONDOEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "INJEUR",
-      "requested_pair": "INJEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "PENDLEEUR",
-      "requested_pair": "PENDLEEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "RENDEREUR",
-      "requested_pair": "RENDEREUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "TAOEUR",
-      "requested_pair": "TAOEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
+      "error": null,
+      "detail": null
     }
   ],
+  "owned_priority_status": {
+    "GALAEUR": {
+      "data_health": "DATA_OK",
+      "source_data_health": "DATA_OK",
+      "pair_matches": true,
+      "fresh_quote_evidence": true,
+      "spread_observed_at": "2026-10-05T19:15:34.000Z",
+      "spread_source_retrieved_at": "2026-10-05T19:15:39.185Z",
+      "depth_source_retrieved_at": "2026-10-05T19:15:40.295Z",
+      "best_bid": 0.002219,
+      "best_ask": 0.002222,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    },
+    "NIGHTEUR": {
+      "data_health": "PARTIAL_DATA",
+      "source_data_health": "PARTIAL_DATA",
+      "pair_matches": true,
+      "fresh_quote_evidence": false,
+      "spread_observed_at": "2026-10-05T19:15:22.000Z",
+      "spread_source_retrieved_at": "2026-10-05T19:15:49.487Z",
+      "depth_source_retrieved_at": "2026-10-05T19:15:50.600Z",
+      "best_bid": 0.04176,
+      "best_ask": 0.0418,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    },
+    "MEGAEUR": {
+      "data_health": "DATA_OK",
+      "source_data_health": "DATA_OK",
+      "pair_matches": true,
+      "fresh_quote_evidence": true,
+      "spread_observed_at": "2026-10-05T19:15:39.000Z",
+      "spread_source_retrieved_at": "2026-10-05T19:15:59.773Z",
+      "depth_source_retrieved_at": "2026-10-05T19:16:00.876Z",
+      "best_bid": 0.04387,
+      "best_ask": 0.04392,
+      "error": null,
+      "pair_error": null,
+      "trade_signal": null,
+      "independent_crosscheck": "NOT_PROVIDED"
+    }
+  },
   "notes": [
-    "Public read-only market-data mirror only.",
-    "Mirror success is not a BUY/SELL signal.",
-    "Consumer must recompute freshness from source timestamps.",
-    "Logical DOGEEUR is requested from Kraken REST as XDGEUR.",
-    "owned-quotes may be research-usable while data_health is PARTIAL_DATA; it is never executable evidence.",
-    "A single optional candidate failure does not fail the core mirror workflow.",
-    "A local rate-limit cooldown is missing evidence, not a negative market signal."
+    "Public read-only evidence only. No private APIs, trades or account data.",
+    "Recompute freshness from embedded source times.",
+    "Ticker rows are research support, not timestamped executable evidence.",
+    "Priority-owned candidates are mandatory and separate from max-three Movers discovery.",
+    "Optional discovery failure does not fail the owned-risk core.",
+    "An evidence snapshot is not a BUY/SELL signal or independent cross-check."
   ],
   "summary": {
     "core_ok": false,
-    "universe_ok": false,
+    "health_schema_ok": true,
+    "universe_ok": true,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 7,
-    "candidate_partial_or_failed_count": 10
-  }
+    "owned_priority_complete": false,
+    "owned_priority_count": 3,
+    "candidate_ok_count": 4,
+    "candidate_partial_or_failed_count": 2
+  },
+  "mirror_revision": "1.2-core-health",
+  "archive_revision": "1.4-same-source-no-extra-requests",
+  "source_core_sha": "ad188b298a2f9748393cd7ca234e3a6a462b80f4",
+  "archived_at": "2026-10-05T19:17:07.741435+00:00",
+  "source_manifest_status": "PARTIAL",
+  "is_independent_freshness_fallback": false,
+  "source_core_file_sha256": {},
+  "file_sha256": {}
 }
