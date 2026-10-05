@@ -74,6 +74,26 @@ class TransportTests(unittest.TestCase):
         with patch("public_transport.time.monotonic", return_value=100.25), patch("public_transport.time.sleep") as sleep, patch("public_transport.urllib.request.urlopen", return_value=Response(b'{}')):
             client.get("/health")
         sleep.assert_called_once_with(1.0)
+    def test_slow_response_keeps_full_post_completion_gap(self):
+        client = PublicGetter("https://public.test", min_interval=1.25)
+        clock = [100.0]
+        def slow_response(*args, **kwargs):
+            clock[0] += 9.0
+            return Response(b'{}')
+        with patch("public_transport.time.monotonic", side_effect=lambda: clock[0]), patch("public_transport.urllib.request.urlopen", side_effect=slow_response), patch("public_transport.time.sleep") as sleep:
+            self.assertTrue(client.get("/candidate.json?pair=ONEEUR")["ok"])
+            self.assertEqual(client.last_request, 109.0)
+            self.assertTrue(client.get("/candidate.json?pair=TWOEUR")["ok"])
+        sleep.assert_called_once_with(1.25)
+    def test_network_failure_also_starts_gap_at_completion(self):
+        client = PublicGetter("https://public.test")
+        clock = [100.0]
+        def slow_error(*args, **kwargs):
+            clock[0] += 9.0
+            raise OSError("timeout")
+        with patch("public_transport.time.monotonic", side_effect=lambda: clock[0]), patch("public_transport.urllib.request.urlopen", side_effect=slow_error):
+            self.assertFalse(client.get("/health")["ok"])
+        self.assertEqual(client.last_request, 109.0)
     def test_non_json_and_non_object_fail_closed(self):
         for raw, ctype in ((b'not json', 'text/html'), (b'[]', 'application/json')):
             with patch("public_transport.urllib.request.urlopen", return_value=Response(raw, ctype)):

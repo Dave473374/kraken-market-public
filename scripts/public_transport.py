@@ -70,7 +70,6 @@ class PublicGetter:
                 time.sleep(delay)
         req = urllib.request.Request(url, method="GET", headers={
             "Accept": "application/json", "User-Agent": "kraken-market-public-mirror/1.3-transport"})
-        self.last_request = time.monotonic()
         try:
             with urllib.request.urlopen(req, timeout=self.timeout) as resp:
                 raw = resp.read(16 * 1024 * 1024 + 1)
@@ -113,6 +112,11 @@ class PublicGetter:
             return result
         except Exception as exc:
             return self.failure(url, started, type(exc).__name__, str(exc)[:300])
+        finally:
+            # Pacing starts AFTER completion, not before a slow response.
+            # Otherwise a nine-second candidate consumes the entire gap and
+            # the next core request can follow only 0.4 seconds later.
+            self.last_request = time.monotonic()
 
     @staticmethod
     def failure(url, started, error, detail=None):
