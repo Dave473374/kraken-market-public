@@ -3,26 +3,13 @@
   "status": "ACTIVE",
   "data_health": "DATA_OK",
   "first_active_observed": 1791118351.5882373,
-  "last_observed_at": "2026-10-05T04:58:13.351497Z",
-  "cash_eur": 284.2569199687373,
-  "equity_eur": 496.1316319841311,
-  "position": {
-    "qty": 1.9840124,
-    "initial_qty": 1.9840124,
-    "entry": 107.87776999999998,
-    "stop": 104.64143689999999,
-    "distance": 0.03,
-    "partial": false,
-    "peak_bid": 107.76,
-    "proceeds": 0,
-    "initial_cost": 215.74308003126274,
-    "opened_at": "2026-10-04T21:02:39.309868Z",
-    "opened_unix": 1791147759.3098683,
-    "planned_loss_eur": 10.0
-  },
-  "fees_eur": 1.7122466669147838,
+  "last_observed_at": "2026-10-05T05:03:14.009079Z",
+  "cash_eur": 495.7777209952412,
+  "equity_eur": 495.7777209952412,
+  "position": null,
+  "fees_eur": 3.418059578418848,
   "max_drawdown_pct": 0.8641175225567399,
-  "success_count": 142,
+  "success_count": 143,
   "failure_count": 0,
   "consecutive_failures": 0,
   "gaps": [
@@ -51,23 +38,31 @@
       "cash": 1.0815800237651274e-06,
       "start": "2026-10-04T12:52:31.588237Z",
       "label": "Independent buy-and-hold comparison; not bot funds",
-      "net_liquidation_eur": 490.39772335070006
+      "net_liquidation_eur": 489.57857348054
     },
     "400": {
       "qty": 3.6737,
       "cash": 100.00000086526404,
       "start": "2026-10-04T12:52:31.588237Z",
       "label": "Independent buy-and-hold comparison; not bot funds",
-      "net_liquidation_eur": 492.3181786805601
+      "net_liquidation_eur": 491.66285878443205
     }
   },
-  "closed_trades": [],
+  "closed_trades": [
+    {
+      "entry": "2026-10-04T21:02:39.309868Z",
+      "exit": "2026-10-05T05:03:14.009079Z",
+      "pnl_eur": -4.2222790047588035,
+      "initial_cost_eur": 215.74308003126274,
+      "reason": "TWO_CLOSES_BELOW_SMA20"
+    }
+  ],
   "last_error": null,
   "final": false,
   "final_delay_seconds": null,
-  "generated_at": "2026-10-05T04:58:13.354743Z",
-  "net_pnl_eur": -3.868368015868896,
-  "fill_count": 1,
+  "generated_at": "2026-10-05T05:03:14.012381Z",
+  "net_pnl_eur": -4.222279004758775,
+  "fill_count": 2,
   "protocol_hash": "394eafafbe6a51a231b989cedd11401e8a4f438c93924ea5194e072bd6174d0a",
   "paper_only": true,
   "real_orders": false,
