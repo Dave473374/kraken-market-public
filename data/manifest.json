@@ -2,7 +2,7 @@
   "schema": "KRAKEN_MARKET_PUBLIC_MIRROR_V1",
   "mirror_revision": "1.2-core-health",
   "transport_revision": "1.3-paced-owned-first",
-  "generated_at": "2026-10-05T15:05:02.165941Z",
+  "generated_at": "2026-10-05T16:05:30.390719Z",
   "worker_base": "https://kraken-public-test.david-e5e.workers.dev",
   "expected_worker_schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
   "status": "PARTIAL",
@@ -13,7 +13,7 @@
     "health.json": {
       "ok": true,
       "schema_ok": true,
-      "source_retrieved_at": "2026-10-05T15:04:14.431301Z"
+      "source_retrieved_at": "2026-10-05T16:04:14.168959Z"
     },
     "owned-quotes.json": {
       "ok": true,
@@ -58,7 +58,7 @@
         "NIGHTEUR",
         "MEGAEUR"
       ],
-      "source_retrieved_at": "2026-10-05T15:04:17.018969Z",
+      "source_retrieved_at": "2026-10-05T16:04:16.801469Z",
       "expected_count": 17,
       "received_count": 17,
       "missing_pairs": [],
@@ -69,7 +69,7 @@
     "universe.json": {
       "ok": false,
       "schema_ok": false,
-      "source_retrieved_at": "2026-10-05T15:05:02.165016Z"
+      "source_retrieved_at": "2026-10-05T16:05:30.389694Z"
     }
   },
   "candidate_pairs_attempted": [
@@ -101,25 +101,25 @@
       "logical_pair": "ETHEUR",
       "requested_pair": "ETHEUR",
       "attempts": 1,
-      "http_request_made": false
+      "http_request_made": true
     },
     {
       "logical_pair": "SOLEUR",
       "requested_pair": "SOLEUR",
       "attempts": 1,
-      "http_request_made": false
+      "http_request_made": true
     },
     {
       "logical_pair": "DOGEEUR",
       "requested_pair": "XDGEUR",
       "attempts": 1,
-      "http_request_made": false
+      "http_request_made": true
     },
     {
       "logical_pair": "LTCEUR",
       "requested_pair": "LTCEUR",
       "attempts": 1,
-      "http_request_made": false
+      "http_request_made": true
     },
     {
       "logical_pair": "SUIEUR",
@@ -179,53 +179,13 @@
   "candidate_pairs_ok": [
     "GALAEUR",
     "NIGHTEUR",
-    "MEGAEUR"
+    "MEGAEUR",
+    "XBTEUR",
+    "ETHEUR",
+    "SOLEUR",
+    "DOGEEUR"
   ],
   "candidate_pairs_partial_or_failed": [
-    {
-      "logical_pair": "XBTEUR",
-      "requested_pair": "XBTEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "HTTP_429",
-      "detail": "{\"schema\":\"KRAKEN_PUBLIC_TRANSPORT_V2.0.2\",\"role\":\"PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT\",\"contains_account_data\":false,\"automatic_trading\":false,\"private_exchange_api\":false,\"production_ready\":false,\"movers_live_pass\":false,\"hourly_task_integration\":\"NOT_VALIDATED\",\"trade_signal\":null,\"independent_crosscheck\":\"NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY\",\"status\":\"LOCAL_COOLDOWN\",\"data_health\":\"PARTIAL_DATA\",\"note\":\"BEST_EFFORT_PER_ISOLATE_ONLY\"}"
-    },
-    {
-      "logical_pair": "ETHEUR",
-      "requested_pair": "ETHEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "SOLEUR",
-      "requested_pair": "SOLEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
-    },
-    {
-      "logical_pair": "DOGEEUR",
-      "requested_pair": "XDGEUR",
-      "attempts": 1,
-      "transport_ok": false,
-      "schema_ok": false,
-      "data_health": null,
-      "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
-    },
     {
       "logical_pair": "LTCEUR",
       "requested_pair": "LTCEUR",
@@ -234,8 +194,8 @@
       "schema_ok": false,
       "data_health": null,
       "pair_error": null,
-      "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "error": "HTTP_429",
+      "detail": "{\"schema\":\"KRAKEN_PUBLIC_TRANSPORT_V2.0.2\",\"role\":\"PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT\",\"contains_account_data\":false,\"automatic_trading\":false,\"private_exchange_api\":false,\"production_ready\":false,\"movers_live_pass\":false,\"hourly_task_integration\":\"NOT_VALIDATED\",\"trade_signal\":null,\"independent_crosscheck\":\"NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY\",\"status\":\"LOCAL_COOLDOWN\",\"data_health\":\"PARTIAL_DATA\",\"note\":\"BEST_EFFORT_PER_ISOLATE_ONLY\"}"
     },
     {
       "logical_pair": "SUIEUR",
@@ -246,7 +206,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "LINKEUR",
@@ -257,7 +217,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "BNBEUR",
@@ -268,7 +228,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "AAVEEUR",
@@ -279,7 +239,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "ONDOEUR",
@@ -290,7 +250,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "INJEUR",
@@ -301,7 +261,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "PENDLEEUR",
@@ -312,7 +272,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "RENDEREUR",
@@ -323,7 +283,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     },
     {
       "logical_pair": "TAOEUR",
@@ -334,7 +294,7 @@
       "data_health": null,
       "pair_error": null,
       "error": "LOCAL_RATE_LIMIT_COOLDOWN",
-      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=XBTEUR&notional_eur=60.0"
+      "detail": "No HTTP request made; honoring prior HTTP_429 from https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=LTCEUR&notional_eur=60.0"
     }
   ],
   "notes": [
@@ -351,7 +311,7 @@
     "universe_ok": false,
     "owned_quotes_research_usable": true,
     "owned_quotes_executable_evidence": false,
-    "candidate_ok_count": 3,
-    "candidate_partial_or_failed_count": 14
+    "candidate_ok_count": 7,
+    "candidate_partial_or_failed_count": 10
   }
 }
