@@ -9,8 +9,8 @@
   "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
   "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-10-05T08:41:22.772Z",
-  "generated_at": "2026-10-05T08:41:31.668Z",
+  "request_started_at": "2026-10-05T09:41:23.262Z",
+  "generated_at": "2026-10-05T09:41:32.165Z",
   "data_health": "DATA_OK",
   "transport_status": "CANDIDATE_PUBLIC_EVIDENCE_COLLECTED",
   "pair_metadata": {
@@ -39,14 +39,14 @@
   "metadata_source": {
     "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=SUIEUR&country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
-    "request_started_at": "2026-10-05T08:41:23.872Z",
-    "retrieved_at": "2026-10-05T08:41:23.968Z",
+    "request_started_at": "2026-10-05T09:41:24.362Z",
+    "retrieved_at": "2026-10-05T09:41:24.466Z",
     "http_status": 200,
     "market_observed_at": null,
     "from_isolate_cache": false,
     "ok": true,
     "http_metadata": {
-      "Date": "Mon, 05 Oct 2026 08:41:23 GMT",
+      "Date": "Mon, 05 Oct 2026 09:41:24 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1",
       "CF-Cache-Status": "EXPIRED",
       "Content-Type": "application/json"
@@ -55,19 +55,19 @@
   },
   "clock": {
     "quality": "VERIFIED",
-    "server_unix": 1791189682,
-    "age_seconds_at_response": 9.667999982833862,
+    "server_unix": 1791193283,
+    "age_seconds_at_response": 9.164999961853027,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Time",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:22.772Z",
-      "retrieved_at": "2026-10-05T08:41:22.866Z",
+      "request_started_at": "2026-10-05T09:41:23.262Z",
+      "retrieved_at": "2026-10-05T09:41:23.364Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:22 GMT",
+        "Date": "Mon, 05 Oct 2026 09:41:23 GMT",
         "Cache-Control": "no-store",
         "CF-Cache-Status": "BYPASS",
         "Content-Type": "application/json"
@@ -80,83 +80,28 @@
     "quality": "APPROXIMATE",
     "observation_time": null,
     "timestamp_note": "TICKER_DOES_NOT_TIMESTAMP_QUOTES",
-    "bid": 1.0995,
-    "ask": 1.0998,
-    "last": 1.0992,
-    "mid": 1.09965,
-    "spread_pct": 0.02728140772065557,
-    "volume_24h_base": 10925506.29161,
-    "vwap_24h_quote": 1.09256689,
-    "turnover_24h_quote": 11936846.430699773,
-    "change_since_midnight_utc_pct": 2.4322057590159263,
+    "bid": 1.1002,
+    "ask": 1.101,
+    "last": 1.1006,
+    "mid": 1.1006,
+    "spread_pct": 0.07268762493184734,
+    "volume_24h_base": 11002715.26016,
+    "vwap_24h_quote": 1.0927178,
+    "turnover_24h_quote": 12022862.813108461,
+    "change_since_midnight_utc_pct": 2.5626689031777117,
     "change_window": "SINCE_MIDNIGHT_UTC_NOT_ROLLING_24H",
     "rolling_24h_price_change_pct": null,
     "source": {
       "source_url": "https://api.kraken.com/0/public/Ticker?pair=SUIEUR",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:31.572Z",
-      "retrieved_at": "2026-10-05T08:41:31.668Z",
+      "request_started_at": "2026-10-05T09:41:32.062Z",
+      "retrieved_at": "2026-10-05T09:41:32.165Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:31 GMT",
-        "Cache-Control": "max-age=2, public",
-        "CF-Cache-Status": "EXPIRED",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "timestamped_spread": {
-    "quality": "VERIFIED",
-    "observed_unix": 1791189684,
-    "observed_at": "2026-10-05T08:41:24.000Z",
-    "age_seconds_at_response": 7.667999982833862,
-    "bid": 1.0997,
-    "ask": 1.1,
-    "mid": 1.09985,
-    "spread_pct": 0.027276446788215575,
-    "recent_rows": [
-      [
-        1791189683,
-        "1.09960000",
-        "1.10020000"
-      ],
-      [
-        1791189683,
-        "1.09960000",
-        "1.10040000"
-      ],
-      [
-        1791189684,
-        "1.09970000",
-        "1.10040000"
-      ],
-      [
-        1791189684,
-        "1.09970000",
-        "1.10020000"
-      ],
-      [
-        1791189684,
-        "1.09970000",
-        "1.10000000"
-      ]
-    ],
-    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Spread?pair=SUIEUR",
-      "method": "GET",
-      "request_started_at": "2026-10-05T08:41:29.372Z",
-      "retrieved_at": "2026-10-05T08:41:29.464Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:29 GMT",
+        "Date": "Mon, 05 Oct 2026 09:41:32 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -164,24 +109,79 @@
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     }
   },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "observed_unix": 1791193289,
+    "observed_at": "2026-10-05T09:41:29.000Z",
+    "age_seconds_at_response": 3.1649999618530273,
+    "bid": 1.1001,
+    "ask": 1.101,
+    "mid": 1.1005500000000001,
+    "spread_pct": 0.08177729317158701,
+    "recent_rows": [
+      [
+        1791193288,
+        "1.10040000",
+        "1.10140000"
+      ],
+      [
+        1791193288,
+        "1.10040000",
+        "1.10130000"
+      ],
+      [
+        1791193288,
+        "1.10040000",
+        "1.10110000"
+      ],
+      [
+        1791193288,
+        "1.10040000",
+        "1.10100000"
+      ],
+      [
+        1791193289,
+        "1.10010000",
+        "1.10100000"
+      ]
+    ],
+    "meaning": "LATEST_RECORDED_TOP_OF_BOOK_CHANGE_NOT_INDEPENDENT_PRICE_SOURCE",
+    "source": {
+      "source_url": "https://api.kraken.com/0/public/Spread?pair=SUIEUR",
+      "method": "GET",
+      "request_started_at": "2026-10-05T09:41:29.862Z",
+      "retrieved_at": "2026-10-05T09:41:29.973Z",
+      "http_status": 200,
+      "market_observed_at": null,
+      "from_isolate_cache": false,
+      "ok": true,
+      "http_metadata": {
+        "Date": "Mon, 05 Oct 2026 09:41:29 GMT",
+        "Cache-Control": "max-age=2, public",
+        "CF-Cache-Status": "EXPIRED",
+        "Content-Type": "application/json"
+      },
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
   "depth": {
     "quality": "VERIFIED",
-    "best_bid": 1.0995,
-    "best_ask": 1.0998,
-    "mid": 1.09965,
-    "spread_pct": 0.02728140772065557,
+    "best_bid": 1.1004,
+    "best_ask": 1.1012,
+    "mid": 1.1008,
+    "spread_pct": 0.07267441860464316,
     "band_pct": 0.5,
     "depth_each_side": {
       "asks": {
-        "notional_quote_lower_bound": 143238.0059822,
+        "notional_quote_lower_bound": 97566.4410351,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 2387.300099703333,
+        "multiple_of_test_notional": 1626.107350585,
         "depth_20x_test": "PASS"
       },
       "bids": {
-        "notional_quote_lower_bound": 338822.91567420005,
+        "notional_quote_lower_bound": 237076.64212670003,
         "band_fully_observed": true,
-        "multiple_of_test_notional": 5647.048594570001,
+        "multiple_of_test_notional": 3951.2773687783338,
         "depth_20x_test": "PASS"
       }
     },
@@ -189,7 +189,7 @@
     "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_THE_SNAPSHOT_TIME",
     "returned_levels": {
       "asks": 500,
-      "bids": 469
+      "bids": 454
     },
     "simulation": {
       "quality": "APPROXIMATE",
@@ -197,17 +197,17 @@
       "buy": {
         "fillable": true,
         "notional_quote": 60,
-        "base_quantity": 54.55537370430987,
+        "base_quantity": 54.48601525608427,
         "unfilled_quote": 0,
-        "average_price": 1.0998,
+        "average_price": 1.1012,
         "slippage_vs_best_ask_pct": 0
       },
       "sell_same_base_quantity": {
         "fillable": true,
-        "base_quantity": 54.55537370430987,
+        "base_quantity": 54.48601525608427,
         "unfilled_base": 0,
-        "proceeds_quote": 59.9836333878887,
-        "average_price": 1.0995,
+        "proceeds_quote": 59.95641118779513,
+        "average_price": 1.1004,
         "slippage_vs_best_bid_pct": 0
       },
       "fees_included": false,
@@ -217,15 +217,15 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/Depth?pair=SUIEUR&count=500",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:30.472Z",
-      "retrieved_at": "2026-10-05T08:41:30.573Z",
+      "request_started_at": "2026-10-05T09:41:30.962Z",
+      "retrieved_at": "2026-10-05T09:41:31.083Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:30 GMT",
-        "Cache-Control": "public, max-age=2",
+        "Date": "Mon, 05 Oct 2026 09:41:31 GMT",
+        "Cache-Control": "max-age=2, public",
         "CF-Cache-Status": "EXPIRED",
         "Content-Type": "application/json"
       },
@@ -882,16 +882,16 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=SUIEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:24.972Z",
-      "retrieved_at": "2026-10-05T08:41:25.082Z",
+      "request_started_at": "2026-10-05T09:41:25.462Z",
+      "retrieved_at": "2026-10-05T09:41:25.560Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:25 GMT",
+        "Date": "Mon, 05 Oct 2026 09:41:25 GMT",
         "Cache-Control": "public, max-age=2",
-        "CF-Cache-Status": "EXPIRED",
+        "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
       },
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -1528,14 +1528,14 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=SUIEUR&interval=1440",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:26.072Z",
-      "retrieved_at": "2026-10-05T08:41:26.167Z",
+      "request_started_at": "2026-10-05T09:41:26.562Z",
+      "retrieved_at": "2026-10-05T09:41:26.665Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:26 GMT",
+        "Date": "Mon, 05 Oct 2026 09:41:26 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -1555,14 +1555,14 @@
     "source": {
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
-      "request_started_at": "2026-10-05T08:41:28.272Z",
-      "retrieved_at": "2026-10-05T08:41:28.361Z",
+      "request_started_at": "2026-10-05T09:41:28.762Z",
+      "retrieved_at": "2026-10-05T09:41:28.864Z",
       "http_status": 200,
       "market_observed_at": null,
       "from_isolate_cache": false,
       "ok": true,
       "http_metadata": {
-        "Date": "Mon, 05 Oct 2026 08:41:28 GMT",
+        "Date": "Mon, 05 Oct 2026 09:41:28 GMT",
         "Cache-Control": "public, max-age=2",
         "CF-Cache-Status": "HIT",
         "Content-Type": "application/json"
@@ -1582,22 +1582,22 @@
   "test_notional_is_recommendation": false,
   "test_minima": {
     "quality": "APPROXIMATE",
-    "base_quantity_rounded_down": 54.55537,
+    "base_quantity_rounded_down": 54.48601,
     "ordermin_met": true,
     "costmin_met": true,
     "fees_included": false
   },
   "same_exchange_quote_comparisons": {
     "Ticker_Spread": {
-      "difference_pct": 0.01818595135257813,
+      "difference_pct": 0.004543079753754489,
       "within_1pct": true
     },
     "Ticker_Depth": {
-      "difference_pct": 0,
+      "difference_pct": 0.018170255292084853,
       "within_1pct": true
     },
     "Spread_Depth": {
-      "difference_pct": 0.01818595135257813,
+      "difference_pct": 0.02271333499896531,
       "within_1pct": true
     }
   },
