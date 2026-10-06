@@ -1,24 +1,31 @@
 {
+  "data_health": "DATA_OK",
+  "clock_source": {
+    "provider": "api.kraken.com",
+    "source_url": "https://api.kraken.com/0/public/Time",
+    "method": "GET",
+    "ok": true,
+    "request_started_at": "2026-10-06T15:32:38.203544Z",
+    "retrieved_at": "2026-10-06T15:32:38.454206Z",
+    "market_observed_at": null,
+    "from_cache": false,
+    "http_status": 200,
+    "http_metadata": {
+      "Date": "Tue, 06 Oct 2026 15:32:38 GMT",
+      "Cache-Control": "no-store"
+    },
+    "http_request_made": true,
+    "status": "PUBLIC_JSON_ENVELOPE_VALID"
+  },
   "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "producer": "CAW_DIRECT_KRAKEN_V1",
   "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
+  "transport_mode": "DIRECT_KRAKEN_NO_WORKER",
+  "schema_note": "LEGACY_WIRE_COMPATIBILITY_NOT_WORKER_IDENTITY",
+  "generated_at": "2026-10-06T15:32:38.454290Z",
   "contains_account_data": false,
   "automatic_trading": false,
   "private_exchange_api": false,
-  "production_ready": false,
-  "movers_live_pass": false,
-  "hourly_task_integration": "NOT_VALIDATED",
   "trade_signal": null,
-  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "worker_status": "RESPONDING",
-  "generated_at": "2026-10-06T08:36:12.749Z",
-  "kraken_status": "NOT_TESTED_BY_THIS_ROUTE",
-  "routes": [
-    "/test.json",
-    "/universe.json",
-    "/candidate.json?pair=GRTEUR&notional_eur=60",
-    "/quotes.json?pairs=XBTEUR,ETHEUR"
-  ],
-  "test_notional_note": "60 EUR is an optional synthetic order-size probe, NOT a trade budget.",
-  "operational_status": "V2_STAGED_REQUIRES_LIVE_ENDPOINT_AND_HOURLY_INGESTION_VALIDATION",
-  "limits": "No cron, KV, account data or trading. Cooldowns/cache are per isolate, not guaranteed global quota protection."
+  "actionability": "NEVER_AUTHORIZED_BY_DATA_ADAPTER"
 }
