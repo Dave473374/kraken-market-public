@@ -41,10 +41,24 @@ def compare_reference(reference, book_mid_quote, eur_per_quote, asset):
 class IndependentReferences:
     def __init__(self, cache):
         self.cache=cache; self.references={};self.attempted=False
-        self.cg=PublicHTTP('https://api.coingecko.com',{'/api/v3/coins/list','/api/v3/simple/price'},budget=2,timeout=10)
+        self.cg=PublicHTTP('https://api.coingecko.com',{'/api/v3/coins/list','/api/v3/simple/price'},
+            previous=self._cooldown_state('coingecko'),budget=2,timeout=10)
         self.cb=PublicHTTP('https://api.exchange.coinbase.com',{
-            '/products/BTC-EUR/ticker','/products/ETH-EUR/ticker','/products/SOL-EUR/ticker'},budget=3,timeout=10)
+            '/products/BTC-EUR/ticker','/products/ETH-EUR/ticker','/products/SOL-EUR/ticker'},
+            previous=self._cooldown_state('coinbase'),budget=3,timeout=10)
         self.diagnostics=[]
+    def _cooldown_state(self, provider):
+        entry=self.cache.get('independent:'+provider+':cooldown',{})
+        if not isinstance(entry,dict) or not isinstance(entry.get('data',{}),dict):
+            raise ValueError('Corrupt provider cooldown; do not silently reset')
+        return entry.get('data',{})
+    def _save_cooldowns(self):
+        # Operational values only; never price evidence. Saved before cache flush.
+        for name,client in (('coingecko',self.cg),('coinbase',self.cb)):
+            self.cache['independent:'+name+':cooldown']={
+                'data':{'cooldown_until_epoch':client.until},
+                'source':{'ok':True,'retrieved_at':stamp(),
+                          'status':'LOCAL_RATE_LIMIT_STATE_NOT_MARKET_EVIDENCE'}}
     def _load(self):
         self.attempted=True
         identity=self.cache.get('independent:coingecko:identities')
@@ -53,7 +67,7 @@ class IndependentReferences:
             found={}
             if raw['source']['ok'] and isinstance(raw['data'],list):
                 for base,(coin_id,symbol) in IDS.items():
-                    hits=[r for r in raw['data'] if isinstance(r,dict) and r.get('id')==coin_id and r.get('symbol','').lower()==symbol]
+                    hits=[r for r in raw['data'] if isinstance(r,dict) and r.get('id')==coin_id and str(r.get('symbol','')).lower()==symbol]
                     if len(hits)==1 and (base!='NIGHT' or hits[0].get('platforms',{}).get('cardano')==NIGHT_CARDANO):found[base]=hits[0]
             identity={'source':raw['source'],'data':found}
             if found:self.cache['independent:coingecko:identities']=identity
@@ -90,6 +104,7 @@ class IndependentReferences:
                     'source':row['source'],'is_kraken_executable':False,'action_approved':False}
             except (ValueError,TypeError,KeyError):
                 self.references[base]={'quality':'MISSING','provider':'Coinbase Exchange','source':row['source']}
+        self._save_cooldowns()
         return self.references.get(base,{'quality':'MISSING','reason':'NO_VERIFIED_FRESH_REFERENCE_FOR_EXACT_ASSET',
                                         'is_kraken_executable':False,'action_approved':False})
     def report(self):
