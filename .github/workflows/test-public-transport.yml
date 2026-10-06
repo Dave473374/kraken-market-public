@@ -26,7 +26,7 @@ permissions:
 jobs:
   offline-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,3 +37,6 @@ jobs:
       - name: Bounded read-only diagnostic for this repair PR only
         if: github.event_name == 'pull_request' && github.head_ref == 'fix/caw-cooldown-20261006'
         run: python -B scripts/probe_public_transport.py
+      - name: Direct Kraken and independent-provider test (this repair PR only)
+        if: github.event_name == 'pull_request' && github.head_ref == 'fix/caw-direct-sources-20261006'
+        run: python -B scripts/probe_direct_sources.py
