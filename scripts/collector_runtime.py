@@ -33,6 +33,10 @@ class CycleTransport(PublicGetter):
     def get_bounded(self, path):
         attempts, result = 0, None
         for _ in range(2):
+            # Bound total rejections across paths; a short local hint must not
+            # create a rapid loop across the entire configured universe.
+            if self.http_429_count >= 6:
+                break
             remaining = max(0.0, self.cooldown_until - time.monotonic())
             if remaining:
                 wait = remaining + 0.05
