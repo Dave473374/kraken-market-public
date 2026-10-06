@@ -1,59 +1,9 @@
 {
-  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
-  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
-  "contains_account_data": false,
-  "automatic_trading": false,
-  "private_exchange_api": false,
-  "production_ready": false,
-  "movers_live_pass": false,
-  "hourly_task_integration": "NOT_VALIDATED",
-  "trade_signal": null,
-  "independent_crosscheck": "NOT_PROVIDED_BY_THIS_SINGLE_EXCHANGE_RELAY",
-  "request_started_at": "2026-10-06T05:31:05.423Z",
-  "generated_at": "2026-10-06T05:31:06.621Z",
-  "data_health": "DATA_UNAVAILABLE",
-  "stage": "AssetPairs",
-  "source": {
-    "source_url": "https://api.kraken.com/0/public/AssetPairs?pair=IOEUR&country_code=SI&aclass_base=currency&execution_venue=international",
-    "method": "GET",
-    "request_started_at": "2026-10-06T05:31:06.523Z",
-    "retrieved_at": "2026-10-06T05:31:06.621Z",
-    "http_status": 200,
-    "market_observed_at": null,
-    "from_isolate_cache": false,
-    "ok": false,
-    "http_metadata": {
-      "Date": "Tue, 06 Oct 2026 05:31:06 GMT",
-      "Cache-Control": "no-store",
-      "CF-Cache-Status": "BYPASS",
-      "Content-Type": "application/json"
-    },
-    "status": "KRAKEN_API_ERROR",
-    "errors": [
-      "EQuery:Unknown asset pair"
-    ]
-  },
-  "clock": {
-    "quality": "VERIFIED",
-    "server_unix": 1791264665,
-    "age_seconds_at_response": 0.5190000534057617,
-    "source": {
-      "source_url": "https://api.kraken.com/0/public/Time",
-      "method": "GET",
-      "request_started_at": "2026-10-06T05:31:05.423Z",
-      "retrieved_at": "2026-10-06T05:31:05.519Z",
-      "http_status": 200,
-      "market_observed_at": null,
-      "from_isolate_cache": false,
-      "ok": true,
-      "http_metadata": {
-        "Date": "Tue, 06 Oct 2026 05:31:05 GMT",
-        "Cache-Control": "no-store",
-        "CF-Cache-Status": "BYPASS",
-        "Content-Type": "application/json"
-      },
-      "status": "PUBLIC_JSON_ENVELOPE_VALID"
-    }
-  },
-  "freshness_note": "Recompute every age at ingestion. cached source timestamps remain unchanged; generated_at is NOT a Ticker observation time."
+  "mirror_status": "SOURCE_FETCH_FAILED",
+  "mirror_generated_at": "2026-10-06T08:22:22.800865Z",
+  "source_url": "https://kraken-public-test.david-e5e.workers.dev/candidate.json?pair=IOEUR&notional_eur=60.0",
+  "error": "COLLECTION_BUDGET_OR_COOLDOWN",
+  "detail": "Deferred, not a strategy rejection; next cycle prioritizes missing owned evidence",
+  "retry_after_seconds": null,
+  "http_request_made": false
 }
