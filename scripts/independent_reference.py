@@ -13,8 +13,29 @@ IDS = {'BTC':('bitcoin','btc'), 'ETH':('ethereum','eth'), 'SOL':('solana','sol')
        'LINK':('chainlink','link'), 'SUI':('sui','sui'), 'AAVE':('aave','aave'),
        'ONDO':('ondo-finance','ondo'), 'INJ':('injective-protocol','inj'), 'PENDLE':('pendle','pendle'),
        'RENDER':('render-token','render'), 'TAO':('bittensor','tao'), 'GALA':('gala','gala'),
-       'MEGA':('megaeth','mega'), 'NIGHT':('midnight','night'), 'HYPE':('hyperliquid','hype'),
+       'MEGA':('megaeth','mega'), 'NIGHT':('midnight-3','night'), 'HYPE':('hyperliquid','hype'),
        'SHIB':('shiba-inu','shib')}
+
+
+# Official Midnight tokenomics whitepaper and CoinGecko midnight-3 refer to
+# this Cardano asset. CoinGecko id midnight is an unrelated Polygon meme.
+NIGHT_CARDANO='0691b2fecca1ac4f53cb6dfb00b7013e561d1f34403b957cbb5af1fa4e49474854'
+
+def compare_reference(reference, book_mid_quote, eur_per_quote, asset):
+    result={'quality':'MISSING','action_approved':False,'independent_price_only':True,
+            'liquid_1pct_pass':False,'speculative_2pct_pass':False}
+    try:
+        if (reference.get('quality')!='VERIFIED_PROVIDER_REFERENCE' or reference.get('asset_symbol')!=asset
+                or reference.get('quote')!='EUR' or not fresh(reference.get('source',{}),900)
+                or not 0<=time.time()-finite(reference.get('observed_unix'))<=900): return result
+        price=finite(reference['price']);mid=finite(book_mid_quote)*finite(eur_per_quote)
+        mismatch=100*abs(mid-price)/min(mid,price)
+        return {**result,'quality':'CONFLICT' if mismatch>2 else 'COMPARABLE_REFERENCE',
+                'provider':reference['provider'],'kraken_mid_eur':mid,'reference_eur':price,
+                'mismatch_pct':mismatch,'liquid_1pct_pass':mismatch<=1,
+                'speculative_2pct_pass':mismatch<=2,
+                'note':'Not a trade approval; identity, current source times and all other gates remain required.'}
+    except (KeyError,TypeError,ValueError):return result
 
 
 class IndependentReferences:
@@ -28,15 +49,18 @@ class IndependentReferences:
         self.attempted=True
         identity=self.cache.get('independent:coingecko:identities')
         if not identity or not fresh(identity.get('source',{}),86400):
-            raw=self.cg.get('/api/v3/coins/list',{'include_platform':'false'})
+            raw=self.cg.get('/api/v3/coins/list',{'include_platform':'true'})
             found={}
             if raw['source']['ok'] and isinstance(raw['data'],list):
                 for base,(coin_id,symbol) in IDS.items():
                     hits=[r for r in raw['data'] if isinstance(r,dict) and r.get('id')==coin_id and r.get('symbol','').lower()==symbol]
-                    if len(hits)==1:found[base]=hits[0]
+                    if len(hits)==1 and (base!='NIGHT' or hits[0].get('platforms',{}).get('cardano')==NIGHT_CARDANO):found[base]=hits[0]
             identity={'source':raw['source'],'data':found}
             if found:self.cache['independent:coingecko:identities']=identity
-        mapped=identity.get('data',{})
+        mapped={base:r for base,r in identity.get('data',{}).items()
+                if base in IDS and isinstance(r,dict) and r.get('id')==IDS[base][0]
+                and str(r.get('symbol','')).lower()==IDS[base][1]
+                and (base!='NIGHT' or r.get('platforms',{}).get('cardano')==NIGHT_CARDANO)}
         if mapped:
             prices=self.cg.get('/api/v3/simple/price',{'ids':','.join(sorted(r['id'] for r in mapped.values())),
                   'vs_currencies':'eur','include_last_updated_at':'true'})
@@ -47,7 +71,7 @@ class IndependentReferences:
                     price=finite(row['eur']);updated=finite(row['last_updated_at'])
                     if not prices['source']['ok'] or not 0<=time.time()-updated<=900:continue
                     self.references[base]={'quality':'VERIFIED_PROVIDER_REFERENCE','provider':'CoinGecko','asset_id':meta['id'],
-                        'identity_name':meta.get('name'),'identity_source':identity['source'],'quote':'EUR','price':price,
+                        'identity_name':meta.get('name'),'asset_symbol':base,'identity_source':identity['source'],'identity_platforms':meta.get('platforms',{}),'quote':'EUR','price':price,
                         'observed_unix':updated,'source':prices['source'],'is_kraken_executable':False,
                         'action_approved':False,'note':'Aggregator price, not an independent Kraken order book.'}
                 except (KeyError,TypeError,ValueError):continue
@@ -61,7 +85,7 @@ class IndependentReferences:
                 bid,ask=finite(raw['bid']),finite(raw['ask']);when=ts(raw['time'])
                 if not row['source']['ok'] or bid>ask or not 0<=time.time()-when<=900:raise ValueError('Stale/missing crosscheck')
                 self.references[base]={'quality':'VERIFIED_PROVIDER_REFERENCE','provider':'Coinbase Exchange',
-                    'pair':base+'-EUR','quote':'EUR','price':(bid+ask)/2,'bid':bid,'ask':ask,
+                    'pair':base+'-EUR','asset_symbol':base,'quote':'EUR','price':(bid+ask)/2,'bid':bid,'ask':ask,
                     'observed_unix':when,'time_basis':'API_LAST_TRADE_TIME_CHECKED_PLUS_CURRENT_BBO_ACQUISITION',
                     'source':row['source'],'is_kraken_executable':False,'action_approved':False}
             except (ValueError,TypeError,KeyError):

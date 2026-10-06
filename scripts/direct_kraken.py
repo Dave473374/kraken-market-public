@@ -18,7 +18,7 @@ from pathlib import Path
 SCHEMA = 'KRAKEN_PUBLIC_TRANSPORT_V2.0.2'
 PRODUCER = 'CAW_DIRECT_KRAKEN_V1'
 BAR = 14400
-FIAT_STABLE = {'EUR','USD','USDC','USDT','GBP','CHF','CAD','AUD','JPY','DAI','PYUSD','EURC','USDE','USDG','USDD','TUSD','FDUSD'}
+FIAT_STABLE = {'EUR','USD','USDC','USDT','GBP','CHF','CAD','AUD','JPY','DAI','PYUSD','EURC','USDE','USDG','USDD','TUSD','FDUSD','AUSD','USD1','USDS','SUSDS','RLUSD','GHO','FRAX','LUSD','EURQ','USDQ'}
 DISPLAY = {'XXBT':'BTC','XBT':'BTC','XDG':'DOGE','XXDG':'DOGE','XETH':'ETH','XLTC':'LTC','ZEUR':'EUR','ZUSD':'USD','ZGBP':'GBP','ZCAD':'CAD','ZJPY':'JPY','ZCHF':'CHF'}
 
 
@@ -124,8 +124,13 @@ def closed_candles(result, key, at=None):
         normalized=[]
         for row in rows:
             if not isinstance(row,list) or len(row)!=8: return bad
-            start=finite(row[0]); vals=[finite(x) for x in row[1:6]]
+            start=finite(row[0]); vals=[finite(x) for x in row[1:5]]
             volume=finite(row[6],zero=True); trades=finite(row[7],zero=True)
+            vwap=finite(row[5],zero=True)
+            # Observed Kraken no-trade bars have flat positive OHLC and zero VWAP.
+            # Preserve their explicit zero volume; never manufacture absent bars.
+            if vwap==0 and not (volume==0 and trades==0 and len(set(vals))==1): return bad
+            vals.append(vwap)
             if start%BAR or start+BAR>boundary or not vals[2]<=min(vals[0],vals[3])<=max(vals[0],vals[3])<=vals[1]: return bad
             normalized.append([int(start),*vals,volume,trades])
         tail=normalized[-49:]
@@ -301,13 +306,16 @@ class DirectKrakenTransport:
         if ticker.get('mid') and depth.get('mid'):
             mismatch=100*abs(ticker['mid']-depth['mid'])/min(ticker['mid'],depth['mid'])
             if mismatch>2: reasons.append('SAME_PROVIDER_PRICE_MISMATCH_GT_2PCT')
+        from independent_reference import compare_reference
+        independent=self.independent.get(meta_out['base_display'])
+        comparison=compare_reference(independent,depth.get('mid'),fx,meta_out['base_display'])
         return {'data_health':'PARTIAL_DATA' if reasons else 'DATA_OK','pair_metadata':meta_out,
                 'metadata_source':self._meta()['source'],'ticker':ticker,'timestamped_spread':spread,'depth':depth,
                 'closed_4h':candles,'closed_daily':{'quality':'NOT_COLLECTED_OPTIONAL'},
                 'btc_same_period_reference':{'quality':btc.get('quality'),'source':btc.get('source'),
                     'closed_24h':btc.get('closed_24h'),'optional_only':True},
                 'aggregate_turnover':self._aggregate(meta['base']),
-                'independent_reference':self.independent.get(meta_out['base_display']),
+                'independent_reference':independent,'independent_comparison':comparison,
                 'fx':{'quality':'VERIFIED' if meta_out['quote_display']=='EUR' else 'APPROXIMATE' if fx else 'MISSING',
                       'eur_per_quote_mid':fx,'quote_currency':meta_out['quote_display'],
                       'source':None if meta_out['quote_display']=='EUR' else self._ticks()['source']},
@@ -324,6 +332,7 @@ class DirectKrakenTransport:
             if not isinstance(meta,dict) or meta.get('aclass_base')!='currency' or meta.get('status')!='online': continue
             base=DISPLAY.get(meta.get('base'),meta.get('base'));quote=DISPLAY.get(meta.get('quote'),meta.get('quote'))
             if not isinstance(base,str) or base in FIAT_STABLE or quote not in ('EUR','USD','USDC') or not base.isalnum(): continue
+            if base.endswith('x') or base.startswith(('XAUT','PAXG')) or base in ('WBTC','WETH','STETH','WSTETH','CBETH','RETH','WSOL'): continue
             tick=self._ticker(key);fx=self._fx(quote)
             if tick.get('quality')=='MISSING' or fx is None: continue
             row={'pair_key':key,'altname':meta.get('altname'),'asset':base,'quote':quote,
