@@ -142,7 +142,7 @@ def collect_session(minutes, remaining):
         # Python crashes and a valid PARTIAL both return 1. Remove the preceding
         # receipt before launch so a crash cannot republish the previous cycle.
         (ROOT / 'data/core/manifest.json').unlink(missing_ok=True)
-        result = subprocess.run([sys.executable, '-B', 'scripts/collect_core.py'], cwd=ROOT, timeout=540)
+        result = subprocess.run([sys.executable, '-B', 'scripts/collect_direct.py'], cwd=ROOT, timeout=540)
         if result.returncode not in (0, 1):
             raise RuntimeError('Collector crashed; no stale republish or recursive restart')
         new_files = local_snapshot()
@@ -192,7 +192,7 @@ def archive_manifest(files, sha, now=None):
     manifest['summary']['core_ok'] = manifest['status'] == 'OK'
     manifest['source_core_file_sha256'] = manifest.get('file_sha256', {})
     manifest['file_sha256'] = {name: digest for name, digest in manifest.get('file_sha256', {}).items()
-        if name in ('health.json', 'owned-quotes.json', 'universe.json', 'sampling-report.json') or name.startswith('candidates/')}
+        if name in ('health.json', 'owned-quotes.json', 'universe.json', 'sampling-report.json', 'independent-quotes.json') or name.startswith('candidates/')}
     return manifest
 
 
@@ -201,7 +201,7 @@ def archive_main():
     manifest = archive_manifest(files, sha)
     dest = ROOT / 'data'
     # Restrict writes to existing public evidence paths; never research/ or ledger.
-    for name in ('health.json', 'owned-quotes.json', 'universe.json', 'sampling-report.json'):
+    for name in ('health.json', 'owned-quotes.json', 'universe.json', 'sampling-report.json', 'independent-quotes.json'):
         if name in files:
             (dest / name).write_bytes(files[name])
     candidates = {n.removeprefix('candidates/'): b for n, b in files.items() if n.startswith('candidates/')}
@@ -212,6 +212,8 @@ def archive_main():
     git('add', 'data/manifest.json', 'data/health.json', 'data/owned-quotes.json', 'data/universe.json', 'data/candidates')
     if (dest / 'sampling-report.json').exists():
         git('add', 'data/sampling-report.json')
+    if (dest / 'independent-quotes.json').exists():
+        git('add', 'data/independent-quotes.json')
     if subprocess.run(['git', 'diff', '--cached', '--quiet'], cwd=ROOT).returncode == 0:
         return
     git('commit', '-m', 'Archive exact Kraken core evidence without new market requests')
