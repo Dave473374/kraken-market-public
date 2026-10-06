@@ -17,7 +17,7 @@ class CycleTransport(PublicGetter):
     Kraken again. This cannot coordinate unrelated projects/Worker isolates.
     """
     def __init__(self, base, previous=None, timeout=30):
-        super().__init__(base, timeout=timeout, min_interval=1.25)
+        super().__init__(base, timeout=timeout, min_interval=3.0)
         previous = obj(previous)
         until = previous.get('cooldown_until_epoch', 0)
         if not isinstance(until, (int, float)) or isinstance(until, bool) or not math.isfinite(until) or until < 0:
@@ -88,7 +88,6 @@ def retained_seeds(previous, current, now, limit=20):
         row['last_seen_at'] = now.isoformat()
         row['asset'] = item.get('asset') or item.get('base_code') or pair
     order.extend(p for p in kept if p not in order)
-    # Deduplicate venues/quotes for the same asset. Not an eligibility verdict.
     result, seen = [], set()
     for pair in order:
         row = kept[pair]

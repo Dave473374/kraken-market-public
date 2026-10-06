@@ -72,7 +72,7 @@ class RelayCooldownTests(unittest.TestCase):
         with patch('collector_runtime.time.time',side_effect=lambda:clock[0]), patch('collector_runtime.time.monotonic',side_effect=lambda:clock[0]), patch('collector_runtime.time.sleep',side_effect=lambda t:clock.__setitem__(0,clock[0]+t)), patch('public_transport.urllib.request.urlopen',side_effect=[limited(),Response()]) as net:
             c=CycleTransport('https://public.test');r,n=c.get_bounded('/candidate.json')
         self.assertTrue(r['ok']);self.assertEqual(n,2);self.assertEqual(net.call_count,2)
-        self.assertGreaterEqual(c.recovery_wait_seconds,2);self.assertLess(c.recovery_wait_seconds,3)
+        self.assertGreaterEqual(c.recovery_wait_seconds,3);self.assertLess(c.recovery_wait_seconds,4)
         self.assertEqual(r['body']['generated_at'],'original-source-time')
         self.assertEqual(c.http_429_count,1)
         self.assertNotIn('Set-Cookie',r['http_response_headers'])

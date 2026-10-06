@@ -50,6 +50,40 @@ def diagnostic_headers(headers):
     return {k: str(headers.get(k))[:256] for k in keys if headers.get(k) is not None}
 
 
+def upstream_rate_limit(body):
+    """Recognize Kraken rate-limit errors embedded in this relay's HTTP200 body.
+
+    Traverse only a bounded object tree. OHLC/depth arrays are numeric data and
+    are not inspected as instructions. Only exact Kraken public source records
+    with explicit provider error codes can trigger this conservative cooldown.
+    """
+    if not isinstance(body, dict) or body.get('schema') != 'KRAKEN_PUBLIC_TRANSPORT_V2.0.2':
+        return None
+    codes = {'EGeneral:Too many requests', 'EAPI:Rate limit exceeded', 'EOrder:Rate limit exceeded'}
+    queue, found, visited = [body], [], 0
+    while queue and visited < 512:
+        node = queue.pop(); visited += 1
+        errors = node.get('errors')
+        try:
+            url = urllib.parse.urlsplit(node.get('source_url', ''))
+            matches = (url.scheme == 'https' and url.netloc == 'api.kraken.com'
+                and url.path.startswith('/0/public/') and node.get('method') == 'GET'
+                and node.get('ok') is False and node.get('status') == 'KRAKEN_API_ERROR'
+                and isinstance(errors, list) and any(isinstance(e, str) and e in codes for e in errors))
+        except (ValueError, TypeError, AttributeError):
+            matches = False
+        if matches:
+            headers = node.get('http_metadata')
+            hint = retry_seconds(headers.get('Retry-After') if isinstance(headers, dict) else None, None, time.time())
+            found.append((node.get('source_url'), max(60.0, hint if hint is not None else 60.0)))
+        queue.extend(v for v in node.values() if isinstance(v, dict))
+    if not found:
+        return None
+    return {'kind': 'KRAKEN_API_RATE_LIMIT_IN_HTTP200',
+            'cooldown_seconds': max(delay for _, delay in found),
+            'source_urls': list(dict.fromkeys(url for url, _ in found))[:8]}
+
+
 class PublicGetter:
     """Paced public GET with an origin-wide cooldown and bounded diagnostic data.
 
@@ -67,6 +101,7 @@ class PublicGetter:
         self.blocked_at = None
         self.local_429_streak = 0
         self.http_429_count = 0
+        self.upstream_rate_limit_count = 0
 
     def get(self, path):
         if not path.startswith("/") or path.startswith("//"):
@@ -85,7 +120,7 @@ class PublicGetter:
             if delay > 0:
                 time.sleep(delay)
         req = urllib.request.Request(url, method="GET", headers={
-            "Accept": "application/json", "User-Agent": "kraken-market-public-mirror/1.4.1-cooldown"})
+            "Accept": "application/json", "User-Agent": "kraken-market-public-mirror/1.4.2-provider-backoff"})
         try:
             with urllib.request.urlopen(req, timeout=self.timeout) as resp:
                 raw = resp.read(16 * 1024 * 1024 + 1)
@@ -102,9 +137,15 @@ class PublicGetter:
             if not isinstance(body, dict):
                 return self.failure(url, started, "NON_OBJECT_JSON")
             self.local_429_streak = 0
+            upstream_limit = upstream_rate_limit(body)
+            if upstream_limit is not None:
+                self.upstream_rate_limit_count += 1
+                self.cooldown_until = max(self.cooldown_until, time.monotonic() + upstream_limit['cooldown_seconds'])
+                self.blocked_by_url = upstream_limit['source_urls'][0]
+                self.blocked_at = stamp()
             return {"ok": True, "url": url, "started_at": started,
                     "retrieved_at": stamp(), "body": body,
-                    "http_response_headers": response_headers}
+                    "http_response_headers": response_headers, "upstream_rate_limit": upstream_limit}
         except urllib.error.HTTPError as exc:
             try:
                 raw_error = exc.read(4096).decode("utf-8", errors="replace")
@@ -125,8 +166,6 @@ class PublicGetter:
                 recognized = local_worker_cooldown(error_body)
                 if recognized and hint is not None:
                     self.local_429_streak += 1
-                    # 2,4,8,...s progressive backoff: never faster than either the
-                    # server hint or the existing 1.25s post-response quiet gap.
                     delay = max(self.min_interval, hint, min(60.0, 2.0 ** min(self.local_429_streak, 6)))
                     kind = "RELAY_LOCAL_CONFIRMED"
                 else:
