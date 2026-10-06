@@ -34,3 +34,6 @@ jobs:
           python-version: "3.12"
       - name: All offline evidence, transport, archive and publication regressions
         run: python -B -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Bounded read-only diagnostic for this repair PR only
+        if: github.event_name == 'pull_request' && github.head_ref == 'fix/caw-cooldown-20261006'
+        run: python -B scripts/probe_public_transport.py
