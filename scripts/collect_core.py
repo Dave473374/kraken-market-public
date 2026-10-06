@@ -17,6 +17,7 @@ from collect import CFG, DATA, EXPECTED, BASE, atomic_write, request_pair, norma
 from quote_guard import coverage
 from evidence_guard import fresh as fresh_time, book as valid_book, obj, candidate_status, universe_status
 from collector_runtime import CycleTransport, retained_seeds, review_seed_pairs, sampling_report
+from watch_availability import unavailable_pair_evidence, watchlist_status
 
 CORE = DATA / 'core'
 CORE_CANDIDATES = CORE / 'candidates'
@@ -169,6 +170,7 @@ def main():
         s['closed_4h_current'] = history_ok(results[p], now)
         if s['fresh_quote_evidence']:
             last_success[p] = now.isoformat()
+    availability = {p: unavailable_pair_evidence(results[p], p, EXPECTED, CFG.get('pair_aliases'), now) for p in watch}
     q_status = owned_quote_coverage(quotes, logical, now)
     u_status = universe_status(universe, EXPECTED, now)
     owned_book_ok = bool(logical) and all(statuses[p]['fresh_quote_evidence'] for p in logical)
@@ -179,7 +181,7 @@ def main():
         'owned_quotes': 'DATA_OK' if q_status['research_usable'] else 'PARTIAL_DATA',
         'owned_books': 'DATA_OK' if owned_book_ok else 'PARTIAL_DATA',
         'owned_closed_history': 'DATA_OK' if owned_history_ok else 'PARTIAL_DATA',
-        'watchlist': 'DATA_OK' if all(statuses[p]['fresh_quote_evidence'] and statuses[p]['closed_4h_current'] for p in watch) else 'PARTIAL_DATA',
+        'watchlist': watchlist_status(watch, statuses, availability),
         'discovery': 'DATA_OK' if u_status['research_usable'] and all(statuses[p]['fresh_quote_evidence'] for p in discovery) else 'PARTIAL_DATA',
         'strategy_decisions': 'NOT_VALIDATED_BY_COLLECTOR', 'delivery': 'NOT_VALIDATED_BY_COLLECTOR'}
     generated = now_iso()
@@ -188,7 +190,7 @@ def main():
     snapshot_id = hashlib.sha256((generated + str(run_id)).encode()).hexdigest()[:24]
     manifest = {
         'schema': CORE_SCHEMA, 'revision': REVISION, 'coverage_revision': '1.2-all-owned-and-watch',
-        'operational_revision': OPERATIONAL_REVISION, 'transport_revision': '1.4-bounded-recovery',
+        'operational_revision': OPERATIONAL_REVISION, 'transport_revision': '1.4.1-local-cooldown',
         'expected_worker_schema': EXPECTED, 'generated_at': generated,
         'collection_started_at': started, 'snapshot_id': snapshot_id, 'run_id': run_id, 'code_sha': code_sha,
         'status': 'OK' if owned_ok else 'PARTIAL', 'modules': modules,
@@ -202,7 +204,7 @@ def main():
         'candidate_pairs_partial_or_failed': [{'logical_pair': p, 'role': roles[p], **s}
             for p, s in statuses.items() if not s['fresh_quote_evidence']],
         'owned_priority_status': {p: statuses[p] for p in logical},
-        'candidate_statuses': statuses,
+        'candidate_statuses': statuses, 'watchlist_availability': availability,
         'summary': {'core_ok': owned_ok, 'owned_quotes_research_usable': q_status['research_usable'],
             'owned_quotes_executable_evidence': False, 'owned_priority_complete': owned_book_ok,
             'owned_priority_count': len(logical), 'owned_history_complete': owned_history_ok,
@@ -211,12 +213,13 @@ def main():
         'notes': ['Collection only, not a BUY/SELL or retail Convert quote.',
                   'Recompute source ages at use; root OK means owned evidence at publication only.',
                   'Watchlist/discovery health is separate; inspect modules, not only root status.',
+                  'CHECKED_WITH_UNAVAILABLE_PAIRS means a fresh pair-eligibility rejection, never usable quotes or a whole-asset ban.',
                   'All routes remain one Kraken provider; independent cross-check is still required.',
                   'Synthetic 60 EUR/20x diagnostics never override actual-notional 10x/15x rules.']}
     record = {'generated_at': generated, 'collection_started_at': started,
               'snapshot_id': snapshot_id, 'run_id': run_id, 'code_sha': code_sha,
               'owned_complete': owned_ok, 'modules': modules,
-              'requests_made': CLIENT.requests_made, 'recovery_wait_seconds': round(CLIENT.recovery_wait_seconds, 3)}
+              'requests_made': CLIENT.requests_made, 'recovery_wait_seconds': round(CLIENT.recovery_wait_seconds, 3), 'http_429_count': CLIENT.http_429_count}
     history.append(record)
     # Bounded public operational history; never reset advisory/financial records.
     cutoff = now.timestamp() - 7 * 86400

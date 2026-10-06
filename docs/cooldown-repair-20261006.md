@@ -16,10 +16,26 @@ existing time/wait bounds and cross-process cooldown persistence remain.
 Public response headers are allowlisted for diagnostics. No cookies, request
 headers, account data, exchange credentials, trading rules or financial state.
 
-Eight offline regression tests cover the exact local envelope, missing/unknown
-hints, long hints, no requests during cooldown, progressive waiting, recovery and
-cross-path rejection bounds. Repository-wide CI remains required. The PR-only
-bounded diagnostic reads public relay routes and direct Kraken Time/IO metadata;
-it does not publish production data, create orders or run a recurring monitor.
-Live recovery and long-duration coverage must be verified separately. Do not
-reset existing sampling history or mark this patch as a trading/alpha success.
+## Actual bounded diagnostic observations
+
+CI run 37417483118 / job 112119205429 ran the full 84-test suite successfully.
+Its separate public diagnostic returned BNB, MEGA and NIGHT DATA_OK, including
+an actual MEGA relay-local HTTP429 recovered after 2.05 seconds; one 429 total.
+This proves the specific recovery attempt, not production uptime or strategy.
+
+Direct IOEUR SI/international AssetPairs returned EQuery:Unknown asset pair.
+Follow-up CI run 37417666141 / job 112119778816 made one bulk SI/international
+metadata request at 2026-10-06T05:16:01.923862Z: error=[], 1292 pairs, no matching
+base=IO or IOEUR/IOUSD/IOUSDC identities. It does not check a private account.
+
+A fresh, exact requested-pair AssetPairs rejection is now separately recorded
+in watchlist_availability. CHECKED_WITH_UNAVAILABLE_PAIRS means the eligibility
+check completed while that pair has NO usable price; it is not DATA_OK quote
+evidence, a claim of exchange outage, an automatic alternative pair, or a
+permanent whole-asset exclusion. A stale error, wrong pair/region/provider,
+429 or other API error remains UNKNOWN/PARTIAL. Owned-risk completeness is
+unchanged: missing owned quotes/history still prevents owned root OK.
+
+Sixteen new offline regression tests cover local cooldown and eligibility
+classification. Live and long-duration recovery must be verified separately.
+No existing sampling history, financial ledger or task health is reset.
