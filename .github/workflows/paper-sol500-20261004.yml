@@ -13,14 +13,15 @@ permissions:
   contents: write
   actions: write
 concurrency:
-  # Same lock as before: never two writers; keep the active worker running.
+  # Keep the original single-writer lock. Never interrupt an active writer.
   group: paper-sol500-20261004
   cancel-in-progress: false
 jobs:
   paper:
     if: github.repository == 'Dave473374/kraken-market-public' && github.ref == 'refs/heads/main' && github.event.repository.private == false
     runs-on: ubuntu-latest
-    timeout-minutes: 195
+    # Includes bounded publication retries and artifact upload, not a longer trial.
+    timeout-minutes: 210
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,25 +46,22 @@ jobs:
           ref: paper-sol500-20261004
           path: ledger
           fetch-depth: 1
-      - name: Supervise public-only paper engine and persist every observation
+      - name: Recover unpublished evidence and supervise public-only paper engine
         if: steps.gate.outputs.run == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PYTHONUNBUFFERED: '1'
-          # Short bootstrap exercises handoff; normal workers run for three hours.
           BURST_MINUTES: ${{ github.event_name == 'push' && '6' || '180' }}
-        run: python3 engine/research/paper-sol500-20261004/runner.py --ledger ledger --minutes "$BURST_MINUTES"
-      - name: Preserve unpublished recovery evidence on failure
+        run: python3 engine/research/paper-sol500-20261004/reliable_runner.py --ledger ledger --minutes "$BURST_MINUTES"
+      - name: Preserve full unpublished recovery evidence on failure
         if: failure() && steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: sol500-recovery-${{ github.run_id }}-${{ github.run_attempt }}
           retention-days: 7
-          if-no-files-found: ignore
-          path: |
-            ledger/research/paper-sol500-20261004/state.json
-            ledger/research/paper-sol500-20261004/report.json
-            ledger/research/paper-sol500-20261004/operations.json
+          if-no-files-found: error
+          # Includes ORIGINAL observation files; excludes .git and all credentials.
+          path: ledger/research/paper-sol500-20261004/
       - name: Disable only this scheduler after completion or fixed cutoff
         if: ${{ !cancelled() }}
         env:
@@ -75,5 +73,5 @@ jobs:
             finished=$(python3 -c "import json; print(str(json.load(open('ledger/research/paper-sol500-20261004/state.json')).get('final') is True).lower())")
           fi
           if [ "$finished" = true ] || [ "$(date -u +%s)" -ge "$(date -u -d '2026-10-11 08:30:00 UTC' +%s)" ]; then
-            gh api --method PUT repos/${{ github.repository }}/actions/workflows/paper-sol500-20261004.yml/disable
+            gh api --method PUT repos/Dave473374/kraken-market-public/actions/workflows/paper-sol500-20261004.yml/disable
           fi
