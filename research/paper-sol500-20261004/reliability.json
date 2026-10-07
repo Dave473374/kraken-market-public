@@ -1,0 +1,43 @@
+{
+  "id": "SOL500-FWD-20261004-v1",
+  "protocol_hash": "394eafafbe6a51a231b989cedd11401e8a4f438c93924ea5194e072bd6174d0a",
+  "supervisor_revision": "SUPERVISOR-1.2-20261007",
+  "paper_only": true,
+  "real_orders": false,
+  "checked_at": "2026-10-07T16:39:42.358641Z",
+  "handoff": {
+    "status": "ACCEPTED",
+    "verification": "EXISTING_RUN_OBSERVED",
+    "run_id": 37653013041,
+    "run_status": "pending",
+    "at": "2026-10-07T16:39:41.108274Z"
+  },
+  "transport_events": [
+    {
+      "kind": "RECOVERY",
+      "at": "2026-10-07T16:33:39.556928Z",
+      "id": "SOL500-FWD-20261004-v1",
+      "protocol_hash": "394eafafbe6a51a231b989cedd11401e8a4f438c93924ea5194e072bd6174d0a",
+      "source_run": 37599580577,
+      "artifact_id": 11492547737,
+      "status": "INCOMPLETE_LEGACY_NO_TRADE_CHANGE_EVIDENCE_ONLY",
+      "original_observed_at": "2026-10-07T15:07:47.786678Z",
+      "recovery_checked_at": "2026-10-07T16:33:38.337365Z",
+      "paper_only": true,
+      "real_orders": false,
+      "note": "Original artifact bytes only; never a retrospective model execution."
+    },
+    {
+      "kind": "FINAL_HANDOFF_CHECK",
+      "at": "2026-10-07T16:39:42.358596Z",
+      "receipt": {
+        "status": "ACCEPTED",
+        "verification": "EXISTING_RUN_OBSERVED",
+        "run_id": 37653013041,
+        "run_status": "pending",
+        "at": "2026-10-07T16:39:41.108274Z"
+      }
+    }
+  ],
+  "failure": null
+}
