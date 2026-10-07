@@ -1,0 +1,70 @@
+{
+  "id": "SOL500-FWD-20261004-v1",
+  "status": "ACTIVE",
+  "data_health": "DATA_OK",
+  "first_active_observed": 1791118351.5882373,
+  "last_observed_at": "2026-10-07T15:07:47.786678Z",
+  "cash_eur": 495.7777209952412,
+  "equity_eur": 495.7777209952412,
+  "position": null,
+  "fees_eur": 3.418059578418848,
+  "max_drawdown_pct": 0.8641175225567399,
+  "success_count": 838,
+  "failure_count": 0,
+  "consecutive_failures": 0,
+  "gaps": [
+    {
+      "from": "2026-10-04T06:51:21.689212Z",
+      "to": "2026-10-04T12:52:31.588237Z",
+      "seconds": 21669.899025678635,
+      "note": "No invented orders or stops during gap"
+    },
+    {
+      "from": "2026-10-04T12:52:31.588237Z",
+      "to": "2026-10-04T17:12:03.443160Z",
+      "seconds": 15571.854922771454,
+      "note": "No invented orders or stops during gap"
+    },
+    {
+      "from": "2026-10-04T17:12:03.443160Z",
+      "to": "2026-10-04T17:37:23.712616Z",
+      "seconds": 1520.2694563865662,
+      "note": "No invented orders or stops during gap"
+    }
+  ],
+  "benchmarks": {
+    "500": {
+      "qty": 4.592125,
+      "cash": 1.0815800237651274e-06,
+      "start": "2026-10-04T12:52:31.588237Z",
+      "label": "Independent buy-and-hold comparison; not bot funds",
+      "net_liquidation_eur": 470.32855153178
+    },
+    "400": {
+      "qty": 3.6737,
+      "cash": 100.00000086526404,
+      "start": "2026-10-04T12:52:31.588237Z",
+      "label": "Independent buy-and-hold comparison; not bot funds",
+      "net_liquidation_eur": 476.26284122542404
+    }
+  },
+  "closed_trades": [
+    {
+      "entry": "2026-10-04T21:02:39.309868Z",
+      "exit": "2026-10-05T05:03:14.009079Z",
+      "pnl_eur": -4.2222790047588035,
+      "initial_cost_eur": 215.74308003126274,
+      "reason": "TWO_CLOSES_BELOW_SMA20"
+    }
+  ],
+  "last_error": null,
+  "final": false,
+  "final_delay_seconds": null,
+  "generated_at": "2026-10-07T15:07:47.789285Z",
+  "net_pnl_eur": -4.222279004758775,
+  "fill_count": 2,
+  "protocol_hash": "394eafafbe6a51a231b989cedd11401e8a4f438c93924ea5194e072bd6174d0a",
+  "paper_only": true,
+  "real_orders": false,
+  "sampling": "Observed quotes, nominal 5min; not continuous stops"
+}
