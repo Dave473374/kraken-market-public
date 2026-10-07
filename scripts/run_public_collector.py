@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Bounded single-writer sessions and same-source hourly archive.
 
-Only existing core-live/main public evidence paths may be published. GitHub's
-short-lived job token is used for ONE guarded successor request, never Kraken.
+Publication repair: immutable commits, bounded retries and exact remote-ref
+verification. No exchange requests, strategy or account state are changed.
 """
 import argparse
 import copy
@@ -10,7 +10,8 @@ import io
 import hashlib
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+import re
 import shutil
 import sys
 import subprocess
@@ -23,18 +24,47 @@ from datetime import datetime, timezone
 REPO = 'Dave473374/kraken-market-public'
 WORKFLOW = 'collect-core.yml'
 ROOT = Path(__file__).resolve().parents[1]
+PUBLICATION_REVISION = '1.6-verified-publication'
+RETRY_DELAYS = (0, 15, 45, 90)
 
 
-def git(*args):
-    return subprocess.check_output(['git', *args], cwd=ROOT, timeout=90).decode().strip()
+def git(*args, input=None, env=None):
+    return subprocess.check_output(['git', *args], cwd=ROOT, timeout=45,
+        input=input, env=env, stderr=subprocess.STDOUT).decode().strip()
 
 
 def utc():
     return datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
 
 
+def transient_git(error):
+    if isinstance(error, subprocess.TimeoutExpired):
+        return True
+    text = (error.output or b'') if isinstance(error, subprocess.CalledProcessError) else b''
+    if isinstance(text, bytes):
+        text = text.decode('utf-8', errors='replace')
+    text = text.lower()
+    # Permission/lease/ruleset failures are deliberately not retried.
+    return any(word in text for word in ('internal server error', 'bad gateway',
+        'service unavailable', 'gateway timeout', 'error: 500', 'error: 502',
+        'error: 503', 'error: 504', 'connection reset', 'connection timed out',
+        'operation timed out', 'could not resolve host', 'could not resolve hostname',
+        'failed to connect', 'remote end hung up', 'unexpected disconnect'))
+
+
+def fetch_core_ref():
+    for attempt, delay in enumerate(RETRY_DELAYS):
+        if delay:
+            time.sleep(delay)
+        try:
+            return git('fetch', 'origin', '+refs/heads/core-live:refs/remotes/origin/core-live')
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+            if not transient_git(error) or attempt == len(RETRY_DELAYS) - 1:
+                raise
+
+
 def snapshot_from_git():
-    git('fetch', 'origin', '+refs/heads/core-live:refs/remotes/origin/core-live')
+    fetch_core_ref()
     sha = git('rev-parse', 'origin/core-live')
     raw = subprocess.check_output(['git', 'archive', sha, 'data/core'], cwd=ROOT, timeout=90)
     if len(raw) > 32 * 1024 * 1024:
@@ -67,24 +97,104 @@ def local_snapshot():
     return {p.relative_to(dest).as_posix(): p.read_bytes() for p in dest.rglob('*.json')}
 
 
+class PublicationUnavailable(subprocess.CalledProcessError):
+    """A bounded transient failure; retain the immutable attempted commit."""
+    def __init__(self, sha, expected_sha):
+        super().__init__(1, ['git', 'push', 'origin', sha + ':core-live'])
+        self.sha = sha
+        self.expected_sha = expected_sha
+
+
+def publication_receipt(**fields):
+    # Local recovery evidence, uploaded only by the existing job on failure.
+    # Not a market timestamp, health recovery, trade decision or public signal.
+    dest = ROOT / '.caw-publication'
+    dest.mkdir(exist_ok=True)
+    row = {'publication_revision': PUBLICATION_REVISION, 'observed_at': utc(), **fields}
+    with (dest / 'attempts.jsonl').open('a') as stream:
+        stream.write(json.dumps(row) + '\n')
+    print(json.dumps(row), flush=True)
+
+
+def remote_core_sha():
+    value = git('ls-remote', '--refs', 'origin', 'refs/heads/core-live').split()
+    if len(value) != 2 or value[1] != 'refs/heads/core-live' or not re.fullmatch('[0-9a-f]{40}', value[0]):
+        raise RuntimeError('Unknown core-live remote identity; refusing overwrite')
+    return value[0]
+
+
+def push_verified(sha, expected_sha):
+    """Retry the SAME commit and lease; never adopt an unknown remote writer."""
+    for attempt, delay in enumerate(RETRY_DELAYS):
+        if delay:
+            time.sleep(delay)
+        push_error = None
+        try:
+            git('push', '--force-with-lease=refs/heads/core-live:' + expected_sha,
+                'origin', sha + ':refs/heads/core-live')
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+            push_error = error
+        try:
+            actual = remote_core_sha()
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as read_error:
+            if not transient_git(read_error):
+                raise
+            actual = None
+        publication_receipt(attempt=attempt + 1, attempted_sha=sha,
+            expected_sha=expected_sha, remote_sha=actual,
+            status='REMOTE_REF_VERIFIED' if actual == sha else 'PUBLICATION_UNCONFIRMED')
+        # Covers a committed push whose acknowledgment was lost.
+        if actual == sha:
+            return sha
+        if actual is not None and actual != expected_sha:
+            raise subprocess.CalledProcessError(1, ['git', 'push', 'origin', 'core-live'],
+                output=b'Concurrent core-live writer detected; exact lease preserved')
+        if push_error is not None and not transient_git(push_error):
+            raise push_error
+    raise PublicationUnavailable(sha, expected_sha)
+
+
 def publish_core(files, expected_sha):
-    branch = 'caw-publish-' + os.environ['GITHUB_RUN_ID']
-    git('checkout', '--orphan', branch)
+    if 'manifest.json' not in files or sum(map(len, files.values())) > 32 * 1024 * 1024:
+        raise ValueError('Invalid public snapshot size or missing manifest')
+    for name, content in files.items():
+        path = PurePosixPath(name)
+        if not isinstance(content, bytes) or path.is_absolute() or '..' in path.parts or str(path) != name or not re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*\.json', name):
+            raise ValueError('Unexpected public snapshot path or content')
+    if not re.fullmatch('[0-9a-f]{40}', expected_sha):
+        raise ValueError('Exact expected core-live SHA required')
+    write_snapshot(ROOT / 'data/core', files)
+    # Separate index: no checkout/rm/clean of main, code, other projects or caches.
+    # Retain the preexisting rolling/orphan core-live design and exact lease.
+    with tempfile.TemporaryDirectory(prefix='caw-publication-index-') as tmp:
+        env = {**os.environ, 'GIT_INDEX_FILE': str(Path(tmp) / 'index')}
+        git('read-tree', '--empty', env=env)
+        entries = {'data/core/' + name: data for name, data in files.items()}
+        entries['README.md'] = b'# Kraken fast core public evidence\n\nOne rolling snapshot. No account data or trade authorization.\nPin the commit and recompute all source ages. See sampling-report.json for observed gaps.\n'
+        for name, data in sorted(entries.items()):
+            blob = git('hash-object', '-w', '--stdin', input=data)
+            git('update-index', '--add', '--cacheinfo', '100644', blob, name, env=env)
+        tree = git('write-tree', env=env)
+        sha = git('commit-tree', tree, '-m', 'Publish Kraken fast core snapshot')
+    publication_receipt(status='IMMUTABLE_COMMIT_PREPARED', attempted_sha=sha,
+        expected_sha=expected_sha, snapshot_id=json.loads(files['manifest.json']).get('snapshot_id'),
+        source_generated_at=json.loads(files['manifest.json']).get('generated_at'))
+    return push_verified(sha, expected_sha)
+
+
+def publish_with_recovery(files, expected_sha, deadline):
+    """Pause collection while retrying an unchanged pending snapshot, bounded by session."""
     try:
-        git('rm', '-rf', '.')
-        git('clean', '-fdx')
-        write_snapshot(ROOT / 'data/core', files)
-        (ROOT / 'README.md').write_text('# Kraken fast core public evidence\n\nOne rolling snapshot. No account data or trade authorization.\nPin the commit and recompute all source ages. See sampling-report.json for observed gaps.\n')
-        git('add', 'README.md', 'data/core')
-        git('commit', '-m', 'Publish Kraken fast core snapshot')
-        sha = git('rev-parse', 'HEAD')
-        # Do not overwrite a concurrent newer publisher, even on the rolling branch.
-        git('push', '--force-with-lease=refs/heads/core-live:' + expected_sha, 'origin', 'HEAD:core-live')
-        return sha
-    finally:
-        git('checkout', '-f', 'main')
-        git('branch', '-D', branch)
-        write_snapshot(ROOT / 'data/core', files)
+        return publish_core(files, expected_sha)
+    except PublicationUnavailable as error:
+        pending = error
+    while time.monotonic() + 60 < deadline:
+        time.sleep(60)
+        try:
+            return push_verified(pending.sha, pending.expected_sha)
+        except PublicationUnavailable:
+            pass
+    raise pending
 
 
 def api(path, body=None):
@@ -137,25 +247,31 @@ def collect_session(minutes, remaining):
     git('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
     started, published = time.monotonic(), 0
     deadline = started + minutes * 60
-    while time.monotonic() < deadline:
-        cycle_start = time.monotonic()
-        # Python crashes and a valid PARTIAL both return 1. Remove the preceding
-        # receipt before launch so a crash cannot republish the previous cycle.
-        (ROOT / 'data/core/manifest.json').unlink(missing_ok=True)
-        result = subprocess.run([sys.executable, '-B', 'scripts/collect_direct.py'], cwd=ROOT, timeout=540)
-        if result.returncode not in (0, 1):
-            raise RuntimeError('Collector crashed; no stale republish or recursive restart')
-        new_files = local_snapshot()
-        manifest = obj(json.loads(new_files['manifest.json']))
-        if manifest.get('operational_revision') != '1.4-single-owner' or manifest.get('run_id') != os.environ['GITHUB_RUN_ID']:
-            raise RuntimeError('Unrecognized collector output')
-        expected_sha = publish_core(new_files, expected_sha)
-        files = new_files
-        published += 1
-        print(json.dumps({'published_sha': expected_sha, 'cycle_status': manifest['status'], 'modules': manifest.get('modules')}), flush=True)
-        remaining_time = deadline - time.monotonic()
-        if remaining_time > 0:
-            time.sleep(min(remaining_time, max(15, 300 - (time.monotonic() - cycle_start))))
+    try:
+        while time.monotonic() < deadline:
+            cycle_start = time.monotonic()
+            # Missing receipt after a crash must never republish the old cycle.
+            (ROOT / 'data/core/manifest.json').unlink(missing_ok=True)
+            result = subprocess.run([sys.executable, '-B', 'scripts/collect_direct.py'], cwd=ROOT, timeout=540)
+            if result.returncode not in (0, 1):
+                raise RuntimeError('Collector crashed; no stale republish or recursive restart')
+            new_files = local_snapshot()
+            manifest = obj(json.loads(new_files['manifest.json']))
+            if manifest.get('operational_revision') != '1.4-single-owner' or manifest.get('run_id') != os.environ['GITHUB_RUN_ID']:
+                raise RuntimeError('Unrecognized collector output')
+            expected_sha = publish_with_recovery(new_files, expected_sha, deadline)
+            files = new_files
+            published += 1
+            print(json.dumps({'published_sha': expected_sha, 'cycle_status': manifest['status'], 'modules': manifest.get('modules')}), flush=True)
+            remaining_time = deadline - time.monotonic()
+            if remaining_time > 0:
+                time.sleep(min(remaining_time, max(15, 300 - (time.monotonic() - cycle_start))))
+    except PublicationUnavailable:
+        # Do not let a late publication outage silently bypass the existing
+        # guarded handoff. No recursive dispatch after an early crash.
+        receipt = handoff(remaining, time.monotonic() - started, published, os.environ['GITHUB_RUN_ID'])
+        publication_receipt(status='PUBLICATION_EXHAUSTED', handoff=receipt)
+        raise
     receipt = handoff(remaining, time.monotonic() - started, published, os.environ['GITHUB_RUN_ID'])
     files['handoff.json'] = (json.dumps(receipt, indent=2) + '\n').encode()
     manifest = json.loads(files['manifest.json'])
@@ -182,7 +298,6 @@ def archive_manifest(files, sha, now=None):
     for pair in logical:
         candidate = json.loads(files.get('candidates/' + pair + '.json', b'{}'))
         good = good and candidate_status({'ok': True, 'body': candidate}, pair, EXPECTED, aliases, now)['fresh_quote_evidence'] and history_ok({'ok': True, 'body': candidate}, now)
-    # Preserve source semantics and all timestamps; this is explicitly an archive.
     manifest = copy.deepcopy(original)
     manifest.update(schema='KRAKEN_MARKET_PUBLIC_MIRROR_V1', mirror_revision='1.2-core-health',
                     archive_revision='1.4-same-source-no-extra-requests', source_core_sha=sha,
@@ -200,7 +315,6 @@ def archive_main():
     sha, files = snapshot_from_git()
     manifest = archive_manifest(files, sha)
     dest = ROOT / 'data'
-    # Restrict writes to existing public evidence paths; never research/ or ledger.
     for name in ('health.json', 'owned-quotes.json', 'universe.json', 'sampling-report.json', 'independent-quotes.json'):
         if name in files:
             (dest / name).write_bytes(files[name])
@@ -228,7 +342,6 @@ def archive_main():
 
 
 if __name__ == '__main__':
-    import sys
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=['core', 'archive'])
     args = parser.parse_args()

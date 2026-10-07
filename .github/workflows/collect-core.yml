@@ -27,6 +27,7 @@ on:
       - "scripts/run_public_collector.py"
       - "scripts/test_owned_coverage.py"
       - "scripts/test_operational_recovery.py"
+      - "scripts/test_publication_retry.py"
       - "config/assets.json"
   schedule:
     - cron: "17,47 * * * *"
@@ -59,9 +60,21 @@ jobs:
       - name: Regression tests (including test_owned_coverage.py)
         run: python -B -m unittest discover -s scripts -p 'test_*.py' -v
       - name: Single upstream owner and guarded continuation
+        id: collect
         env:
           GH_TOKEN: ${{ github.token }}
           # First deployment makes a short real handoff check; successors use 4h.
           CAW_SESSION_MINUTES: ${{ inputs.session_minutes || (github.event_name == 'push' && '10') || '240' }}
           CAW_HANDOFF_REMAINING: ${{ inputs.handoff_remaining || '7' }}
         run: python -B scripts/run_public_collector.py core
+      - name: Preserve unpublished public evidence on collection or publication failure
+        if: failure() && steps.collect.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: caw-core-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/core/
+            .caw-publication/attempts.jsonl
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 7
