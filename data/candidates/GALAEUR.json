@@ -28,13 +28,13 @@
     "source_url": "https://api.kraken.com/0/public/AssetPairs?country_code=SI&aclass_base=currency&execution_venue=international",
     "method": "GET",
     "ok": true,
-    "request_started_at": "2026-10-23T05:29:28.839482Z",
-    "retrieved_at": "2026-10-23T05:29:29.044144Z",
+    "request_started_at": "2026-10-23T10:39:47.440144Z",
+    "retrieved_at": "2026-10-23T10:39:47.634748Z",
     "market_observed_at": null,
     "from_cache": true,
     "http_status": 200,
     "http_metadata": {
-      "Date": "Fri, 23 Oct 2026 05:29:29 GMT",
+      "Date": "Fri, 23 Oct 2026 10:39:47 GMT",
       "Cache-Control": "public, max-age=1, s-maxage=1"
     },
     "http_request_made": true,
@@ -42,41 +42,41 @@
   },
   "ticker": {
     "quality": "APPROXIMATE",
-    "bid": 0.001699,
-    "ask": 0.0017,
-    "last": 0.001701,
-    "mid": 0.0016995,
+    "bid": 0.001679,
+    "ask": 0.001681,
+    "last": 0.001682,
+    "mid": 0.00168,
     "source": {
       "provider": "api.kraken.com",
       "source_url": "https://api.kraken.com/0/public/Ticker",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T05:34:28.828474Z",
-      "retrieved_at": "2026-10-23T05:34:29.125800Z",
+      "request_started_at": "2026-10-23T10:44:47.401422Z",
+      "retrieved_at": "2026-10-23T10:44:47.535670Z",
       "market_observed_at": null,
       "from_cache": false,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 05:34:29 GMT",
+        "Date": "Fri, 23 Oct 2026 10:44:47 GMT",
         "Cache-Control": "public, max-age=2"
       },
       "http_request_made": true,
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     },
-    "volume_24h_base": 13915976.50396179,
-    "vwap_24h_quote": 0.001666,
-    "turnover_24h_quote": 23184.01685560034,
-    "change_since_midnight_utc_pct": 1.7344497607655551,
+    "volume_24h_base": 12937561.98947636,
+    "vwap_24h_quote": 0.001669,
+    "turnover_24h_quote": 21592.790960436043,
+    "change_since_midnight_utc_pct": 0.5980861244019087,
     "rolling_24h_price_change_pct": null,
     "timestamp_note": "TICKER_HAS_NO_EXCHANGE_QUOTE_TIMESTAMP"
   },
   "timestamped_spread": {
     "quality": "VERIFIED",
-    "bid": 0.001698,
-    "ask": 0.0017,
-    "mid": 0.001699,
-    "spread_pct": 0.11771630370805367,
-    "observed_at": "2026-10-23T05:34:30.611657Z",
+    "bid": 0.001679,
+    "ask": 0.001681,
+    "mid": 0.00168,
+    "spread_pct": 0.11904761904762194,
+    "observed_at": "2026-10-23T10:44:48.909106Z",
     "meaning": "DIRECT_L2_SNAPSHOT_ACQUIRED_AT_LOCAL_TIME_NOT_EXCHANGE_CHANGE_TIMESTAMP",
     "same_source_as_depth": true,
     "source": {
@@ -84,14 +84,14 @@
       "source_url": "https://api.kraken.com/0/public/Depth?pair=GALAEUR&count=100",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T05:34:30.375996Z",
-      "retrieved_at": "2026-10-23T05:34:30.611657Z",
+      "request_started_at": "2026-10-23T10:44:48.785853Z",
+      "retrieved_at": "2026-10-23T10:44:48.909106Z",
       "market_observed_at": null,
       "from_cache": false,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 05:34:30 GMT",
-        "Cache-Control": "public, max-age=2"
+        "Date": "Fri, 23 Oct 2026 10:44:48 GMT",
+        "Cache-Control": "max-age=2, public"
       },
       "http_request_made": true,
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
@@ -104,113 +104,118 @@
       "source_url": "https://api.kraken.com/0/public/Depth?pair=GALAEUR&count=100",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T05:34:30.375996Z",
-      "retrieved_at": "2026-10-23T05:34:30.611657Z",
+      "request_started_at": "2026-10-23T10:44:48.785853Z",
+      "retrieved_at": "2026-10-23T10:44:48.909106Z",
       "market_observed_at": null,
       "from_cache": false,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 05:34:30 GMT",
-        "Cache-Control": "public, max-age=2"
+        "Date": "Fri, 23 Oct 2026 10:44:48 GMT",
+        "Cache-Control": "max-age=2, public"
       },
       "http_request_made": true,
       "status": "PUBLIC_JSON_ENVELOPE_VALID"
     },
-    "best_bid": 0.001698,
-    "best_ask": 0.0017,
-    "mid": 0.001699,
-    "spread_pct": 0.11771630370805367,
+    "best_bid": 0.001679,
+    "best_ask": 0.001681,
+    "mid": 0.00168,
+    "spread_pct": 0.11904761904762194,
     "band_pct": 0.5,
     "depth_each_side": {
       "bids": {
-        "notional_quote_lower_bound": 13608.817864875,
+        "notional_quote_lower_bound": 15566.522171493,
         "band_fully_observed": true
       },
       "asks": {
-        "notional_quote_lower_bound": 4116.633570938,
+        "notional_quote_lower_bound": 6028.868320021,
         "band_fully_observed": true
       }
     },
     "returned_levels": {
-      "bids": 54,
+      "bids": 56,
       "asks": 100
     },
     "levels": {
       "bids": [
         [
-          0.001698,
-          1010040.028,
-          1792733669.0
+          0.001679,
+          265894.514,
+          1792752279.0
         ],
         [
-          0.001697,
-          3022140.053,
-          1792733665.0
+          0.001678,
+          4166748.29,
+          1792752279.0
         ],
         [
-          0.001696,
-          600680.618,
-          1792733665.0
+          0.001677,
+          1007551.629,
+          1792752280.0
         ],
         [
-          0.001695,
-          6673.419,
-          1792733629.0
+          0.001676,
+          765768.208,
+          1792752279.0
         ],
         [
-          0.001694,
-          1889625.367,
-          1792733656.0
-        ],
-        [
-          0.001693,
-          1069897.941,
-          1792733618.0
-        ],
-        [
-          0.001692,
-          6789.505,
-          1792733602.0
-        ],
-        [
-          0.001691,
-          420628.046,
-          1792733665.0
-        ],
-        [
-          0.00169,
-          681295.961,
-          1792733666.0
-        ],
-        [
-          0.001689,
-          792069.384,
-          1792733607.0
-        ],
-        [
-          0.001685,
-          1739473.648,
-          1792733668.0
-        ],
-        [
-          0.001684,
-          626864.464,
-          1792733602.0
-        ],
-        [
-          0.001682,
-          1060317.733,
-          1792733419.0
+          0.001675,
+          806218.714,
+          1792752042.0
         ],
         [
           0.001674,
-          5332587.542,
-          1792733058.0
+          765669.663,
+          1792752272.0
+        ],
+        [
+          0.001673,
+          1083076.67,
+          1792752264.0
+        ],
+        [
+          0.001672,
+          425272.382,
+          1792752218.0
+        ],
+        [
+          0.001671,
+          45586.826,
+          1792752279.0
+        ],
+        [
+          0.001669,
+          802384.057,
+          1792752082.0
         ],
         [
           0.001666,
           30012.005,
-          1792733293.0
+          1792752198.0
+        ],
+        [
+          0.001665,
+          1072659.056,
+          1792752028.0
+        ],
+        [
+          0.001664,
+          639373.255,
+          1792751951.0
+        ],
+        [
+          0.00166,
+          1075516.624,
+          1792752004.0
+        ],
+        [
+          0.001654,
+          5397113.234,
+          1792751499.0
+        ],
+        [
+          0.001645,
+          5421.947,
+          1792752162.0
         ],
         [
           0.001623,
@@ -218,34 +223,39 @@
           1792719904.0
         ],
         [
-          0.001602,
-          6242.198,
-          1792732093.0
-        ],
-        [
           0.001601,
           2000.001,
-          1792727415.0
+          1792742866.0
         ],
         [
           0.0016,
           17943.75,
-          1792726845.0
+          1792742865.0
         ],
         [
-          0.001573,
-          6357.28,
-          1792733651.0
+          0.001593,
+          6277.464,
+          1792751181.0
+        ],
+        [
+          0.001563,
+          6397.953,
+          1792751181.0
+        ],
+        [
+          0.001556,
+          22930.18,
+          1792747916.0
         ],
         [
           0.001552,
-          10030.062,
-          1792732922.0
+          10030.525,
+          1792747213.0
         ],
         [
           0.001551,
-          32872.878,
-          1792733551.0
+          9869.392,
+          1792744013.0
         ],
         [
           0.00155,
@@ -253,9 +263,9 @@
           1792698641.0
         ],
         [
-          0.001543,
-          6480.882,
-          1792733490.0
+          0.001534,
+          6518.905,
+          1792751181.0
         ],
         [
           0.001501,
@@ -268,9 +278,9 @@
           1792300308.0
         ],
         [
-          0.001446,
-          2834880.253,
-          1792733665.0
+          0.001441,
+          1434919.306,
+          1792752218.0
         ],
         [
           0.00144,
@@ -288,9 +298,9 @@
           1792677143.0
         ],
         [
-          0.001364,
-          241915.024,
-          1792732980.0
+          0.00135,
+          244410.882,
+          1792752202.0
         ],
         [
           0.00134,
@@ -410,104 +420,84 @@
       ],
       "asks": [
         [
-          0.0017,
-          52474.861,
-          1792733665.0
+          0.001681,
+          584362.475,
+          1792752279.0
         ],
         [
-          0.001701,
-          524454.362,
-          1792733669.0
+          0.001682,
+          1462548.337,
+          1792752237.0
+        ],
+        [
+          0.001683,
+          203285.958,
+          1792752279.0
+        ],
+        [
+          0.001684,
+          918262.173,
+          1792752230.0
+        ],
+        [
+          0.001685,
+          404235.666,
+          1792752185.0
+        ],
+        [
+          0.001688,
+          10028.337,
+          1792752274.0
+        ],
+        [
+          0.001689,
+          365080.502,
+          1792752180.0
+        ],
+        [
+          0.001695,
+          1327141.104,
+          1792752231.0
+        ],
+        [
+          0.001696,
+          157941.675,
+          1792752055.0
+        ],
+        [
+          0.001697,
+          412492.635,
+          1792752144.0
         ],
         [
           0.001702,
-          78633.896,
-          1792733665.0
+          157406.511,
+          1792751305.0
         ],
         [
-          0.001703,
-          883549.802,
-          1792733665.0
+          0.001713,
+          1772829.225,
+          1792752274.0
         ],
         [
-          0.001704,
-          564265.908,
-          1792733669.0
+          0.001729,
+          548103.793,
+          1792752004.0
         ],
         [
-          0.001705,
-          156964.143,
-          1792733661.0
+          0.001754,
+          79710.421,
+          1792751388.0
         ],
         [
-          0.001707,
-          156810.933,
-          1792733664.0
+          0.001781,
+          20668.361,
+          1792751181.0
         ],
         [
-          0.001708,
-          204918.033,
-          1792733662.0
-        ],
-        [
-          0.00171,
-          681295.961,
-          1792733669.0
-        ],
-        [
-          0.001711,
-          156458.799,
-          1792733477.0
-        ],
-        [
-          0.001715,
-          1308493.868,
-          1792733651.0
-        ],
-        [
-          0.001716,
-          615931.352,
-          1792733662.0
-        ],
-        [
-          0.001719,
-          207657.545,
-          1792733568.0
-        ],
-        [
-          0.001726,
-          1550710.824,
-          1792731567.0
-        ],
-        [
-          0.001733,
-          721292.557,
-          1792733619.0
-        ],
-        [
-          0.00175,
-          537329.834,
-          1792733461.0
-        ],
-        [
-          0.001771,
-          20685.539,
-          1792733085.0
-        ],
-        [
-          0.001779,
-          59011.034,
-          1792731898.0
-        ],
-        [
-          0.001797,
-          20685.539,
-          1792733085.0
-        ],
-        [
-          0.00181,
-          20506.191,
-          1792725914.0
+          0.001807,
+          20668.361,
+          1792751181.0
         ],
         [
           0.00193,
@@ -908,11 +898,31 @@
           0.01777,
           1000.0,
           1756076075.0
+        ],
+        [
+          0.018,
+          2977.778,
+          1768564408.0
+        ],
+        [
+          0.018001,
+          54222.0,
+          1790910205.0
+        ],
+        [
+          0.01915,
+          340.0,
+          1760173514.0
+        ],
+        [
+          0.02,
+          304408.675,
+          1790532139.0
         ]
       ]
     },
     "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_SNAPSHOT_TIME",
-    "snapshot_observed_at": "2026-10-23T05:34:30.611657Z",
+    "snapshot_observed_at": "2026-10-23T10:44:48.909106Z",
     "snapshot_time_basis": "LOCAL_ACQUISITION_TIME_NOT_EXCHANGE_EVENT_TIMESTAMP"
   },
   "closed_4h": {
@@ -922,13 +932,13 @@
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=GALAEUR&interval=240",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T04:04:30.284196Z",
-      "retrieved_at": "2026-10-23T04:04:30.544840Z",
+      "request_started_at": "2026-10-23T08:04:48.818870Z",
+      "retrieved_at": "2026-10-23T08:04:48.932362Z",
       "market_observed_at": null,
       "from_cache": true,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 04:04:30 GMT",
+        "Date": "Fri, 23 Oct 2026 08:04:48 GMT",
         "Cache-Control": "public, max-age=2"
       },
       "http_request_made": true,
@@ -936,42 +946,42 @@
     },
     "unfinished_final_bar_excluded": true,
     "history_has_gaps": false,
-    "latest_closed_bar_start": "2026-10-23T00:00:00+00:00",
-    "latest_closed_bar_end": "2026-10-23T04:00:00+00:00",
+    "latest_closed_bar_start": "2026-10-23T04:00:00+00:00",
+    "latest_closed_bar_end": "2026-10-23T08:00:00+00:00",
     "closed_24h": {
       "quality": "VERIFIED",
-      "start_unix": 1792641600,
-      "end_unix": 1792728000,
-      "start_at": "2026-10-22T04:00:00+00:00",
-      "end_at": "2026-10-23T04:00:00+00:00",
-      "from_close": 0.001687,
-      "to_close": 0.001689,
-      "change_pct": 0.11855364552459946
+      "start_unix": 1792656000,
+      "end_unix": 1792742400,
+      "start_at": "2026-10-22T08:00:00+00:00",
+      "end_at": "2026-10-23T08:00:00+00:00",
+      "from_close": 0.001676,
+      "to_close": 0.001701,
+      "change_pct": 1.4916467780429654
     },
     "closed_48h": {
       "quality": "VERIFIED",
-      "start_unix": 1792555200,
-      "end_unix": 1792728000,
-      "start_at": "2026-10-21T04:00:00+00:00",
-      "end_at": "2026-10-23T04:00:00+00:00",
-      "from_close": 0.001759,
-      "to_close": 0.001689,
-      "change_pct": -3.979533826037518
+      "start_unix": 1792569600,
+      "end_unix": 1792742400,
+      "start_at": "2026-10-21T08:00:00+00:00",
+      "end_at": "2026-10-23T08:00:00+00:00",
+      "from_close": 0.001737,
+      "to_close": 0.001701,
+      "change_pct": -2.072538860103623
     },
     "volume_research": {
       "quality": "VERIFIED",
-      "last_24h_volume_base": 11649584.591900721,
+      "last_24h_volume_base": 13785582.023352051,
       "prior_7_block_volumes_base": [
-        21824573.51776493,
-        14331195.83787929,
-        20256540.43928801,
-        10042468.79429347,
-        14013183.04372843,
-        27192790.769710872,
-        20447095.85635528
+        21626373.43158914,
+        14679720.90138972,
+        18840471.94447717,
+        11153919.30361397,
+        14389961.33925386,
+        25701999.809931412,
+        20728864.50363902
       ],
-      "median_prior_7_blocks_base": 20256540.43928801,
-      "ratio": 0.5751023787510178
+      "median_prior_7_blocks_base": 18840471.94447717,
+      "ratio": 0.7317004618556335
     },
     "columns": [
       "start_unix",
@@ -984,16 +994,6 @@
       "trades"
     ],
     "recent_closed_rows": [
-      [
-        1791345600,
-        0.002055,
-        0.00209,
-        0.002036,
-        0.002078,
-        0.002077,
-        4587034.33235374,
-        30.0
-      ],
       [
         1791360000,
         0.002062,
@@ -1943,6 +1943,16 @@
         0.001678,
         639282.724252,
         5.0
+      ],
+      [
+        1792728000,
+        0.001697,
+        0.001701,
+        0.001695,
+        0.001701,
+        0.001697,
+        2476418.87001307,
+        12.0
       ]
     ]
   },
@@ -1956,13 +1966,13 @@
       "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T04:04:31.795022Z",
-      "retrieved_at": "2026-10-23T04:04:31.987889Z",
+      "request_started_at": "2026-10-23T08:04:50.182556Z",
+      "retrieved_at": "2026-10-23T08:04:50.299821Z",
       "market_observed_at": null,
       "from_cache": true,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 04:04:31 GMT",
+        "Date": "Fri, 23 Oct 2026 08:04:50 GMT",
         "Cache-Control": "public, max-age=2"
       },
       "http_request_made": true,
@@ -1970,27 +1980,27 @@
     },
     "closed_24h": {
       "quality": "VERIFIED",
-      "start_unix": 1792641600,
-      "end_unix": 1792728000,
-      "start_at": "2026-10-22T04:00:00+00:00",
-      "end_at": "2026-10-23T04:00:00+00:00",
-      "from_close": 73701.7,
-      "to_close": 72906.2,
-      "change_pct": -1.0793509511992316
+      "start_unix": 1792656000,
+      "end_unix": 1792742400,
+      "start_at": "2026-10-22T08:00:00+00:00",
+      "end_at": "2026-10-23T08:00:00+00:00",
+      "from_close": 73124.3,
+      "to_close": 72747.3,
+      "change_pct": -0.515560490835465
     },
     "optional_only": true
   },
   "aggregate_turnover": {
     "quality": "APPROXIMATE",
-    "turnover_24h_eur": 92504.98598021735,
+    "turnover_24h_eur": 78444.62483339594,
     "included_pairs": [
       {
         "pair": "GALAEUR",
-        "turnover_eur": 23184.01685560034
+        "turnover_eur": 21592.790960436043
       },
       {
         "pair": "GALAUSD",
-        "turnover_eur": 69320.96912461701
+        "turnover_eur": 56851.8338729599
       }
     ],
     "missing_pairs": [],
@@ -2000,13 +2010,13 @@
       "source_url": "https://api.kraken.com/0/public/Ticker",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T05:34:28.828474Z",
-      "retrieved_at": "2026-10-23T05:34:29.125800Z",
+      "request_started_at": "2026-10-23T10:44:47.401422Z",
+      "retrieved_at": "2026-10-23T10:44:47.535670Z",
       "market_observed_at": null,
       "from_cache": false,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 05:34:29 GMT",
+        "Date": "Fri, 23 Oct 2026 10:44:47 GMT",
         "Cache-Control": "public, max-age=2"
       },
       "http_request_made": true,
@@ -2043,20 +2053,20 @@
       "galachain": "E3bVbsc7viP1A8tn3ayChk3BAt"
     },
     "quote": "EUR",
-    "price": 0.00169957,
-    "observed_unix": 1792733662.0,
+    "price": 0.00167984,
+    "observed_unix": 1792752281.0,
     "source": {
       "provider": "api.coingecko.com",
       "source_url": "https://api.coingecko.com/api/v3/simple/price?ids=aave%2Cbinancecoin%2Cbitcoin%2Cbittensor%2Cchainlink%2Cdogecoin%2Cethereum%2Cgala%2Chyperliquid%2Cinjective-protocol%2Clitecoin%2Cmegaeth%2Cmidnight-3%2Condo-finance%2Cpendle%2Crender-token%2Cshiba-inu%2Csolana%2Csui&vs_currencies=eur&include_last_updated_at=true",
       "method": "GET",
       "ok": true,
-      "request_started_at": "2026-10-23T05:34:30.612085Z",
-      "retrieved_at": "2026-10-23T05:34:30.747368Z",
+      "request_started_at": "2026-10-23T10:44:48.909618Z",
+      "retrieved_at": "2026-10-23T10:44:48.999035Z",
       "market_observed_at": null,
       "from_cache": false,
       "http_status": 200,
       "http_metadata": {
-        "Date": "Fri, 23 Oct 2026 05:34:30 GMT",
+        "Date": "Fri, 23 Oct 2026 10:44:48 GMT",
         "Cache-Control": "max-age=30, public, must-revalidate, s-maxage=60"
       },
       "http_request_made": true,
@@ -2073,9 +2083,9 @@
     "liquid_1pct_pass": true,
     "speculative_2pct_pass": true,
     "provider": "CoinGecko",
-    "kraken_mid_eur": 0.001699,
-    "reference_eur": 0.00169957,
-    "mismatch_pct": 0.03354914655680308,
+    "kraken_mid_eur": 0.00168,
+    "reference_eur": 0.00167984,
+    "mismatch_pct": 0.009524716639687946,
     "note": "Not a trade approval; identity, current source times and all other gates remain required."
   },
   "fx": {
@@ -2084,7 +2094,7 @@
     "quote_currency": "EUR",
     "source": null
   },
-  "same_provider_ticker_depth_mismatch_pct": 0.029429075927019797,
+  "same_provider_ticker_depth_mismatch_pct": 0.0,
   "blocking_data_reasons": [],
   "not_checked": [
     "independent provider confirmation",
@@ -2099,7 +2109,7 @@
   "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
   "transport_mode": "DIRECT_KRAKEN_NO_WORKER",
   "schema_note": "LEGACY_WIRE_COMPATIBILITY_NOT_WORKER_IDENTITY",
-  "generated_at": "2026-10-23T05:34:30.748634Z",
+  "generated_at": "2026-10-23T10:44:49.000970Z",
   "contains_account_data": false,
   "automatic_trading": false,
   "private_exchange_api": false,
