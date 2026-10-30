@@ -43,10 +43,10 @@
     "HOLD_30D": {
       "BASE": {
         "closed_cohorts": 0,
-        "cost_drag_eur_estimate": 1.7309856313281387,
+        "cost_drag_eur_estimate": null,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 988.591239507997,
-        "marks_complete": true,
+        "equity_eur_estimate": null,
+        "marks_complete": false,
         "mean_closed_pnl_eur_estimate": null,
         "net_pnl_closed_cohorts_eur_estimate": 0,
         "observed_max_drawdown_pct_lower_bound": 1.1408760492003012,
@@ -55,10 +55,10 @@
       },
       "LOW": {
         "closed_cohorts": 0,
-        "cost_drag_eur_estimate": 1.242524077514199,
+        "cost_drag_eur_estimate": null,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 989.079701061811,
-        "marks_complete": true,
+        "equity_eur_estimate": null,
+        "marks_complete": false,
         "mean_closed_pnl_eur_estimate": null,
         "net_pnl_closed_cohorts_eur_estimate": 0,
         "observed_max_drawdown_pct_lower_bound": 1.0920298938189035,
@@ -67,10 +67,10 @@
       },
       "STRESS": {
         "closed_cohorts": 0,
-        "cost_drag_eur_estimate": 2.454742689723174,
+        "cost_drag_eur_estimate": null,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 987.867482449602,
-        "marks_complete": true,
+        "equity_eur_estimate": null,
+        "marks_complete": false,
         "mean_closed_pnl_eur_estimate": null,
         "net_pnl_closed_cohorts_eur_estimate": 0,
         "observed_max_drawdown_pct_lower_bound": 1.2132517550398005,
@@ -196,8 +196,8 @@
   "convert_execution": "UNOBSERVED_COST_SENSITIVITY_ONLY",
   "evidence_stage": "COLLECTING",
   "fully_closed_paired_cohorts": 0,
-  "generated_at": "2026-10-29T20:35:08.663847Z",
-  "git_run_id": "40949849734",
+  "generated_at": "2026-10-30T00:17:58.038290Z",
+  "git_run_id": "40978707300",
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "independent_crosscheck": "NOT_COLLECTED",
   "limitations": [
@@ -211,8 +211,8 @@
   "market_coverage": {
     "data_health": "PARTIAL_DATA",
     "discovery_pairs": [],
-    "public_429_stop": false,
-    "public_requests": 21,
+    "public_429_stop": true,
+    "public_requests": 6,
     "scope": "All configured watched pairs plus open shadow positions plus at most 3 discovery candidates; not an exhaustive deep scan.",
     "selected_pairs": [
       "XBTEUR",
@@ -238,7 +238,22 @@
       "ZROEUR"
     ],
     "unavailable": {
-      "IOEUR": "PARTIAL_SOURCE"
+      "AAVEEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "BNBEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "GALAEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "HYPEEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "INJEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "IOEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "LINKEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "MEGAEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "NIGHTEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "ONDOEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "PENDLEEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "RENDEREUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "SHIBEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "SUIEUR": "HTTP_429",
+      "TAOEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
+      "ZROEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP"
     },
     "universe_fresh": true,
     "valid_pairs": [
@@ -246,22 +261,7 @@
       "ETHEUR",
       "SOLEUR",
       "DOGEEUR",
-      "LTCEUR",
-      "SUIEUR",
-      "LINKEUR",
-      "BNBEUR",
-      "AAVEEUR",
-      "ONDOEUR",
-      "INJEUR",
-      "PENDLEEUR",
-      "RENDEREUR",
-      "TAOEUR",
-      "GALAEUR",
-      "NIGHTEUR",
-      "MEGAEUR",
-      "HYPEEUR",
-      "SHIBEUR",
-      "ZROEUR"
+      "LTCEUR"
     ],
     "watched_pairs": [
       "XBTEUR",
@@ -286,7 +286,7 @@
       "SHIBEUR"
     ]
   },
-  "observation_gaps": 131,
+  "observation_gaps": 132,
   "pending_setups": 0,
   "production_changes_allowed": false,
   "production_mutations_by_this_job": false,
@@ -294,9 +294,9 @@
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "realized_user_pnl": null,
   "role": "RESEARCH_ONLY",
-  "run_count": 132,
+  "run_count": 133,
   "schema": "CRYPTO_V23_SHADOW_REPORT_V1",
-  "source_code_commit": "dfcd1d6d8b0ca8e2cf7dc05d263e3275d392aea2",
+  "source_code_commit": "95b6fb7a3fdcdd8856300de3da3b096b74bde4d3",
   "started_at": "2026-10-03T06:17:07.833490Z",
   "unique_entry_cohorts": 3,
   "variant_cost_paths_are_not_independent_trades": true
