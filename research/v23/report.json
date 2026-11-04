@@ -43,9 +43,9 @@
     "HOLD_30D": {
       "BASE": {
         "closed_cohorts": 2,
-        "cost_drag_eur_estimate": 1.7299782796435306,
+        "cost_drag_eur_estimate": 1.7440898080722373,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 988.5629617071361,
+        "equity_eur_estimate": 988.9590924694562,
         "marks_complete": true,
         "mean_closed_pnl_eur_estimate": -4.684633213041631,
         "net_pnl_closed_cohorts_eur_estimate": -9.369266426083263,
@@ -55,9 +55,9 @@
       },
       "LOW": {
         "closed_cohorts": 2,
-        "cost_drag_eur_estimate": 1.2418009873278901,
+        "cost_drag_eur_estimate": 1.2519304266056377,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 989.0511389994517,
+        "equity_eur_estimate": 989.4512518509229,
         "marks_complete": true,
         "mean_closed_pnl_eur_estimate": -4.530676081391245,
         "net_pnl_closed_cohorts_eur_estimate": -9.06135216278249,
@@ -67,9 +67,9 @@
       },
       "STRESS": {
         "closed_cohorts": 2,
-        "cost_drag_eur_estimate": 2.453314145696565,
+        "cost_drag_eur_estimate": 2.4733259647574872,
         "drawdown_caveat": "Hourly observations can miss intraperiod drawdowns.",
-        "equity_eur_estimate": 987.839625841083,
+        "equity_eur_estimate": 988.229856312771,
         "marks_complete": true,
         "mean_closed_pnl_eur_estimate": -4.912752621523601,
         "net_pnl_closed_cohorts_eur_estimate": -9.825505243047202,
@@ -196,8 +196,8 @@
   "convert_execution": "UNOBSERVED_COST_SENSITIVITY_ONLY",
   "evidence_stage": "COLLECTING",
   "fully_closed_paired_cohorts": 2,
-  "generated_at": "2026-11-04T08:00:34.428801Z",
-  "git_run_id": "41795906437",
+  "generated_at": "2026-11-04T16:35:34.607352Z",
+  "git_run_id": "41868206891",
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "independent_crosscheck": "NOT_COLLECTED",
   "limitations": [
@@ -211,8 +211,8 @@
   "market_coverage": {
     "data_health": "PARTIAL_DATA",
     "discovery_pairs": [],
-    "public_429_stop": true,
-    "public_requests": 17,
+    "public_429_stop": false,
+    "public_requests": 20,
     "scope": "All configured watched pairs plus open shadow positions plus at most 3 discovery candidates; not an exhaustive deep scan.",
     "selected_pairs": [
       "XBTEUR",
@@ -237,29 +237,29 @@
       "SHIBEUR"
     ],
     "unavailable": {
-      "HYPEEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
-      "IOEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP",
-      "MEGAEUR": "HTTP_429",
-      "RENDEREUR": "PARTIAL_SOURCE",
-      "SHIBEUR": "PUBLIC_REQUEST_BUDGET_OR_429_STOP"
+      "AAVEEUR": "PARTIAL_SOURCE",
+      "ETHEUR": "PARTIAL_SOURCE",
+      "IOEUR": "PARTIAL_SOURCE",
+      "XBTEUR": "PARTIAL_SOURCE"
     },
     "universe_fresh": true,
     "valid_pairs": [
-      "XBTEUR",
-      "ETHEUR",
       "SOLEUR",
       "DOGEEUR",
       "LTCEUR",
       "SUIEUR",
       "LINKEUR",
       "BNBEUR",
-      "AAVEEUR",
       "ONDOEUR",
       "INJEUR",
       "PENDLEEUR",
+      "RENDEREUR",
       "TAOEUR",
       "GALAEUR",
-      "NIGHTEUR"
+      "NIGHTEUR",
+      "MEGAEUR",
+      "HYPEEUR",
+      "SHIBEUR"
     ],
     "watched_pairs": [
       "XBTEUR",
@@ -284,17 +284,17 @@
       "SHIBEUR"
     ]
   },
-  "observation_gaps": 153,
-  "pending_setups": 1,
+  "observation_gaps": 154,
+  "pending_setups": 0,
   "production_changes_allowed": false,
   "production_mutations_by_this_job": false,
   "production_v22_comparison": "UNAVAILABLE_NO_ACTUAL_SIGNAL_HISTORY_IMPORTED",
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "realized_user_pnl": null,
   "role": "RESEARCH_ONLY",
-  "run_count": 154,
+  "run_count": 155,
   "schema": "CRYPTO_V23_SHADOW_REPORT_V1",
-  "source_code_commit": "b0f12c6fda6ff763df8e64b446ecb5deca6c2ce2",
+  "source_code_commit": "828fca4d468cd83492f75b9af6235ceae8467a16",
   "started_at": "2026-10-03T06:17:07.833490Z",
   "unique_entry_cohorts": 3,
   "variant_cost_paths_are_not_independent_trades": true
