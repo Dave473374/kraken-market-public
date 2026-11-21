@@ -196,8 +196,8 @@
   "convert_execution": "UNOBSERVED_COST_SENSITIVITY_ONLY",
   "evidence_stage": "COLLECTING",
   "fully_closed_paired_cohorts": 3,
-  "generated_at": "2026-11-21T02:50:25.761936Z",
-  "git_run_id": "44857763252",
+  "generated_at": "2026-11-21T11:46:03.308429Z",
+  "git_run_id": "44900431006",
   "implementation_hash": "2c1df16e2a30ed4f8235c329db2c19095a6e9ad0ac52608cfdc04af7f05b969e",
   "independent_crosscheck": "NOT_COLLECTED",
   "limitations": [
@@ -211,7 +211,7 @@
   "market_coverage": {
     "data_health": "PARTIAL_DATA",
     "discovery_pairs": [],
-    "public_429_stop": false,
+    "public_429_stop": true,
     "public_requests": 20,
     "scope": "All configured watched pairs plus open shadow positions plus at most 3 discovery candidates; not an exhaustive deep scan.",
     "selected_pairs": [
@@ -238,7 +238,7 @@
     ],
     "unavailable": {
       "IOEUR": "PARTIAL_SOURCE",
-      "SHIBEUR": "PARTIAL_SOURCE"
+      "SHIBEUR": "HTTP_429"
     },
     "universe_fresh": true,
     "valid_pairs": [
@@ -284,7 +284,7 @@
       "SHIBEUR"
     ]
   },
-  "observation_gaps": 212,
+  "observation_gaps": 213,
   "pending_setups": 0,
   "production_changes_allowed": false,
   "production_mutations_by_this_job": false,
@@ -292,9 +292,9 @@
   "protocol_hash": "16c399dd296928d791e5b407a12180c03592fa2213c029319f0d7c9820bfe254",
   "realized_user_pnl": null,
   "role": "RESEARCH_ONLY",
-  "run_count": 213,
+  "run_count": 214,
   "schema": "CRYPTO_V23_SHADOW_REPORT_V1",
-  "source_code_commit": "9b1ddd78c2b9f6c2185650f960aa991b639e0288",
+  "source_code_commit": "000fdc61801c066b7188aa9543c84a3bf129a5ef",
   "started_at": "2026-10-03T06:17:07.833490Z",
   "unique_entry_cohorts": 3,
   "variant_cost_paths_are_not_independent_trades": true
