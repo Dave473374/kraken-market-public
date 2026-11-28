@@ -1,0 +1,1478 @@
+{
+  "data_health": "DATA_OK",
+  "pair_metadata": {
+    "pair_key": "CAMPEUR",
+    "altname": "CAMPEUR",
+    "wsname": "CAMP/EUR",
+    "asset": "CAMP",
+    "base_code": "CAMP",
+    "quote_code": "ZEUR",
+    "base_display": "CAMP",
+    "quote_display": "EUR",
+    "aclass_base": "currency",
+    "aclass_quote": "currency",
+    "status": "online",
+    "execution_venue": "international",
+    "country_filter": "SI",
+    "account_specific_eligibility": "NOT_CHECKED",
+    "pair_decimals": 6,
+    "lot_decimals": 5,
+    "cost_decimals": 5,
+    "ordermin_base": "50000",
+    "costmin_quote": "0.45",
+    "tick_size_quote": "0.000001",
+    "fee_tier_and_interface_fees": "UNKNOWN"
+  },
+  "metadata_source": {
+    "provider": "api.kraken.com",
+    "source_url": "https://api.kraken.com/0/public/AssetPairs?country_code=SI&aclass_base=currency&execution_venue=international",
+    "method": "GET",
+    "ok": true,
+    "request_started_at": "2026-11-28T14:42:43.575371Z",
+    "retrieved_at": "2026-11-28T14:42:43.800367Z",
+    "market_observed_at": null,
+    "from_cache": true,
+    "http_status": 200,
+    "http_metadata": {
+      "Date": "Sat, 28 Nov 2026 14:42:43 GMT",
+      "Cache-Control": "public, max-age=1, s-maxage=1"
+    },
+    "http_request_made": true,
+    "status": "PUBLIC_JSON_ENVELOPE_VALID"
+  },
+  "ticker": {
+    "quality": "APPROXIMATE",
+    "bid": 1e-05,
+    "ask": 1.5e-05,
+    "last": 1.3e-05,
+    "mid": 1.25e-05,
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/Ticker",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T14:47:43.570466Z",
+      "retrieved_at": "2026-11-28T14:47:43.664632Z",
+      "market_observed_at": null,
+      "from_cache": false,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 14:47:43 GMT",
+        "Age": "1",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "volume_24h_base": 249707.5517,
+    "vwap_24h_quote": 1.3e-05,
+    "turnover_24h_quote": 3.2461981720999997,
+    "change_since_midnight_utc_pct": 18.181818181818187,
+    "rolling_24h_price_change_pct": null,
+    "timestamp_note": "TICKER_HAS_NO_EXCHANGE_QUOTE_TIMESTAMP"
+  },
+  "timestamped_spread": {
+    "quality": "VERIFIED",
+    "bid": 1e-05,
+    "ask": 1.5e-05,
+    "mid": 1.25e-05,
+    "spread_pct": 40.0,
+    "observed_at": "2026-11-28T14:48:14.354153Z",
+    "meaning": "DIRECT_L2_SNAPSHOT_ACQUIRED_AT_LOCAL_TIME_NOT_EXCHANGE_CHANGE_TIMESTAMP",
+    "same_source_as_depth": true,
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/Depth?pair=CAMPEUR&count=100",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T14:48:14.164972Z",
+      "retrieved_at": "2026-11-28T14:48:14.354153Z",
+      "market_observed_at": null,
+      "from_cache": false,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 14:48:14 GMT",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "depth": {
+    "quality": "VERIFIED",
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/Depth?pair=CAMPEUR&count=100",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T14:48:14.164972Z",
+      "retrieved_at": "2026-11-28T14:48:14.354153Z",
+      "market_observed_at": null,
+      "from_cache": false,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 14:48:14 GMT",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "best_bid": 1e-05,
+    "best_ask": 1.5e-05,
+    "mid": 1.25e-05,
+    "spread_pct": 40.0,
+    "band_pct": 0.5,
+    "depth_each_side": {
+      "bids": {
+        "notional_quote_lower_bound": 0,
+        "band_fully_observed": true
+      },
+      "asks": {
+        "notional_quote_lower_bound": 0,
+        "band_fully_observed": true
+      }
+    },
+    "returned_levels": {
+      "bids": 7,
+      "asks": 31
+    },
+    "levels": {
+      "bids": [
+        [
+          1e-05,
+          12361453.847,
+          1795876137.0
+        ],
+        [
+          9e-06,
+          20144242.227,
+          1795877281.0
+        ],
+        [
+          6e-06,
+          6500000.0,
+          1795877282.0
+        ],
+        [
+          5e-06,
+          2000000.0,
+          1795875541.0
+        ],
+        [
+          4e-06,
+          2500000.0,
+          1795875541.0
+        ],
+        [
+          2e-06,
+          5000000.0,
+          1795703737.0
+        ],
+        [
+          1e-06,
+          32061628.763,
+          1795877281.0
+        ]
+      ],
+      "asks": [
+        [
+          1.5e-05,
+          6482713.584,
+          1795874248.0
+        ],
+        [
+          5.8e-05,
+          50000.0,
+          1795874237.0
+        ],
+        [
+          5.9e-05,
+          56680.625,
+          1795873476.0
+        ],
+        [
+          8.6e-05,
+          3948441.361,
+          1795698168.0
+        ],
+        [
+          9e-05,
+          1600536.667,
+          1795874881.0
+        ],
+        [
+          9.5e-05,
+          1158357.444,
+          1795854271.0
+        ],
+        [
+          9.6e-05,
+          1950000.0,
+          1795803326.0
+        ],
+        [
+          9.9e-05,
+          4429241.901,
+          1795875175.0
+        ],
+        [
+          0.0001,
+          20463680.082,
+          1795601518.0
+        ],
+        [
+          0.000139,
+          4000000.0,
+          1795874252.0
+        ],
+        [
+          0.00014,
+          1299928.572,
+          1795775017.0
+        ],
+        [
+          0.00015,
+          1213266.667,
+          1795460076.0
+        ],
+        [
+          0.00016,
+          2274875.0,
+          1795460075.0
+        ],
+        [
+          0.00017,
+          1070529.412,
+          1795460059.0
+        ],
+        [
+          0.00018,
+          1011055.556,
+          1795875175.0
+        ],
+        [
+          0.00019,
+          1915684.211,
+          1795460106.0
+        ],
+        [
+          0.00021,
+          230769.231,
+          1795874892.0
+        ],
+        [
+          0.000222,
+          824639.64,
+          1795512415.0
+        ],
+        [
+          0.000236,
+          775720.339,
+          1795512414.0
+        ],
+        [
+          0.000254,
+          720748.032,
+          1795512414.0
+        ],
+        [
+          0.000268,
+          683097.015,
+          1795512414.0
+        ],
+        [
+          0.000292,
+          626952.055,
+          1795512416.0
+        ],
+        [
+          0.00031,
+          590548.388,
+          1795512418.0
+        ],
+        [
+          0.000342,
+          535292.398,
+          1795512420.0
+        ],
+        [
+          0.000348,
+          526063.219,
+          1795512421.0
+        ],
+        [
+          0.0009,
+          798119.6,
+          1795242667.0
+        ],
+        [
+          0.000938,
+          880617.505,
+          1795601518.0
+        ],
+        [
+          0.000978,
+          2194587.92,
+          1787788690.0
+        ],
+        [
+          0.05,
+          50000.0,
+          1795863425.0
+        ],
+        [
+          0.1,
+          50000.0,
+          1795863402.0
+        ],
+        [
+          0.2,
+          20535.73,
+          1792962360.0
+        ]
+      ]
+    },
+    "book_level_timestamps_note": "LEVEL_LAST_UPDATE_TIMES_ARE_NOT_SNAPSHOT_TIME",
+    "snapshot_observed_at": "2026-11-28T14:48:14.354153Z",
+    "snapshot_time_basis": "LOCAL_ACQUISITION_TIME_NOT_EXCHANGE_EVENT_TIMESTAMP"
+  },
+  "closed_4h": {
+    "quality": "VERIFIED",
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=CAMPEUR&interval=240",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T12:12:58.641703Z",
+      "retrieved_at": "2026-11-28T12:12:58.802559Z",
+      "market_observed_at": null,
+      "from_cache": true,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 12:12:58 GMT",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "unfinished_final_bar_excluded": true,
+    "history_has_gaps": false,
+    "latest_closed_bar_start": "2026-11-28T08:00:00+00:00",
+    "latest_closed_bar_end": "2026-11-28T12:00:00+00:00",
+    "closed_24h": {
+      "quality": "VERIFIED",
+      "start_unix": 1795780800,
+      "end_unix": 1795867200,
+      "start_at": "2026-11-27T12:00:00+00:00",
+      "end_at": "2026-11-28T12:00:00+00:00",
+      "from_close": 1.3e-05,
+      "to_close": 1.3e-05,
+      "change_pct": 0.0
+    },
+    "closed_48h": {
+      "quality": "VERIFIED",
+      "start_unix": 1795694400,
+      "end_unix": 1795867200,
+      "start_at": "2026-11-26T12:00:00+00:00",
+      "end_at": "2026-11-28T12:00:00+00:00",
+      "from_close": 1.2e-05,
+      "to_close": 1.3e-05,
+      "change_pct": 8.333333333333325
+    },
+    "volume_research": {
+      "quality": "VERIFIED",
+      "last_24h_volume_base": 0.0,
+      "prior_7_block_volumes_base": [
+        3799097.0117,
+        22091045.66234,
+        6713261.86348,
+        144385947.91538,
+        13147058.60568,
+        100000.0,
+        1888555.46591
+      ],
+      "median_prior_7_blocks_base": 6713261.86348,
+      "ratio": 0.0
+    },
+    "columns": [
+      "start_unix",
+      "open",
+      "high",
+      "low",
+      "close",
+      "vwap",
+      "volume_base",
+      "trades"
+    ],
+    "recent_closed_rows": [
+      [
+        1794484800,
+        6e-05,
+        6e-05,
+        6e-05,
+        6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794499200,
+        6e-05,
+        6e-05,
+        6e-05,
+        6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794513600,
+        6e-05,
+        6e-05,
+        6e-05,
+        6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794528000,
+        6e-05,
+        6e-05,
+        6e-05,
+        6e-05,
+        6e-05,
+        87445.07931,
+        1.0
+      ],
+      [
+        1794542400,
+        5.9e-05,
+        5.9e-05,
+        5.8e-05,
+        5.8e-05,
+        5.8e-05,
+        132878.1423,
+        2.0
+      ],
+      [
+        1794556800,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        100000.0,
+        2.0
+      ],
+      [
+        1794571200,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794585600,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794600000,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794614400,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794628800,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794643200,
+        5.6e-05,
+        5.6e-05,
+        5.1e-05,
+        5.1e-05,
+        5.2e-05,
+        1034482.7587,
+        5.0
+      ],
+      [
+        1794657600,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        98497.9461,
+        2.0
+      ],
+      [
+        1794672000,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        199999.99,
+        3.0
+      ],
+      [
+        1794686400,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        340692.0,
+        2.0
+      ],
+      [
+        1794700800,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794715200,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        99999.9999,
+        1.0
+      ],
+      [
+        1794729600,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794744000,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794758400,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794772800,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794787200,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794801600,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794816000,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794830400,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        5.7e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794844800,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        349335.61045,
+        1.0
+      ],
+      [
+        1794859200,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794873600,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794888000,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794902400,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794916800,
+        5.6e-05,
+        5.6e-05,
+        5.2e-05,
+        5.3e-05,
+        5.2e-05,
+        7535833.74765,
+        21.0
+      ],
+      [
+        1794931200,
+        5.3e-05,
+        6.4e-05,
+        5.2e-05,
+        6.4e-05,
+        5.3e-05,
+        3852624.56255,
+        23.0
+      ],
+      [
+        1794945600,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        87534.01708,
+        1.0
+      ],
+      [
+        1794960000,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794974400,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1794988800,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795003200,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795017600,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        6.6e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795032000,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        500000.0,
+        1.0
+      ],
+      [
+        1795046400,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795060800,
+        5.3e-05,
+        5.3e-05,
+        5.3e-05,
+        5.3e-05,
+        5.3e-05,
+        613599.9956,
+        1.0
+      ],
+      [
+        1795075200,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        244800.0,
+        2.0
+      ],
+      [
+        1795089600,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795104000,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        5.2e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795118400,
+        5e-05,
+        5.1e-05,
+        5e-05,
+        5.1e-05,
+        5e-05,
+        830398.2803,
+        3.0
+      ],
+      [
+        1795132800,
+        5.1e-05,
+        5.1e-05,
+        5.1e-05,
+        5.1e-05,
+        5.1e-05,
+        99847.94575,
+        1.0
+      ],
+      [
+        1795147200,
+        5.1e-05,
+        5.1e-05,
+        5.1e-05,
+        5.1e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795161600,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        1154499.99935,
+        9.0
+      ],
+      [
+        1795176000,
+        5e-05,
+        6.1e-05,
+        5e-05,
+        5.4e-05,
+        5.4e-05,
+        1888555.46591,
+        12.0
+      ],
+      [
+        1795190400,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795204800,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795219200,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795233600,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795248000,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795262400,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        5.4e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795276800,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        100000.0,
+        1.0
+      ],
+      [
+        1795291200,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795305600,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795320000,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795334400,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795348800,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795363200,
+        5e-05,
+        5e-05,
+        5e-05,
+        5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795377600,
+        4.7e-05,
+        4.7e-05,
+        4.7e-05,
+        4.7e-05,
+        4.7e-05,
+        4258751.64337,
+        4.0
+      ],
+      [
+        1795392000,
+        4.3e-05,
+        4.4e-05,
+        2.5e-05,
+        2.7e-05,
+        3.2e-05,
+        5892156.85442,
+        22.0
+      ],
+      [
+        1795406400,
+        2.2e-05,
+        2.6e-05,
+        1.5e-05,
+        1.5e-05,
+        2.3e-05,
+        2996150.10789,
+        7.0
+      ],
+      [
+        1795420800,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795435200,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795449600,
+        1.6e-05,
+        0.0004,
+        1.6e-05,
+        1.9e-05,
+        0.000247,
+        132708692.55915,
+        80.0
+      ],
+      [
+        1795464000,
+        1.6e-05,
+        1.8e-05,
+        1.5e-05,
+        1.8e-05,
+        1.6e-05,
+        11677255.35623,
+        10.0
+      ],
+      [
+        1795478400,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795492800,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795507200,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795521600,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        1.8e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795536000,
+        1.8e-05,
+        1.9e-05,
+        1.6e-05,
+        1.9e-05,
+        1.7e-05,
+        4429362.41348,
+        9.0
+      ],
+      [
+        1795550400,
+        1.6e-05,
+        1.7e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        580921.0526,
+        3.0
+      ],
+      [
+        1795564800,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        63634.1079,
+        1.0
+      ],
+      [
+        1795579200,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795593600,
+        1.5e-05,
+        1.5e-05,
+        1.1e-05,
+        1.3e-05,
+        1.3e-05,
+        1639344.2895,
+        6.0
+      ],
+      [
+        1795608000,
+        1.3e-05,
+        1.4e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        169138.4917,
+        3.0
+      ],
+      [
+        1795622400,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795636800,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795651200,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795665600,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795680000,
+        1.1e-05,
+        1.3e-05,
+        1e-05,
+        1.2e-05,
+        1e-05,
+        21921907.17064,
+        15.0
+      ],
+      [
+        1795694400,
+        1e-05,
+        1e-05,
+        1e-05,
+        1e-05,
+        1e-05,
+        2549389.46,
+        1.0
+      ],
+      [
+        1795708800,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        1.5e-05,
+        834924.89,
+        1.0
+      ],
+      [
+        1795723200,
+        1.5e-05,
+        1.5e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        414782.6617,
+        2.0
+      ],
+      [
+        1795737600,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795752000,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795766400,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795780800,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795795200,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795809600,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795824000,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795838400,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1795852800,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        1.3e-05,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "closed_daily": {
+    "quality": "NOT_COLLECTED_OPTIONAL"
+  },
+  "btc_same_period_reference": {
+    "quality": "VERIFIED",
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/OHLC?pair=XBTEUR&interval=240",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T12:02:29.107621Z",
+      "retrieved_at": "2026-11-28T12:02:29.265911Z",
+      "market_observed_at": null,
+      "from_cache": true,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 12:02:29 GMT",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    },
+    "closed_24h": {
+      "quality": "VERIFIED",
+      "start_unix": 1795780800,
+      "end_unix": 1795867200,
+      "start_at": "2026-11-27T12:00:00+00:00",
+      "end_at": "2026-11-28T12:00:00+00:00",
+      "from_close": 56168.1,
+      "to_close": 54145.8,
+      "change_pct": -3.6004422439071204
+    },
+    "optional_only": true
+  },
+  "aggregate_turnover": {
+    "quality": "APPROXIMATE",
+    "turnover_24h_eur": 564.9068876619934,
+    "included_pairs": [
+      {
+        "pair": "CAMPEUR",
+        "turnover_eur": 3.2461981720999997
+      },
+      {
+        "pair": "CAMPUSD",
+        "turnover_eur": 561.6606894898935
+      }
+    ],
+    "missing_pairs": [],
+    "scope": "SI_INTERNATIONAL_SPOT_EUR_USD_USDC_ONLY_NOT_GLOBAL_EXCHANGE_VOLUME",
+    "source": {
+      "provider": "api.kraken.com",
+      "source_url": "https://api.kraken.com/0/public/Ticker",
+      "method": "GET",
+      "ok": true,
+      "request_started_at": "2026-11-28T14:47:43.570466Z",
+      "retrieved_at": "2026-11-28T14:47:43.664632Z",
+      "market_observed_at": null,
+      "from_cache": false,
+      "http_status": 200,
+      "http_metadata": {
+        "Date": "Sat, 28 Nov 2026 14:47:43 GMT",
+        "Age": "1",
+        "Cache-Control": "public, max-age=2"
+      },
+      "http_request_made": true,
+      "status": "PUBLIC_JSON_ENVELOPE_VALID"
+    }
+  },
+  "independent_reference": {
+    "quality": "MISSING",
+    "reason": "NO_VERIFIED_FRESH_REFERENCE_FOR_EXACT_ASSET",
+    "is_kraken_executable": false,
+    "action_approved": false
+  },
+  "independent_comparison": {
+    "quality": "MISSING",
+    "action_approved": false,
+    "independent_price_only": true,
+    "liquid_1pct_pass": false,
+    "speculative_2pct_pass": false
+  },
+  "fx": {
+    "quality": "VERIFIED",
+    "eur_per_quote_mid": 1.0,
+    "quote_currency": "EUR",
+    "source": null
+  },
+  "same_provider_ticker_depth_mismatch_pct": 0.0,
+  "blocking_data_reasons": [],
+  "not_checked": [
+    "independent provider confirmation",
+    "fundamentals/security",
+    "private portfolio/risk caps",
+    "Convert price/fees",
+    "actual fill"
+  ],
+  "test_notional_is_recommendation": false,
+  "schema": "KRAKEN_PUBLIC_TRANSPORT_V2.0.2",
+  "producer": "CAW_DIRECT_KRAKEN_V1",
+  "role": "PUBLIC_READ_ONLY_EVIDENCE_TRANSPORT",
+  "transport_mode": "DIRECT_KRAKEN_NO_WORKER",
+  "schema_note": "LEGACY_WIRE_COMPATIBILITY_NOT_WORKER_IDENTITY",
+  "generated_at": "2026-11-28T14:48:14.355851Z",
+  "contains_account_data": false,
+  "automatic_trading": false,
+  "private_exchange_api": false,
+  "trade_signal": null,
+  "actionability": "NEVER_AUTHORIZED_BY_DATA_ADAPTER"
+}
